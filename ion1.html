@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/tinbu/Downloads/jscieincetangen-fixed3_1.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GAMBA 理科 単元表</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'BIZ UDPGothic','Hiragino Kaku Gothic ProN','Yu Gothic UI',Meiryo,sans-serif;background:#f0fdf4;color:#1e293b;min-height:100vh;font-size:15px}
+.top-header{background:linear-gradient(135deg,#064e3b 0%,#0d9488 60%,#0369a1 100%);color:#fff;padding:16px 16px 0;text-align:center}
+.top-header h1{font-size:1.15rem;font-weight:800;letter-spacing:.04em}
+.top-header p{font-size:.78rem;margin-top:3px;opacity:.85}
+.summary-bar{background:rgba(0,0,0,.22);margin-top:12px;padding:9px 14px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;font-size:.78rem;color:#fff}
+.sum-item{display:flex;align-items:center;gap:5px;white-space:nowrap}
+.sum-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.sum-dot-a{background:#4ade80}.sum-dot-b{background:#fbbf24}.sum-dot-c{background:#f87171}.sum-dot-n{background:#94a3b8}
+.sum-count{font-weight:800;font-size:1rem;min-width:18px;text-align:center}
+.tab-nav{background:rgba(255,255,255,.97);border-bottom:2px solid #a7f3d0;padding:8px 12px;display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:0;z-index:300;backdrop-filter:blur(8px);box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.tnav{font-family:inherit;font-size:.8em;font-weight:700;padding:7px 18px;border:2px solid #a7f3d0;border-radius:50px;background:#fff;color:#6b7a99;cursor:pointer;transition:.14s}
+.tnav:hover{border-color:#0d9488;color:#0d9488}
+.tnav.on{background:#0d9488;color:#fff;border-color:#0d9488}
+.tab-sec{display:none}.tab-sec.on{display:block}
+.wrap{max-width:960px;margin:0 auto;padding:14px 12px 70px}
+.progress-wrap{background:#fff;border-radius:14px;border:1px solid #a7f3d0;padding:13px 16px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.progress-lbl{font-size:.8rem;font-weight:800;color:#0d9488;margin-bottom:8px}
+.progress-bar-bg{background:#d1fae5;border-radius:20px;height:12px;overflow:hidden}
+.progress-bar-fill{background:linear-gradient(90deg,#0d9488,#0369a1);height:100%;border-radius:20px;transition:.6s}
+.progress-pct{font-size:.8rem;font-weight:700;color:#0d9488;margin-top:5px;text-align:right}
+.year-band{display:flex;align-items:center;gap:8px;margin:26px 0 14px;font-size:.85rem;font-weight:800;color:#334155}
+.year-band:first-child{margin-top:0}
+.year-band .yb-line{flex:1;height:2px;background:linear-gradient(90deg,#a7f3d0,transparent)}
+.year-band .yb-badge{background:#0d9488;color:#fff;border-radius:50px;padding:4px 16px;font-size:.82rem;letter-spacing:.05em}
+.unit{background:#fff;border-radius:14px;border:1px solid #a7f3d0;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.05);overflow:hidden}
+.unit-hd{padding:11px 16px;display:flex;align-items:center;gap:10px;color:#fff}
+.unit-num{background:rgba(255,255,255,.2);border-radius:7px;padding:3px 10px;font-size:.78rem;font-weight:800;white-space:nowrap}
+.unit-title{font-size:1rem;font-weight:800;flex:1}
+.unit-badge{font-size:.72rem;background:rgba(255,255,255,.25);border-radius:999px;padding:2px 9px;font-weight:700;white-space:nowrap}
+.unit-body{padding:12px 14px}
+.group-label{font-size:.75rem;font-weight:800;color:#64748b;margin:12px 0 8px;letter-spacing:.05em;padding-bottom:4px;border-bottom:1.5px dashed #a7f3d0;display:flex;align-items:center;gap:7px}
+.group-label:first-child{margin-top:0}
+.sec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:4px}
+.sec-card{border-radius:10px;border:1.5px solid #a7f3d0;overflow:hidden;transition:.18s;background:#fff;display:flex;flex-direction:column}
+.sec-card:hover{box-shadow:0 3px 14px rgba(13,148,136,.15);transform:translateY(-1px)}
+.sc-hd{background:#f0fdfa;border-bottom:2px solid #0d9488;padding:9px 12px;display:flex;align-items:center;gap:8px}
+.sc-num{background:#0d9488;color:#fff;border-radius:7px;padding:3px 9px;font-size:.75rem;font-weight:800;flex-shrink:0}
+.sc-title{font-size:.88rem;font-weight:800;flex:1;color:#065f46;line-height:1.3}
+.sc-status{font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:50px;white-space:nowrap;flex-shrink:0;background:#e2e8f0;color:#64748b;border:1px solid #cbd5e1}
+.sc-status.done{background:#dcfce7;color:#16a34a;border-color:#16a34a}
+.sc-status.partial{background:#fef3c7;color:#92400e;border-color:#fbbf24}
+.sc-status.studying{background:#e0e7ff;color:#1d4ed8;border-color:#818cf8}
+.sc-body{padding:8px 12px;background:#fff;flex:1}
+.sc-topics{list-style:none;margin:0;padding:0}
+.sc-topics li{font-size:.78rem;color:#475569;padding:2px 0;border-bottom:1px solid #ecfdf5;line-height:1.5}
+.sc-topics li:last-child{border-bottom:none}
+.sc-topics li::before{content:"・";color:#0d9488}
+.sc-meta{display:flex;align-items:center;gap:12px;padding:4px 12px 6px;font-size:.72rem;color:#64748b;background:#f8fffb;border-top:1px dashed #a7f3d0}
+.sc-meta-item{display:flex;align-items:center;gap:3px}
+.sc-meta-val{font-weight:700;color:#065f46}
+.sc-btn-row{display:flex;gap:5px;padding:8px 12px 0;flex-wrap:wrap}
+.sc-btn{flex:1;min-width:60px;text-align:center;padding:8px 4px;border-radius:8px;font-size:.78rem;font-weight:800;text-decoration:none;transition:.13s;border:none;cursor:pointer;display:block;color:#fff;font-family:inherit;background:#0d9488}
+.sc-btn:hover{background:#065f46}
+.sc-btn-sub{background:#0369a1}.sc-btn-sub:hover{background:#075985}
+.sc-btn-fill{background:#7c3aed}.sc-btn-fill:hover{background:#6d28d9}
+.sc-btn-half{background:#0891b2}.sc-btn-half:hover{background:#0e7490}
+.abc-row{display:flex;gap:5px;padding:8px 12px 10px}
+.abc-lbl{font-size:.68rem;color:#64748b;font-weight:700;align-self:center;margin-right:2px;white-space:nowrap}
+.abc-btn{flex:1;padding:7px 2px;border-radius:20px;font-size:.75rem;font-weight:800;font-family:inherit;cursor:pointer;transition:.13s;border:2px solid;text-align:center;background:#fff}
+.abc-a{border-color:#16a34a;color:#16a34a}.abc-a.sel{background:#16a34a;color:#fff}
+.abc-b{border-color:#d97706;color:#d97706}.abc-b.sel{background:#d97706;color:#fff}
+.abc-c{border-color:#dc2626;color:#dc2626}.abc-c.sel{background:#dc2626;color:#fff}
+.abc-btn:hover{opacity:.8}
+.sec-card.s-a{border-color:#16a34a}.sec-card.s-a .sc-hd{background:#dcfce7!important;border-bottom-color:#16a34a!important}
+.sec-card.s-b{border-color:#d97706}.sec-card.s-b .sc-hd{background:#fef3c7!important;border-bottom-color:#d97706!important}
+.sec-card.s-c{border-color:#dc2626}.sec-card.s-c .sc-hd{background:#fee2e2!important;border-bottom-color:#dc2626!important}
+.record-wrap{background:#fff;border-radius:14px;border:1px solid #a7f3d0;padding:14px 16px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.record-title{font-size:.88rem;font-weight:800;color:#0d9488;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #d1fae5}
+.prog-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #ecfdf5}
+.prog-row:last-child{border-bottom:none}
+.prog-num{width:26px;height:26px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#0d9488,#0369a1);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700}
+.prog-title{flex:1;font-size:.85rem;font-weight:700}
+.prog-grade{font-size:.73em;font-weight:700;padding:3px 10px;border-radius:50px;background:#f0fdfa;color:#64748b;border:1px solid #a7f3d0}
+.prog-grade.a{background:#16a34a;color:#fff;border-color:#16a34a}
+.prog-grade.b{background:#d97706;color:#fff;border-color:#d97706}
+.prog-grade.c{background:#dc2626;color:#fff;border-color:#dc2626}
+.prog-meta{font-size:.68em;color:#64748b;white-space:nowrap}
+.modal-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:900;align-items:center;justify-content:center}
+.modal-ov.open{display:flex}
+.modal-box{background:#fff;border-radius:18px;padding:34px 38px;text-align:center;max-width:340px;width:90%;box-shadow:0 16px 56px rgba(0,0,0,.22);position:relative;overflow:hidden}
+.modal-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#0d9488,#0369a1)}
+.modal-emoji{font-size:3em;margin-bottom:12px}
+.modal-title{font-size:1.2em;font-weight:900;margin-bottom:8px}
+.modal-sub{font-size:.87em;color:#64748b;margin-bottom:22px;line-height:1.6}
+.modal-close{font-family:inherit;font-size:.9em;font-weight:700;background:linear-gradient(135deg,#0d9488,#0369a1);color:#fff;border:none;border-radius:50px;padding:11px 32px;cursor:pointer}
+canvas#cnf{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none}
+
+.unit-hd.ch1{background:linear-gradient(90deg,#14532d,#16a34a)}
+.unit-hd.ch2{background:linear-gradient(90deg,#1e293b,#475569)}
+.unit-hd.ch3{background:linear-gradient(90deg,#7c2d12,#b45309)}
+.unit-hd.ch4{background:linear-gradient(90deg,#78350f,#b45309)}
+.unit-hd.ch5{background:linear-gradient(90deg,#064e3b,#047857)}
+.unit-hd.ch6{background:linear-gradient(90deg,#581c87,#9333ea)}
+.unit-hd.ch7{background:linear-gradient(90deg,#0c4a6e,#0369a1)}
+.unit-hd.ch8{background:linear-gradient(90deg,#134e4a,#0f766e)}
+.unit-hd.ch9{background:linear-gradient(90deg,#831843,#db2777)}
+.unit-hd.ch10{background:linear-gradient(90deg,#312e81,#4338ca)}
+.unit-hd.ch11{background:linear-gradient(90deg,#7f1d1d,#dc2626)}
+.unit-hd.ch12{background:linear-gradient(90deg,#0f172a,#1e3a8a)}
+.unit-hd.ch13{background:linear-gradient(90deg,#065f46,#10b981)}
+
+@media(max-width:480px){.unit-title{font-size:.9rem}.sec-grid{grid-template-columns:1fr}.sc-btn{font-size:.73rem;padding:7px 2px}}
+</style>
+</head>
+<body>
+<canvas id="cnf"></canvas>
+<div class="top-header">
+  <h1>🔬 GAMBA 理科 単元表</h1>
+  <p>中学理科 — 生物・物理・化学・地学（1〜3年 全31レッスン）</p>
+  <div class="summary-bar">
+    <div class="sum-item"><span class="sum-dot sum-dot-a"></span>A 完璧 <span class="sum-count" id="cnt-a">0</span></div>
+    <div class="sum-item"><span class="sum-dot sum-dot-b"></span>B 良好 <span class="sum-count" id="cnt-b">0</span></div>
+    <div class="sum-item"><span class="sum-dot sum-dot-c"></span>C 要復習 <span class="sum-count" id="cnt-c">0</span></div>
+    <div class="sum-item"><span class="sum-dot sum-dot-n"></span>未学習 <span class="sum-count" id="cnt-n">31</span></div>
+  </div>
+</div>
+<div class="tab-nav">
+  <button class="tnav on" onclick="switchTab(&#39;tab-units&#39;,this)">📋 単元表</button>
+  <button class="tnav" onclick="switchTab(&#39;tab-record&#39;,this)">📊 学習記録</button>
+</div>
+<div class="wrap">
+<div class="tab-sec on" id="tab-units">
+  <div class="progress-wrap">
+    <div class="progress-lbl">📊 習熟度（全単元）</div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="progFill" style="width:0%"></div></div>
+    <div class="progress-pct" id="progPct">0%　A評価 <span id="progNote">0 / 31</span> 単元</div>
+  </div>
+
+  <div class="year-band"><span class="yb-badge">1年内容編</span><span class="yb-line"></span></div>
+  <div class="unit">
+    <div class="unit-hd ch1"><span class="unit-num">第1章</span><span class="unit-title">生物の観察と分類</span><span class="unit-badge">2レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">🌱 身近な生物・植物・動物の分類</div>
+      <div class="sec-grid" id="grid-ch1"><div class="sec-card" data-id="r01">
+      <div class="sc-hd">
+        <span class="sc-num">01</span>
+        <span class="sc-title">身近な生物の観察，植物の特徴と分類</span>
+        <span class="sc-status" id="st-r01">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>ルーペ・双眼実体顕微鏡の使い方</li><li>花のつくり（合弁花・離弁花）と種子植物の分類</li><li>被子植物・裸子植物、シダ・コケ植物の分類</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r01">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r01">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="https://realizefield.github.io/gamba_chugaku_seibutu/gamba_chugaku_seibutsu.html" class="sc-btn ">📖 レッスン</a><a href="https://realizefield.github.io/gamba_chugaku_seibutu/gamba_chugaku_seibutsu.html#drill" class="sc-btn ">📝 ドリル</a><a href="https://realizefield.github.io/gamba_chugaku_seibutu/gamba_chugaku_seibutsu.html#kakumon" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r01&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r01&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r01&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r02">
+      <div class="sc-hd">
+        <span class="sc-num">02</span>
+        <span class="sc-title">動物の特徴と分類</span>
+        <span class="sc-status" id="st-r02">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>脊椎動物の5分類（魚類・両生類・ハチュウ類・鳥類・ホニュウ類）</li><li>胎生と卵生、恒温動物と変温動物</li><li>無脊椎動物（節足動物・軟体動物など）</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r02">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r02">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="https://realizefield.github.io/j-science-doubutu/doubutu.html" class="sc-btn ">📖 レッスン</a><a href="https://realizefield.github.io/j-science-doubutu/doubutu.html#card_drill" class="sc-btn ">📝 ドリル</a><a href="https://realizefield.github.io/j-science-doubutu/doubutu.html#card_kakumon" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r02&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r02&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r02&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="unit-hd ch2"><span class="unit-num">第2章</span><span class="unit-title">実験操作・物質の性質</span><span class="unit-badge">3レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">🧪 実験の基本操作・気体・水溶液</div>
+      <div class="sec-grid" id="grid-ch2"><div class="sec-card" data-id="r03">
+      <div class="sc-hd">
+        <span class="sc-num">03</span>
+        <span class="sc-title">実験の基本操作</span>
+        <span class="sc-status" id="st-r03">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>ガスバーナー・上皿てんびんの使い方</li><li>気体の集め方（水上置換・上方/下方置換）</li><li>実験器具の安全な操作と後片付け</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r03">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r03">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r03.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r03_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r03_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r03&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r03&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r03&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r04">
+      <div class="sc-hd">
+        <span class="sc-num">04</span>
+        <span class="sc-title">物質の性質，気体の性質</span>
+        <span class="sc-status" id="st-r04">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>有機物と無機物、金属と非金属</li><li>密度の計算と物質の判別</li><li>酸素・二酸化炭素・水素・アンモニアの性質</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r04">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r04">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r04.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r04_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r04_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r04&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r04&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r04&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r05">
+      <div class="sc-hd">
+        <span class="sc-num">05</span>
+        <span class="sc-title">水溶液の性質，状態変化</span>
+        <span class="sc-status" id="st-r05">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>溶解度と再結晶、質量パーセント濃度</li><li>状態変化と温度（融点・沸点）</li><li>蒸留のしくみ</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r05">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r05">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r05.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r05_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r05_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r05&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r05&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r05&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="unit-hd ch3"><span class="unit-num">第3章</span><span class="unit-title">光・音・力</span><span class="unit-badge">2レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">💡 光の性質・音の性質・力のはたらき</div>
+      <div class="sec-grid" id="grid-ch3"><div class="sec-card" data-id="r06">
+      <div class="sc-hd">
+        <span class="sc-num">06</span>
+        <span class="sc-title">光</span>
+        <span class="sc-status" id="st-r06">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>光の反射・屈折の法則</li><li>凸レンズによる像のでき方（実像・虚像）</li><li>全反射と光ファイバー</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r06">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r06">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r06.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r06_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r06_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r06&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r06&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r06&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r07">
+      <div class="sc-hd">
+        <span class="sc-num">07</span>
+        <span class="sc-title">音と力</span>
+        <span class="sc-status" id="st-r07">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>音の伝わり方と速さ、振幅・振動数</li><li>力のはたらきとフックの法則</li><li>力のつり合いと2力の合成</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r07">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r07">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r07.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r07_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r07_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r07&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r07&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r07&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="unit-hd ch4"><span class="unit-num">第4章</span><span class="unit-title">大地の変化</span><span class="unit-badge">2レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">🌋 火山と地震・地層と大地の変動</div>
+      <div class="sec-grid" id="grid-ch4"><div class="sec-card" data-id="r08">
+      <div class="sc-hd">
+        <span class="sc-num">08</span>
+        <span class="sc-title">火山と地震</span>
+        <span class="sc-status" id="st-r08">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>マグマの粘り気と火山の形・火成岩</li><li>地震のゆれ（初期微動・主要動）とP波・S波</li><li>震度とマグニチュード、緊急地震速報</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r08">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r08">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r08.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r08_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r08_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r08&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r08&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r08&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r09">
+      <div class="sc-hd">
+        <span class="sc-num">09</span>
+        <span class="sc-title">地層と大地の変動</span>
+        <span class="sc-status" id="st-r09">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>地層のでき方としゅう曲・断層</li><li>堆積岩の種類（れき岩・砂岩・泥岩・凝灰岩・石灰岩）</li><li>示相化石・示準化石と大地の変動</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r09">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r09">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r09.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r09_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r09_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r09&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r09&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r09&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+
+  <div class="year-band"><span class="yb-badge">2年内容編</span><span class="yb-line"></span></div>
+  <div class="unit">
+    <div class="unit-hd ch5"><span class="unit-num">第5章</span><span class="unit-title">生物のからだのつくりとはたらき</span><span class="unit-badge">3レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">🫀 細胞・消化吸収呼吸・血液循環と刺激反応</div>
+      <div class="sec-grid" id="grid-ch5"><div class="sec-card" data-id="r10">
+      <div class="sc-hd">
+        <span class="sc-num">10</span>
+        <span class="sc-title">生物と細胞，植物の体のつくりとはたらき</span>
+        <span class="sc-status" id="st-r10">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>動物細胞・植物細胞のつくり</li><li>光合成と呼吸、蒸散のしくみ</li><li>根・茎・葉の維管束（道管・師管）</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r10">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r10">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="https://realizefield.github.io/gamba_chugaku_saiboujintai/gamba_chugaku_saiboujintai.html" class="sc-btn ">📖 レッスン</a><a href="https://realizefield.github.io/gamba_chugaku_saiboujintai/gamba_chugaku_saiboujintai.html#drill" class="sc-btn ">📝 ドリル</a><a href="https://realizefield.github.io/gamba_chugaku_saiboujintai/gamba_chugaku_saiboujintai.html#kakumon" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r10&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r10&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r10&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r11">
+      <div class="sc-hd">
+        <span class="sc-num">11</span>
+        <span class="sc-title">消化と吸収，呼吸，血液の成分とはたらき</span>
+        <span class="sc-status" id="st-r11">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>消化酵素（アミラーゼ・ペプシン・リパーゼ）のはたらき</li><li>肺による呼吸のしくみ（肺胞での気体交換）</li><li>血液の成分（赤血球・白血球・血小板・血しょう）</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r11">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r11">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r11.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r11_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r11_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r11&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r11&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r11&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r12">
+      <div class="sc-hd">
+        <span class="sc-num">12</span>
+        <span class="sc-title">血液の循環と排出，刺激と反応</span>
+        <span class="sc-status" id="st-r12">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>心臓のつくりと血液循環（体循環・肺循環）</li><li>じん臓のはたらきと排出</li><li>感覚器官・神経系と反射</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r12">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r12">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r12.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r12_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r12_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r12&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r12&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r12&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="unit-hd ch6"><span class="unit-num">第6章</span><span class="unit-title">化学変化とエネルギー</span><span class="unit-badge">2レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">⚗️ 物質の成り立ち・酸化と還元</div>
+      <div class="sec-grid" id="grid-ch6"><div class="sec-card" data-id="r13">
+      <div class="sc-hd">
+        <span class="sc-num">13</span>
+        <span class="sc-title">物質の成り立ちといろいろな化学変化</span>
+        <span class="sc-status" id="st-r13">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>原子・分子と化学式・化学反応式</li><li>分解（熱分解・電気分解）</li><li>化合（硫化・酸化）と質量保存の法則</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r13">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r13">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="https://realizefield.github.io/j-science/" class="sc-btn ">📖 レッスン一覧</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r13&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r13&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r13&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r14">
+      <div class="sc-hd">
+        <span class="sc-num">14</span>
+        <span class="sc-title">酸化と還元，化学変化と熱・質量</span>
+        <span class="sc-status" id="st-r14">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>酸化と還元（酸化銅の還元など）</li><li>発熱反応・吸熱反応</li><li>化学変化の前後の質量関係</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r14">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r14">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="https://realizefield.github.io/j-science/" class="sc-btn ">📖 レッスン一覧</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r14&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r14&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r14&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="unit-hd ch7"><span class="unit-num">第7章</span><span class="unit-title">電流とその利用</span><span class="unit-badge">2レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">⚡ 電気と回路・電流の正体と磁界</div>
+      <div class="sec-grid" id="grid-ch7"><div class="sec-card" data-id="r15">
+      <div class="sc-hd">
+        <span class="sc-num">15</span>
+        <span class="sc-title">電気と回路，電気とそのエネルギー</span>
+        <span class="sc-status" id="st-r15">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>直列回路・並列回路と電流・電圧</li><li>オームの法則と抵抗</li><li>電力・電力量と発熱量</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r15">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r15">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r15.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r15_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r15_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r15&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r15&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r15&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r16">
+      <div class="sc-hd">
+        <span class="sc-num">16</span>
+        <span class="sc-title">電流の正体，電流と磁界</span>
+        <span class="sc-status" id="st-r16">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>静電気と電子の移動</li><li>電流がつくる磁界とモーターのしくみ</li><li>電磁誘導と直流・交流</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r16">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r16">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r16.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r16_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r16_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r16&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r16&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r16&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="unit-hd ch8"><span class="unit-num">第8章</span><span class="unit-title">天気とその変化</span><span class="unit-badge">3レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">☁️ 気象観測・雲のでき方・日本の天気</div>
+      <div class="sec-grid" id="grid-ch8"><div class="sec-card" data-id="r17">
+      <div class="sc-hd">
+        <span class="sc-num">17</span>
+        <span class="sc-title">気象観測，空気中の水蒸気</span>
+        <span class="sc-status" id="st-r17">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>気圧・気温・湿度の観測と天気図記号</li><li>飽和水蒸気量と湿度の計算</li><li>露点と雲のでき始める高さ</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r17">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r17">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r17.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r17_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r17_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r17&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r17&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r17&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r18">
+      <div class="sc-hd">
+        <span class="sc-num">18</span>
+        <span class="sc-title">雲のでき方，天気の変化</span>
+        <span class="sc-status" id="st-r18">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>雲のでき方と上昇気流</li><li>前線（寒冷前線・温暖前線）と天気の変化</li><li>低気圧・高気圧と風のふき方</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r18">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r18">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r18.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r18_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r18_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r18&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r18&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r18&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r19">
+      <div class="sc-hd">
+        <span class="sc-num">19</span>
+        <span class="sc-title">大気の動きと日本の天気</span>
+        <span class="sc-status" id="st-r19">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>気団と季節風</li><li>日本の四季の天気（西高東低・南高北低）</li><li>台風と梅雨前線</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r19">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r19">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r19.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r19_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r19_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r19&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r19&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r19&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+
+  <div class="year-band"><span class="yb-badge">3年内容編</span><span class="yb-line"></span></div>
+  <div class="unit">
+    <div class="unit-hd ch9"><span class="unit-num">第9章</span><span class="unit-title">生命の連続性</span><span class="unit-badge">2レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">🧬 生殖と遺伝・生物の多様性と進化</div>
+      <div class="sec-grid" id="grid-ch9"><div class="sec-card" data-id="r20">
+      <div class="sc-hd">
+        <span class="sc-num">20</span>
+        <span class="sc-title">生物の成長と無性生殖・有性生殖</span>
+        <span class="sc-status" id="st-r20">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>体細胞分裂と細胞の成長</li><li>無性生殖（栄養生殖など）と有性生殖</li><li>受精と発生のしくみ</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r20">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r20">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r20.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r20_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r20_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r20&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r20&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r20&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r21">
+      <div class="sc-hd">
+        <span class="sc-num">21</span>
+        <span class="sc-title">遺伝の規則性，生物の種類の多様性と進化</span>
+        <span class="sc-status" id="st-r21">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>メンデルの遺伝の規則性（顕性・潜性）</li><li>分離の法則とDNA</li><li>生物の進化と相同器官</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r21">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r21">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r21.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r21_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r21_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r21&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r21&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r21&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="unit-hd ch10"><span class="unit-num">第10章</span><span class="unit-title">化学変化とイオン</span><span class="unit-badge">3レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">🔋 原子とイオン・中和と電池</div>
+      <div class="sec-grid" id="grid-ch10"><div class="sec-card" data-id="r22">
+      <div class="sc-hd">
+        <span class="sc-num">22</span>
+        <span class="sc-title">イオンと電離，酸・アルカリの性質</span>
+        <span class="sc-status" id="st-r22">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>原子の構造とイオンのでき方（電離式）</li><li>電解質・非電解質と電離のしくみ</li><li>酸・アルカリの性質と指示薬（pH）</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r22">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r22">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="https://realizefield.github.io/j-science-ion/ion1.html" class="sc-btn ">📖 テキスト</a><a href="https://realizefield.github.io/j-science-ion/ion1-drill.html" class="sc-btn ">📝 ドリル</a><a href="https://realizefield.github.io/j-science-ion/ion-drill.html" class="sc-btn sc-btn-sub">📋 総合ドリル</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r22&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r22&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r22&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r23">
+      <div class="sc-hd">
+        <span class="sc-num">23</span>
+        <span class="sc-title">電気分解とイオンの移動</span>
+        <span class="sc-status" id="st-r23">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>塩酸・塩化銅の電気分解のしくみ</li><li>陽極・陰極でのイオンの動きと変化</li><li>電気分解の比較と計算</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r23">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r23">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="https://realizefield.github.io/j-science-ion/ion2.html" class="sc-btn ">📖 テキスト</a><a href="https://realizefield.github.io/j-science-ion/ion2-drill.html" class="sc-btn ">📝 ドリル</a><a href="https://realizefield.github.io/j-science-ion/ion-drill.html" class="sc-btn sc-btn-sub">📋 総合ドリル</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r23&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r23&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r23&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r31">
+      <div class="sc-hd">
+        <span class="sc-num">31</span>
+        <span class="sc-title">中和と塩，電流変化とイオン数グラフ</span>
+        <span class="sc-status" id="st-r31">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>中和反応・塩のでき方と電離（HCl+NaOH，H₂SO₄+Ba(OH)₂）</li><li>電流の変化と中和点（HCl型：最小，H₂SO₄型：0mA）</li><li>イオン数の変化グラフの読み方</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r31">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r31">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="https://realizefield.github.io/j-science-ion/ion3.html" class="sc-btn ">📖 テキスト</a><a href="https://realizefield.github.io/j-science-ion/ion3-drill.html" class="sc-btn ">📝 ドリル</a><a href="https://realizefield.github.io/j-science-ion/ion-drill.html" class="sc-btn sc-btn-sub">📋 総合ドリル</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r31&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r31&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r31&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="unit-hd ch11"><span class="unit-num">第11章</span><span class="unit-title">運動とエネルギー</span><span class="unit-badge">3レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">⚙️ 力の合成分解・運動のようす・仕事とエネルギー</div>
+      <div class="sec-grid" id="grid-ch11"><div class="sec-card" data-id="r24">
+      <div class="sc-hd">
+        <span class="sc-num">24</span>
+        <span class="sc-title">力の合成と分解，水圧と浮力</span>
+        <span class="sc-status" id="st-r24">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>力の合成・分解（作図）</li><li>水圧のかかり方と深さの関係</li><li>浮力の大きさとアルキメデスの原理</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r24">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r24">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r24.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r24_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r24_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r24&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r24&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r24&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r25">
+      <div class="sc-hd">
+        <span class="sc-num">25</span>
+        <span class="sc-title">力がはたらく運動と力がはたらかない運動</span>
+        <span class="sc-status" id="st-r25">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>記録タイマーによる運動の記録</li><li>等速直線運動と慣性の法則</li><li>力がはたらく運動（自由落下など）</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r25">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r25">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r25.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r25_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r25_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r25&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r25&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r25&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r26">
+      <div class="sc-hd">
+        <span class="sc-num">26</span>
+        <span class="sc-title">仕事とエネルギー</span>
+        <span class="sc-status" id="st-r26">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>仕事の原理と仕事率</li><li>位置エネルギーと運動エネルギー</li><li>力学的エネルギーの保存</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r26">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r26">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r26.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r26_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r26_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r26&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r26&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r26&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="unit-hd ch12"><span class="unit-num">第12章</span><span class="unit-title">地球と宇宙</span><span class="unit-badge">2レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">🌌 天体の動き・太陽系と宇宙</div>
+      <div class="sec-grid" id="grid-ch12"><div class="sec-card" data-id="r27">
+      <div class="sc-hd">
+        <span class="sc-num">27</span>
+        <span class="sc-title">天体の動きと地球の運動</span>
+        <span class="sc-status" id="st-r27">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>天体の日周運動と地球の自転</li><li>星の年周運動と地球の公転</li><li>太陽の動き（南中高度）と季節</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r27">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r27">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r27.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r27_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r27_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r27&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r27&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r27&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r28">
+      <div class="sc-hd">
+        <span class="sc-num">28</span>
+        <span class="sc-title">地軸の傾きと季節，太陽系と宇宙</span>
+        <span class="sc-status" id="st-r28">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>地軸の傾きと季節の変化</li><li>太陽系の惑星（内惑星・外惑星）</li><li>恒星・銀河系と宇宙の広がり</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r28">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r28">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r28.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r28_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r28_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r28&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r28&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r28&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="unit-hd ch13"><span class="unit-num">第13章</span><span class="unit-title">自然と人間</span><span class="unit-badge">2レッスン</span></div>
+    <div class="unit-body">
+      <div class="group-label">🌍 生物のつながり・エネルギー資源と科学技術</div>
+      <div class="sec-grid" id="grid-ch13"><div class="sec-card" data-id="r29">
+      <div class="sc-hd">
+        <span class="sc-num">29</span>
+        <span class="sc-title">自然界の生物のつながり</span>
+        <span class="sc-status" id="st-r29">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>食物連鎖と食物網</li><li>生産者・消費者・分解者</li><li>生態系のつり合いと物質の循環</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r29">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r29">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r29.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r29_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r29_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r29&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r29&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r29&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div><div class="sec-card" data-id="r30">
+      <div class="sc-hd">
+        <span class="sc-num">30</span>
+        <span class="sc-title">エネルギー資源の利用，自然環境と科学技術</span>
+        <span class="sc-status" id="st-r30">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics"><li>化石燃料と再生可能エネルギー</li><li>地球温暖化と環境保全</li><li>科学技術の進歩とくらし</li></ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-r30">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-r30">─</span></div>
+      </div>
+      <div class="sc-btn-row"><a href="file:///C:/Users/tinbu/Downloads/r30.html" class="sc-btn ">📖 レッスン</a><a href="file:///C:/Users/tinbu/Downloads/r30_practice.html" class="sc-btn ">📝 練習問題</a><a href="file:///C:/Users/tinbu/Downloads/r30_check.html" class="sc-btn sc-btn-sub">📋 確認問題</a></div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate(&#39;r30&#39;,&#39;a&#39;,this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate(&#39;r30&#39;,&#39;b&#39;,this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate(&#39;r30&#39;,&#39;c&#39;,this)">C 要復習</button>
+      </div></div></div>
+    </div>
+  </div>
+</div>
+<div class="tab-sec" id="tab-record">
+  <div class="record-wrap">
+    <div class="record-title">📊 単元別　理解度一覧</div>
+    <div id="record-list"><div class="prog-row"><div class="prog-num">01</div><div class="prog-title">身近な生物の観察，植物の特徴と分類</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">02</div><div class="prog-title">動物の特徴と分類</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">03</div><div class="prog-title">実験の基本操作</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">04</div><div class="prog-title">物質の性質，気体の性質</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">05</div><div class="prog-title">水溶液の性質，状態変化</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">06</div><div class="prog-title">光</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">07</div><div class="prog-title">音と力</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">08</div><div class="prog-title">火山と地震</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">09</div><div class="prog-title">地層と大地の変動</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">10</div><div class="prog-title">生物と細胞，植物の体のつくりとはたらき</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">11</div><div class="prog-title">消化と吸収，呼吸，血液の成分とはたらき</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">12</div><div class="prog-title">血液の循環と排出，刺激と反応</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">13</div><div class="prog-title">物質の成り立ちといろいろな化学変化</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">14</div><div class="prog-title">酸化と還元，化学変化と熱・質量</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">15</div><div class="prog-title">電気と回路，電気とそのエネルギー</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">16</div><div class="prog-title">電流の正体，電流と磁界</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">17</div><div class="prog-title">気象観測，空気中の水蒸気</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">18</div><div class="prog-title">雲のでき方，天気の変化</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">19</div><div class="prog-title">大気の動きと日本の天気</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">20</div><div class="prog-title">生物の成長と無性生殖・有性生殖</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">21</div><div class="prog-title">遺伝の規則性，生物の種類の多様性と進化</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">22</div><div class="prog-title">イオンと電離，酸・アルカリの性質</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">23</div><div class="prog-title">電気分解とイオンの移動</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">31</div><div class="prog-title">中和と塩，電流変化とイオン数グラフ</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">24</div><div class="prog-title">力の合成と分解，水圧と浮力</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">25</div><div class="prog-title">力がはたらく運動と力がはたらかない運動</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">26</div><div class="prog-title">仕事とエネルギー</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">27</div><div class="prog-title">天体の動きと地球の運動</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">28</div><div class="prog-title">地軸の傾きと季節，太陽系と宇宙</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">29</div><div class="prog-title">自然界の生物のつながり</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div><div class="prog-row"><div class="prog-num">30</div><div class="prog-title">エネルギー資源の利用，自然環境と科学技術</div><div class="prog-grade">未学習</div><div class="prog-meta">0回 / ─</div></div></div>
+  </div>
+</div>
+</div>
+<div class="modal-ov" id="modal" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-emoji" id="modal-emoji"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-sub" id="modal-sub"></div>
+    <button class="modal-close" onclick="closeModal()">閉じる</button>
+  </div>
+</div>
+<script>'use strict';
+const UNITS=[
+  {id:'r01',num:'01',title:'身近な生物の観察，植物の特徴と分類',sub:['ルーペ・双眼実体顕微鏡の使い方','花のつくり（合弁花・離弁花）と種子植物の分類','被子植物・裸子植物、シダ・コケ植物の分類'],group:'ch1',btns:[{label:'📖 レッスン',href:'https://realizefield.github.io/gamba_chugaku_seibutu/gamba_chugaku_seibutsu.html',cls:''},{label:'📝 ドリル',href:'https://realizefield.github.io/gamba_chugaku_seibutu/gamba_chugaku_seibutsu.html#drill',cls:''},{label:'📋 確認問題',href:'https://realizefield.github.io/gamba_chugaku_seibutu/gamba_chugaku_seibutsu.html#kakumon',cls:'sc-btn-sub'}]},
+  {id:'r02',num:'02',title:'動物の特徴と分類',sub:['脊椎動物の5分類（魚類・両生類・ハチュウ類・鳥類・ホニュウ類）','胎生と卵生、恒温動物と変温動物','無脊椎動物（節足動物・軟体動物など）'],group:'ch1',btns:[{label:'📖 レッスン',href:'https://realizefield.github.io/j-science-doubutu/doubutu.html',cls:''},{label:'📝 ドリル',href:'https://realizefield.github.io/j-science-doubutu/doubutu.html#card_drill',cls:''},{label:'📋 確認問題',href:'https://realizefield.github.io/j-science-doubutu/doubutu.html#card_kakumon',cls:'sc-btn-sub'}]},
+  {id:'r03',num:'03',title:'実験の基本操作',sub:['ガスバーナー・上皿てんびんの使い方','気体の集め方（水上置換・上方/下方置換）','実験器具の安全な操作と後片付け'],group:'ch2',btns:[{label:'📖 レッスン',href:'r03.html',cls:''},{label:'📝 練習問題',href:'r03_practice.html',cls:''},{label:'📋 確認問題',href:'r03_check.html',cls:'sc-btn-sub'}]},
+  {id:'r04',num:'04',title:'物質の性質，気体の性質',sub:['有機物と無機物、金属と非金属','密度の計算と物質の判別','酸素・二酸化炭素・水素・アンモニアの性質'],group:'ch2',btns:[{label:'📖 レッスン',href:'r04.html',cls:''},{label:'📝 練習問題',href:'r04_practice.html',cls:''},{label:'📋 確認問題',href:'r04_check.html',cls:'sc-btn-sub'}]},
+  {id:'r05',num:'05',title:'水溶液の性質，状態変化',sub:['溶解度と再結晶、質量パーセント濃度','状態変化と温度（融点・沸点）','蒸留のしくみ'],group:'ch2',btns:[{label:'📖 レッスン',href:'r05.html',cls:''},{label:'📝 練習問題',href:'r05_practice.html',cls:''},{label:'📋 確認問題',href:'r05_check.html',cls:'sc-btn-sub'}]},
+  {id:'r06',num:'06',title:'光',sub:['光の反射・屈折の法則','凸レンズによる像のでき方（実像・虚像）','全反射と光ファイバー'],group:'ch3',btns:[{label:'📖 レッスン',href:'r06.html',cls:''},{label:'📝 練習問題',href:'r06_practice.html',cls:''},{label:'📋 確認問題',href:'r06_check.html',cls:'sc-btn-sub'}]},
+  {id:'r07',num:'07',title:'音と力',sub:['音の伝わり方と速さ、振幅・振動数','力のはたらきとフックの法則','力のつり合いと2力の合成'],group:'ch3',btns:[{label:'📖 レッスン',href:'r07.html',cls:''},{label:'📝 練習問題',href:'r07_practice.html',cls:''},{label:'📋 確認問題',href:'r07_check.html',cls:'sc-btn-sub'}]},
+  {id:'r08',num:'08',title:'火山と地震',sub:['マグマの粘り気と火山の形・火成岩','地震のゆれ（初期微動・主要動）とP波・S波','震度とマグニチュード、緊急地震速報'],group:'ch4',btns:[{label:'📖 レッスン',href:'r08.html',cls:''},{label:'📝 練習問題',href:'r08_practice.html',cls:''},{label:'📋 確認問題',href:'r08_check.html',cls:'sc-btn-sub'}]},
+  {id:'r09',num:'09',title:'地層と大地の変動',sub:['地層のでき方としゅう曲・断層','堆積岩の種類（れき岩・砂岩・泥岩・凝灰岩・石灰岩）','示相化石・示準化石と大地の変動'],group:'ch4',btns:[{label:'📖 レッスン',href:'r09.html',cls:''},{label:'📝 練習問題',href:'r09_practice.html',cls:''},{label:'📋 確認問題',href:'r09_check.html',cls:'sc-btn-sub'}]},
+  {id:'r10',num:'10',title:'生物と細胞，植物の体のつくりとはたらき',sub:['動物細胞・植物細胞のつくり','光合成と呼吸、蒸散のしくみ','根・茎・葉の維管束（道管・師管）'],group:'ch5',btns:[{label:'📖 レッスン',href:'https://realizefield.github.io/gamba_chugaku_saiboujintai/gamba_chugaku_saiboujintai.html',cls:''},{label:'📝 ドリル',href:'https://realizefield.github.io/gamba_chugaku_saiboujintai/gamba_chugaku_saiboujintai.html#drill',cls:''},{label:'📋 確認問題',href:'https://realizefield.github.io/gamba_chugaku_saiboujintai/gamba_chugaku_saiboujintai.html#kakumon',cls:'sc-btn-sub'}]},
+  {id:'r11',num:'11',title:'消化と吸収，呼吸，血液の成分とはたらき',sub:['消化酵素（アミラーゼ・ペプシン・リパーゼ）のはたらき','肺による呼吸のしくみ（肺胞での気体交換）','血液の成分（赤血球・白血球・血小板・血しょう）'],group:'ch5',btns:[{label:'📖 レッスン',href:'r11.html',cls:''},{label:'📝 練習問題',href:'r11_practice.html',cls:''},{label:'📋 確認問題',href:'r11_check.html',cls:'sc-btn-sub'}]},
+  {id:'r12',num:'12',title:'血液の循環と排出，刺激と反応',sub:['心臓のつくりと血液循環（体循環・肺循環）','じん臓のはたらきと排出','感覚器官・神経系と反射'],group:'ch5',btns:[{label:'📖 レッスン',href:'r12.html',cls:''},{label:'📝 練習問題',href:'r12_practice.html',cls:''},{label:'📋 確認問題',href:'r12_check.html',cls:'sc-btn-sub'}]},
+  {id:'r13',num:'13',title:'物質の成り立ちといろいろな化学変化',sub:['原子・分子と化学式・化学反応式','分解（熱分解・電気分解）','化合（硫化・酸化）と質量保存の法則'],group:'ch6',btns:[{label:'📖 レッスン一覧',href:'https://realizefield.github.io/j-science/',cls:''}]},
+  {id:'r14',num:'14',title:'酸化と還元，化学変化と熱・質量',sub:['酸化と還元（酸化銅の還元など）','発熱反応・吸熱反応','化学変化の前後の質量関係'],group:'ch6',btns:[{label:'📖 レッスン一覧',href:'https://realizefield.github.io/j-science/',cls:''}]},
+  {id:'r15',num:'15',title:'電気と回路，電気とそのエネルギー',sub:['直列回路・並列回路と電流・電圧','オームの法則と抵抗','電力・電力量と発熱量'],group:'ch7',btns:[{label:'📖 レッスン',href:'r15.html',cls:''},{label:'📝 練習問題',href:'r15_practice.html',cls:''},{label:'📋 確認問題',href:'r15_check.html',cls:'sc-btn-sub'}]},
+  {id:'r16',num:'16',title:'電流の正体，電流と磁界',sub:['静電気と電子の移動','電流がつくる磁界とモーターのしくみ','電磁誘導と直流・交流'],group:'ch7',btns:[{label:'📖 レッスン',href:'r16.html',cls:''},{label:'📝 練習問題',href:'r16_practice.html',cls:''},{label:'📋 確認問題',href:'r16_check.html',cls:'sc-btn-sub'}]},
+  {id:'r17',num:'17',title:'気象観測，空気中の水蒸気',sub:['気圧・気温・湿度の観測と天気図記号','飽和水蒸気量と湿度の計算','露点と雲のでき始める高さ'],group:'ch8',btns:[{label:'📖 レッスン',href:'r17.html',cls:''},{label:'📝 練習問題',href:'r17_practice.html',cls:''},{label:'📋 確認問題',href:'r17_check.html',cls:'sc-btn-sub'}]},
+  {id:'r18',num:'18',title:'雲のでき方，天気の変化',sub:['雲のでき方と上昇気流','前線（寒冷前線・温暖前線）と天気の変化','低気圧・高気圧と風のふき方'],group:'ch8',btns:[{label:'📖 レッスン',href:'r18.html',cls:''},{label:'📝 練習問題',href:'r18_practice.html',cls:''},{label:'📋 確認問題',href:'r18_check.html',cls:'sc-btn-sub'}]},
+  {id:'r19',num:'19',title:'大気の動きと日本の天気',sub:['気団と季節風','日本の四季の天気（西高東低・南高北低）','台風と梅雨前線'],group:'ch8',btns:[{label:'📖 レッスン',href:'r19.html',cls:''},{label:'📝 練習問題',href:'r19_practice.html',cls:''},{label:'📋 確認問題',href:'r19_check.html',cls:'sc-btn-sub'}]},
+  {id:'r20',num:'20',title:'生物の成長と無性生殖・有性生殖',sub:['体細胞分裂と細胞の成長','無性生殖（栄養生殖など）と有性生殖','受精と発生のしくみ'],group:'ch9',btns:[{label:'📖 レッスン',href:'r20.html',cls:''},{label:'📝 練習問題',href:'r20_practice.html',cls:''},{label:'📋 確認問題',href:'r20_check.html',cls:'sc-btn-sub'}]},
+  {id:'r21',num:'21',title:'遺伝の規則性，生物の種類の多様性と進化',sub:['メンデルの遺伝の規則性（顕性・潜性）','分離の法則とDNA','生物の進化と相同器官'],group:'ch9',btns:[{label:'📖 レッスン',href:'r21.html',cls:''},{label:'📝 練習問題',href:'r21_practice.html',cls:''},{label:'📋 確認問題',href:'r21_check.html',cls:'sc-btn-sub'}]},
+  {id:'r22',num:'22',title:'イオンと電離，酸・アルカリの性質',sub:['原子の構造とイオンのでき方（電離式）','電解質・非電解質と電離のしくみ','酸・アルカリの性質と指示薬（pH）'],group:'ch10',btns:[{label:'📖 テキスト',href:'https://realizefield.github.io/j-science-ion/ion1.html',cls:''},{label:'📝 ドリル',href:'https://realizefield.github.io/j-science-ion/ion1-drill.html',cls:''},{label:'📋 総合ドリル',href:'https://realizefield.github.io/j-science-ion/ion-drill.html',cls:'sc-btn-sub'}]},
+  {id:'r23',num:'23',title:'電気分解とイオンの移動',sub:['塩酸・塩化銅の電気分解のしくみ','陽極・陰極でのイオンの動きと変化','電気分解の比較と計算'],group:'ch10',btns:[{label:'📖 テキスト',href:'https://realizefield.github.io/j-science-ion/ion2.html',cls:''},{label:'📝 ドリル',href:'https://realizefield.github.io/j-science-ion/ion2-drill.html',cls:''},{label:'📋 総合ドリル',href:'https://realizefield.github.io/j-science-ion/ion-drill.html',cls:'sc-btn-sub'}]},
+  {id:'r31',num:'31',title:'中和と塩，電流変化とイオン数グラフ',sub:['中和反応・塩のでき方と電離（HCl+NaOH，H₂SO₄+Ba(OH)₂）','電流の変化と中和点（HCl型：最小，H₂SO₄型：0mA）','イオン数の変化グラフの読み方'],group:'ch10',btns:[{label:'📖 テキスト',href:'https://realizefield.github.io/j-science-ion/ion3.html',cls:''},{label:'📝 ドリル',href:'https://realizefield.github.io/j-science-ion/ion3-drill.html',cls:''},{label:'📋 総合ドリル',href:'https://realizefield.github.io/j-science-ion/ion-drill.html',cls:'sc-btn-sub'}]},
+  {id:'r24',num:'24',title:'力の合成と分解，水圧と浮力',sub:['力の合成・分解（作図）','水圧のかかり方と深さの関係','浮力の大きさとアルキメデスの原理'],group:'ch11',btns:[{label:'📖 レッスン',href:'r24.html',cls:''},{label:'📝 練習問題',href:'r24_practice.html',cls:''},{label:'📋 確認問題',href:'r24_check.html',cls:'sc-btn-sub'}]},
+  {id:'r25',num:'25',title:'力がはたらく運動と力がはたらかない運動',sub:['記録タイマーによる運動の記録','等速直線運動と慣性の法則','力がはたらく運動（自由落下など）'],group:'ch11',btns:[{label:'📖 レッスン',href:'r25.html',cls:''},{label:'📝 練習問題',href:'r25_practice.html',cls:''},{label:'📋 確認問題',href:'r25_check.html',cls:'sc-btn-sub'}]},
+  {id:'r26',num:'26',title:'仕事とエネルギー',sub:['仕事の原理と仕事率','位置エネルギーと運動エネルギー','力学的エネルギーの保存'],group:'ch11',btns:[{label:'📖 レッスン',href:'r26.html',cls:''},{label:'📝 練習問題',href:'r26_practice.html',cls:''},{label:'📋 確認問題',href:'r26_check.html',cls:'sc-btn-sub'}]},
+  {id:'r27',num:'27',title:'天体の動きと地球の運動',sub:['天体の日周運動と地球の自転','星の年周運動と地球の公転','太陽の動き（南中高度）と季節'],group:'ch12',btns:[{label:'📖 レッスン',href:'r27.html',cls:''},{label:'📝 練習問題',href:'r27_practice.html',cls:''},{label:'📋 確認問題',href:'r27_check.html',cls:'sc-btn-sub'}]},
+  {id:'r28',num:'28',title:'地軸の傾きと季節，太陽系と宇宙',sub:['地軸の傾きと季節の変化','太陽系の惑星（内惑星・外惑星）','恒星・銀河系と宇宙の広がり'],group:'ch12',btns:[{label:'📖 レッスン',href:'r28.html',cls:''},{label:'📝 練習問題',href:'r28_practice.html',cls:''},{label:'📋 確認問題',href:'r28_check.html',cls:'sc-btn-sub'}]},
+  {id:'r29',num:'29',title:'自然界の生物のつながり',sub:['食物連鎖と食物網','生産者・消費者・分解者','生態系のつり合いと物質の循環'],group:'ch13',btns:[{label:'📖 レッスン',href:'r29.html',cls:''},{label:'📝 練習問題',href:'r29_practice.html',cls:''},{label:'📋 確認問題',href:'r29_check.html',cls:'sc-btn-sub'}]},
+  {id:'r30',num:'30',title:'エネルギー資源の利用，自然環境と科学技術',sub:['化石燃料と再生可能エネルギー','地球温暖化と環境保全','科学技術の進歩とくらし'],group:'ch13',btns:[{label:'📖 レッスン',href:'r30.html',cls:''},{label:'📝 練習問題',href:'r30_practice.html',cls:''},{label:'📋 確認問題',href:'r30_check.html',cls:'sc-btn-sub'}]},
+];
+
+const KEY_GRADE=id=>'rika_grade_'+id;
+const KEY_CNT  =id=>'rika_cnt_'  +id;
+const KEY_LAST =id=>'rika_last_' +id;
+const getGrade=id=>localStorage.getItem(KEY_GRADE(id))||'';
+const getCount=id=>parseInt(localStorage.getItem(KEY_CNT(id))||'0');
+const getLast =id=>localStorage.getItem(KEY_LAST(id))||'';
+
+function setGrade(id,g){
+  localStorage.setItem(KEY_GRADE(id),g);
+  const d=new Date().toLocaleDateString('ja-JP',{month:'numeric',day:'numeric'});
+  localStorage.setItem(KEY_CNT(id), getCount(id)+1);
+  localStorage.setItem(KEY_LAST(id),d);
+}
+
+function buildCards(){
+  const grids={ch1:'grid-ch1',ch2:'grid-ch2',ch3:'grid-ch3',ch4:'grid-ch4',ch5:'grid-ch5',ch6:'grid-ch6',ch7:'grid-ch7',ch8:'grid-ch8',ch9:'grid-ch9',ch10:'grid-ch10',ch11:'grid-ch11',ch12:'grid-ch12',ch13:'grid-ch13'};
+  Object.values(grids).forEach(function(gid){var g=document.getElementById(gid);if(g)g.innerHTML='';});
+  UNITS.forEach(u=>{
+    const el=document.createElement('div');
+    el.className='sec-card'; el.dataset.id=u.id;
+    const btnHtml=u.btns.map(b=>`<a href="${b.href}" class="sc-btn ${b.cls}">${b.label}</a>`).join('');
+    el.innerHTML=`
+      <div class="sc-hd">
+        <span class="sc-num">${u.num}</span>
+        <span class="sc-title">${u.title}</span>
+        <span class="sc-status" id="st-${u.id}">未学習</span>
+      </div>
+      <div class="sc-body">
+        <ul class="sc-topics">${u.sub.map(s=>`<li>${s}</li>`).join('')}</ul>
+      </div>
+      <div class="sc-meta">
+        <div class="sc-meta-item">📖 学習回数 <span class="sc-meta-val" id="cnt-${u.id}">0</span></div>
+        <div class="sc-meta-item">📅 最終日 <span class="sc-meta-val" id="last-${u.id}">─</span></div>
+      </div>
+      <div class="sc-btn-row">${btnHtml}</div>
+      <div class="abc-row">
+        <span class="abc-lbl">理解度：</span>
+        <button class="abc-btn abc-a" onclick="rate('${u.id}','a',this)">A 完璧</button>
+        <button class="abc-btn abc-b" onclick="rate('${u.id}','b',this)">B 良好</button>
+        <button class="abc-btn abc-c" onclick="rate('${u.id}','c',this)">C 要復習</button>
+      </div>`;
+    document.getElementById(grids[u.group]).appendChild(el);
+  });
+}
+
+function rate(id,g,btn){
+  setGrade(id,g); render();
+  const msgs={a:['🌟','完璧！','この調子でどんどん進もう！'],b:['📘','良好！','もう一度復習するとさらに定着するよ。'],c:['📌','要復習','苦手部分をレッスンで確認してみよう。']};
+  const[em,title,sub]=msgs[g];
+  document.getElementById('modal-emoji').textContent=em;
+  document.getElementById('modal-title').textContent=title;
+  document.getElementById('modal-sub').textContent=sub;
+  document.getElementById('modal').classList.add('open');
+  if(g==='a') launchConfetti();
+}
+
+function render(){
+  let ca=0,cb=0,cc=0,cn=0;
+  UNITS.forEach(u=>{
+    const g=getGrade(u.id); const cnt=getCount(u.id); const last=getLast(u.id);
+    const card=document.querySelector(`[data-id="${u.id}"]`);
+    if(card){
+      card.classList.remove('s-a','s-b','s-c');
+      if(g) card.classList.add('s-'+g);
+      card.querySelectorAll('.abc-btn').forEach(b=>{b.classList.remove('sel');if(b.classList.contains('abc-'+g))b.classList.add('sel');});
+    }
+    const ce=document.getElementById('cnt-'+u.id);  if(ce)ce.textContent=cnt;
+    const le=document.getElementById('last-'+u.id); if(le)le.textContent=last||'─';
+    const st=document.getElementById('st-'+u.id);
+    if(st){
+      if(g==='a'){st.className='sc-status done';st.textContent='✅ 完璧';}
+      else if(g==='b'){st.className='sc-status partial';st.textContent='📘 良好';}
+      else if(g==='c'){st.className='sc-status partial';st.textContent='📌 要復習';}
+      else if(cnt>0){st.className='sc-status studying';st.textContent='学習中';}
+      else{st.className='sc-status';st.textContent='未学習';}
+    }
+    if(g==='a')ca++; else if(g==='b')cb++; else if(g==='c')cc++; else cn++;
+  });
+  const total=UNITS.length;
+  document.getElementById('cnt-a').textContent=ca;
+  document.getElementById('cnt-b').textContent=cb;
+  document.getElementById('cnt-c').textContent=cc;
+  document.getElementById('cnt-n').textContent=cn;
+  const pct=total?Math.round(ca/total*100):0;
+  document.getElementById('progFill').style.width=pct+'%';
+  document.getElementById('progPct').innerHTML=`${pct}%　A評価 <span id="progNote">${ca} / ${total}</span> 単元`;
+  buildRecord();
+}
+
+function buildRecord(){
+  const el=document.getElementById('record-list'); el.innerHTML='';
+  UNITS.forEach(u=>{
+    const g=getGrade(u.id); const cnt=getCount(u.id); const last=getLast(u.id);
+    const row=document.createElement('div'); row.className='prog-row';
+    row.innerHTML=`<div class="prog-num">${u.num}</div><div class="prog-title">${u.title}</div><div class="prog-grade${g?' '+g:''}">${g?{a:'A 完璧',b:'B 良好',c:'C 要復習'}[g]:'未学習'}</div><div class="prog-meta">${cnt}回 / ${last||'─'}</div>`;
+    el.appendChild(row);
+  });
+}
+
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.tnav').forEach(b=>b.classList.remove('on'));
+  document.getElementById(id).classList.add('on'); btn.classList.add('on');
+}
+
+function closeModal(){document.getElementById('modal').classList.remove('open');}
+
+function launchConfetti(){
+  const cvs=document.getElementById('cnf');
+  cvs.width=innerWidth; cvs.height=innerHeight; cvs.style.display='block';
+  const ctx=cvs.getContext('2d');
+  const parts=Array.from({length:120},()=>({
+    x:Math.random()*innerWidth,y:-10,
+    vx:(Math.random()-.5)*4,vy:Math.random()*4+2,
+    r:Math.random()*6+3,
+    color:['#f472b6','#facc15','#34d399','#60a5fa','#f87171','#a78bfa'][Math.floor(Math.random()*6)],
+    rot:Math.random()*360,rv:(Math.random()-.5)*8,
+  }));
+  let frame;
+  function draw(){
+    ctx.clearRect(0,0,cvs.width,cvs.height);
+    parts.forEach(p=>{
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);
+      ctx.fillStyle=p.color;ctx.fillRect(-p.r,-p.r/2,p.r*2,p.r);ctx.restore();
+      p.x+=p.vx;p.y+=p.vy;p.rot+=p.rv;
+    });
+    if(parts.some(p=>p.y<innerHeight)){frame=requestAnimationFrame(draw);}
+    else{cvs.style.display='none';cancelAnimationFrame(frame);}
+  }
+  draw();
+  setTimeout(()=>{cvs.style.display='none';cancelAnimationFrame(frame);},3500);
+}
+
+document.addEventListener('DOMContentLoaded',()=>{buildCards();render();});</script>
+
+
+</body></html>
