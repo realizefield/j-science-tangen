@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)file:///C:/Users/tinbu/Downloads/ion2-drill_2.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>イオン講座 第2回ドリル | GAMBA中学理科</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", "Yu Gothic", sans-serif;
+  background: #E0F2F1; color: #1a1a2e; font-size: 15px; line-height: 1.7;
+}
+.topnav {
+  background: #004D40; color: #fff; padding: 10px 16px;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+.topnav .brand { font-weight: 700; font-size: 15px; }
+.topnav .sep { color: rgba(255,255,255,.4); }
+.topnav a { color: #80CBC4; text-decoration: none; font-size: 13px; }
+.topnav a:hover { color: #fff; text-decoration: underline; }
+.wrap { max-width: 820px; margin: 0 auto; padding: 0 12px 60px; }
+.hero {
+  background: linear-gradient(135deg, #00838F 0%, #006064 60%, #004D40 100%);
+  color: #fff; padding: 28px 24px 22px; margin: 0 -12px 22px;
+}
+.hero .crumb { font-size: 12px; opacity: .75; margin-bottom: 6px; }
+.hero h1 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+.hero .sub { font-size: 13.5px; opacity: .88; line-height: 1.6; }
+
+/* スコアボード */
+.scoreboard {
+  background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  padding: 16px 20px; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.score-total { font-size: 28px; font-weight: 900; color: #00838F; min-width: 80px; text-align: center; }
+.score-label { font-size: 12px; color: #78909C; display: block; }
+.score-bar-wrap { flex: 1; min-width: 160px; }
+.score-bar-bg { background: #E0F2F1; border-radius: 8px; height: 12px; overflow: hidden; margin-bottom: 4px; }
+.score-bar-fill { background: linear-gradient(90deg, #00838F, #4DB6AC); height: 100%; border-radius: 8px; transition: width .5s; width: 0%; }
+.score-msg { font-size: 13px; font-weight: 700; color: #00838F; min-height: 18px; }
+.score-reset-btn {
+  background: #E0F2F1; border: none; border-radius: 20px;
+  color: #00838F; font-weight: 700; font-size: 13px;
+  padding: 7px 18px; cursor: pointer; transition: background .15s;
+}
+.score-reset-btn:hover { background: #B2DFDB; }
+
+/* セクション */
+.section { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.08); margin-bottom: 24px; overflow: hidden; }
+.section-title {
+  color: #fff; font-size: 15px; font-weight: 700; padding: 11px 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-title .sec-num {
+  background: rgba(255,255,255,.25); border-radius: 50%;
+  width: 26px; height: 26px; display: inline-flex;
+  align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; flex-shrink: 0;
+}
+.sec-a .section-title { background: linear-gradient(90deg,#00838F,#00ACC1); }
+.sec-b .section-title { background: linear-gradient(90deg,#006064,#00838F); }
+.sec-c .section-title { background: linear-gradient(90deg,#004D40,#00695C); }
+.sec-d .section-title { background: linear-gradient(90deg,#37474F,#546E7A); }
+
+/* ミニテスト */
+.minitest { padding: 12px 14px 14px; border-bottom: 1px solid #F3F4F6; }
+.minitest:last-of-type { border-bottom: none; }
+.mt-stem { font-size: 14px; margin-bottom: 8px; line-height: 1.6; }
+.mt-num {
+  display: inline-block; background: #00838F; color: #fff;
+  border-radius: 4px; padding: 1px 7px; font-size: 12px; font-weight: 700;
+  margin-right: 6px; vertical-align: middle;
+}
+.mt-choices { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+.mt-c {
+  background: #fff; border: 2px solid #80CBC4; color: #00695C;
+  border-radius: 8px; padding: 6px 22px; font-size: 18px; font-weight: 900;
+  cursor: pointer; transition: all .15s; min-width: 60px;
+}
+.mt-c:hover { background: #E0F2F1; }
+.mt-c.correct { background: #4CAF50; border-color: #388E3C; color: #fff; }
+.mt-c.incorrect { background: #EF5350; border-color: #C62828; color: #fff; }
+.mt-c.disabled { pointer-events: none; opacity: .5; }
+.mt-exp {
+  display: none; border-left: 4px solid #4CAF50; border-radius: 4px;
+  padding: 8px 12px; font-size: 13.5px; margin-top: 6px; line-height: 1.6; background: #F1F8E9;
+}
+.mt-exp.show-err { background: #FFEBEE; border-color: #EF5350; }
+.mt-exp.visible { display: block; }
+
+/* 4択 */
+.q4 { padding: 12px 14px 14px; border-bottom: 1px solid #F3F4F6; }
+.q4:last-of-type { border-bottom: none; }
+.q4-stem { font-size: 14px; margin-bottom: 8px; line-height: 1.6; }
+.q4-num {
+  display: inline-block; background: #006064; color: #fff;
+  border-radius: 4px; padding: 1px 7px; font-size: 12px; font-weight: 700;
+  margin-right: 6px; vertical-align: middle;
+}
+.q4-choices { display: flex; flex-direction: column; gap: 6px; margin-bottom: 6px; }
+.q4-c {
+  background: #fff; border: 1.5px solid #80CBC4; color: #006064;
+  border-radius: 8px; padding: 8px 14px; font-size: 13.5px;
+  cursor: pointer; text-align: left; transition: all .15s; width: 100%;
+}
+.q4-c:hover { background: #E0F2F1; border-color: #00838F; }
+.q4-c.correct { background: #4CAF50; border-color: #388E3C; color: #fff; font-weight: 700; }
+.q4-c.incorrect { background: #EF5350; border-color: #C62828; color: #fff; }
+.q4-c.disabled { pointer-events: none; }
+.q4-exp {
+  display: none; background: #E8F5E9; border-left: 4px solid #4CAF50;
+  border-radius: 4px; padding: 8px 12px; font-size: 13.5px; margin-top: 6px; line-height: 1.6;
+}
+.q4-exp.visible { display: block; }
+
+/* セクション結果 */
+.sec-result { padding: 10px 14px; font-size: 14px; font-weight: 700; text-align: center; min-height: 16px; color: #00838F; }
+.sec-reset-btn {
+  background: #E0F2F1; border: none; border-radius: 20px;
+  padding: 6px 20px; font-size: 13px; font-weight: 700; cursor: pointer;
+  display: block; margin: 4px auto 14px; color: #00838F; transition: background .15s;
+}
+.sec-reset-btn:hover { background: #B2DFDB; }
+
+/* 完了バナー */
+.finish-banner {
+  background: linear-gradient(135deg,#00838F,#006064);
+  color: #fff; border-radius: 14px; padding: 24px 20px; text-align: center; margin-bottom: 24px;
+}
+.finish-banner h3 { font-size: 20px; margin-bottom: 8px; }
+.finish-banner p { font-size: 14px; opacity: .9; margin-bottom: 16px; line-height: 1.7; }
+.finish-banner .links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.finish-banner a {
+  background: rgba(255,255,255,.15); border: 1.5px solid rgba(255,255,255,.4);
+  color: #fff; border-radius: 24px; padding: 9px 20px; font-size: 14px; font-weight: 700;
+  text-decoration: none; transition: background .15s;
+}
+.finish-banner a:hover { background: rgba(255,255,255,.28); }
+
+/* ページナビ */
+.pagenav { display: flex; gap: 10px; margin-bottom: 40px; }
+.pagenav a {
+  flex: 1; background: #fff; border: 1.5px solid #80CBC4;
+  border-radius: 12px; padding: 12px 14px; text-decoration: none; color: #00838F; transition: background .15s;
+}
+.pagenav a:hover { background: #E0F2F1; }
+.pagenav .label { font-size: 11px; color: #90A4AE; display: block; margin-bottom: 2px; }
+.pagenav .title { font-size: 13px; font-weight: 700; }
+.pagenav a.next { text-align: right; }
+code { font-family: "Courier New", monospace; font-weight: 700; font-size: 13px; background: #E0F2F1; padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <span class="brand">⚗️ GAMBA 中学理科</span>
+  <span class="sep">|</span>
+  <a href="file:///C:/Users/tinbu/Downloads/jscieincetangen.html">📋 単元表</a>
+  <span class="sep">|</span>
+  <a href="file:///C:/Users/tinbu/Downloads/ion2.html">第2回 テキスト</a>
+  <span class="sep">|</span>
+  <a href="file:///C:/Users/tinbu/Downloads/ion1-drill.html">← 第1回 ドリル</a>
+  <span class="sep">|</span>
+  <span style="color:#fff;font-weight:700;">第2回 ドリル</span>
+</nav>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="crumb">GAMBA 中学理科 › イオン講座 第2回</div>
+  <h1>📝 第2回 確認ドリル</h1>
+  <div class="sub">塩酸の電気分解 ／ 塩化銅の電気分解 ／ 化学電池 ／ 燃料電池<br>全14問でしっかり復習しよう！</div>
+</div>
+
+<!-- スコアボード -->
+<div class="scoreboard">
+  <div>
+    <div class="score-total" id="global-score">0 / 14</div>
+    <span class="score-label">正解数</span>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar-bg"><div class="score-bar-fill" id="global-bar" style="width: 0%;"></div></div>
+    <div class="score-msg" id="global-msg">問題を解いてみよう！</div>
+  </div>
+  <button class="score-reset-btn" onclick="resetAll()">↻ 全リセット</button>
+</div>
+
+
+<!-- ======================================== -->
+<!-- セクション A: 塩酸の電気分解              -->
+<!-- ======================================== -->
+<div class="section sec-a">
+  <div class="section-title"><span class="sec-num">A</span>塩酸の電気分解</div>
+
+  <div class="minitest" data-correct="x">
+    <div class="mt-stem"><span class="mt-num">問1</span>塩酸を電気分解すると、陰極（−極）に塩素が発生する。</div>
+    <div class="mt-choices">
+      <button class="mt-c" data-v="o">○</button>
+      <button class="mt-c" data-v="x">×</button>
+    </div>
+    <div class="mt-exp">× 陰極に発生するのは<strong>水素（H₂）</strong>です。塩素（Cl₂）が発生するのは<strong>陽極（＋極）</strong>です。</div>
+  </div>
+
+  <div class="minitest" data-correct="o">
+    <div class="mt-stem"><span class="mt-num">問2</span>電気分解で電源装置の−極につないだ電極を「陰極（いんきょく）」という。</div>
+    <div class="mt-choices">
+      <button class="mt-c" data-v="o">○</button>
+      <button class="mt-c" data-v="x">×</button>
+    </div>
+    <div class="mt-exp">○ 正解です。−極につないだ電極が<strong>陰極</strong>、＋極につないだ電極が<strong>陽極</strong>です。陰極には陽イオンが引きつけられます。</div>
+  </div>
+
+  <div class="q4" data-correct="b">
+    <div class="q4-stem"><span class="q4-num">問3</span>塩酸の電気分解で発生する気体の正しい組み合わせはどれか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：陰極→水素、陽極→酸素</button>
+      <button class="q4-c" data-v="b">イ：陰極→水素、陽極→塩素</button>
+      <button class="q4-c" data-v="c">ウ：陰極→塩素、陽極→水素</button>
+      <button class="q4-c" data-v="d">エ：陰極・陽極とも水素</button>
+    </div>
+    <div class="q4-exp">正解は<strong>イ</strong>。陰極では H<sup>+</sup> が電子を受け取り水素（H₂）に、陽極では Cl<sup>−</sup> が電子を失い塩素（Cl₂）になります。</div>
+  </div>
+
+  <div class="q4" data-correct="c">
+    <div class="q4-stem"><span class="q4-num">問4</span>塩酸の電気分解の正しい化学反応式はどれか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：HCl → H + Cl</button>
+      <button class="q4-c" data-v="b">イ：HCl → H₂ + Cl₂</button>
+      <button class="q4-c" data-v="c">ウ：2HCl → H₂ + Cl₂</button>
+      <button class="q4-c" data-v="d">エ：2HCl → H₂ + 2Cl</button>
+    </div>
+    <div class="q4-exp">正解は<strong>ウ：2HCl → H₂ + Cl₂</strong>。HCl の係数を2にすることで、両辺の原子数が一致します（H：2、Cl：2）。</div>
+  </div>
+
+  <div class="sec-result" id="res-a"></div>
+  <div style="text-align:center;"><button class="sec-reset-btn" onclick="resetSection(&#39;sec-a&#39;)">↻ やり直す</button></div>
+</div>
+
+
+<!-- ======================================== -->
+<!-- セクション B: 塩化銅の電気分解            -->
+<!-- ======================================== -->
+<div class="section sec-b">
+  <div class="section-title"><span class="sec-num">B</span>塩化銅の電気分解</div>
+
+  <div class="minitest" data-correct="o">
+    <div class="mt-stem"><span class="mt-num">問5</span>塩化銅水溶液を電気分解すると、陰極に固体の銅が付着する。</div>
+    <div class="mt-choices">
+      <button class="mt-c" data-v="o">○</button>
+      <button class="mt-c" data-v="x">×</button>
+    </div>
+    <div class="mt-exp">○ 正解です。陰極では Cu<sup>2+</sup> が電子を2個受け取り、銅原子（Cu）に戻って<strong>赤褐色の固体</strong>として付着します。</div>
+  </div>
+
+  <div class="minitest" data-correct="x">
+    <div class="mt-stem"><span class="mt-num">問6</span>塩化銅水溶液の青色は、塩化物イオン（Cl<sup>−</sup>）の色である。</div>
+    <div class="mt-choices">
+      <button class="mt-c" data-v="o">○</button>
+      <button class="mt-c" data-v="x">×</button>
+    </div>
+    <div class="mt-exp">× 青色は<strong>銅イオン（Cu<sup>2+</sup>）</strong>の色です。電気分解が進んで Cu<sup>2+</sup> が減ると、液体の青色が薄くなります。</div>
+  </div>
+
+  <div class="q4" data-correct="b">
+    <div class="q4-stem"><span class="q4-num">問7</span>Cu<sup>2+</sup> が銅原子（Cu）になるときの変化として正しいものはどれか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：電子を2個失う</button>
+      <button class="q4-c" data-v="b">イ：電子を2個受け取る</button>
+      <button class="q4-c" data-v="c">ウ：陽子を2個受け取る</button>
+      <button class="q4-c" data-v="d">エ：中性子を2個失う</button>
+    </div>
+    <div class="q4-exp">正解は<strong>イ：電子を2個受け取る</strong>。Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu の反応です。電子を受け取って電気的に中性の銅原子になります。</div>
+  </div>
+
+  <div class="q4" data-correct="c">
+    <div class="q4-stem"><span class="q4-num">問8</span>塩化銅水溶液の電気分解を続けると、溶液の色はどのように変化するか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：色が濃くなる</button>
+      <button class="q4-c" data-v="b">イ：変化しない</button>
+      <button class="q4-c" data-v="c">ウ：薄くなり、最終的には無色に近くなる</button>
+      <button class="q4-c" data-v="d">エ：緑色になる</button>
+    </div>
+    <div class="q4-exp">正解は<strong>ウ</strong>。電気分解が進むにつれて Cu<sup>2+</sup>（青色の原因）が減り続けるため、溶液の青色はどんどん薄くなります。</div>
+  </div>
+
+  <div class="sec-result" id="res-b"></div>
+  <div style="text-align:center;"><button class="sec-reset-btn" onclick="resetSection(&#39;sec-b&#39;)">↻ やり直す</button></div>
+</div>
+
+
+<!-- ======================================== -->
+<!-- セクション C: 化学電池                    -->
+<!-- ======================================== -->
+<div class="section sec-c">
+  <div class="section-title"><span class="sec-num">C</span>化学電池</div>
+
+  <div class="minitest" data-correct="o">
+    <div class="mt-stem"><span class="mt-num">問9</span>亜鉛板と銅板を塩酸（電解質水溶液）に入れると化学電池になり、電流が取り出せる。</div>
+    <div class="mt-choices">
+      <button class="mt-c" data-v="o">○</button>
+      <button class="mt-c" data-v="x">×</button>
+    </div>
+    <div class="mt-exp">○ 正解です。2種類の金属と電解質水溶液の組み合わせで化学電池ができます。亜鉛がとけながら電子を放出し、銅板側に電流が流れます。</div>
+  </div>
+
+  <div class="minitest" data-correct="o">
+    <div class="mt-stem"><span class="mt-num">問10</span>化学電池では、イオン化傾向が大きい金属が−極（負極）になる。</div>
+    <div class="mt-choices">
+      <button class="mt-c" data-v="o">○</button>
+      <button class="mt-c" data-v="x">×</button>
+    </div>
+    <div class="mt-exp">○ 正解です。イオン化傾向が大きい金属ほど溶けやすく、電子を放出しやすいため<strong>−極</strong>になります。</div>
+  </div>
+
+  <div class="q4" data-correct="b">
+    <div class="q4-stem"><span class="q4-num">問11</span>亜鉛板（Zn）と銅板（Cu）を塩酸に入れた電池で、−極はどちらか。<br>イオン化傾向：Zn ＞ Cu</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：銅板（Cu）</button>
+      <button class="q4-c" data-v="b">イ：亜鉛板（Zn）</button>
+      <button class="q4-c" data-v="c">ウ：どちらでもない</button>
+      <button class="q4-c" data-v="d">エ：両方が−極になる</button>
+    </div>
+    <div class="q4-exp">正解は<strong>イ：亜鉛板（Zn）</strong>。Znの方がイオン化傾向が大きいので、Zn → Zn<sup>2+</sup> + 2e<sup>−</sup> として溶け出し、電子を放出する<strong>−極（負極）</strong>になります。</div>
+  </div>
+
+  <div class="q4" data-correct="a">
+    <div class="q4-stem"><span class="q4-num">問12</span>次のうち、化学電池の−極（負極）で起きる変化として正しいものはどれか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：金属原子がイオンになり、電子を放出する</button>
+      <button class="q4-c" data-v="b">イ：水素イオンが電子を受け取り、水素が発生する</button>
+      <button class="q4-c" data-v="c">ウ：酸素が電子を受け取り、水が生成する</button>
+      <button class="q4-c" data-v="d">エ：イオンが合体して塩になる</button>
+    </div>
+    <div class="q4-exp">正解は<strong>ア</strong>。−極では金属（例：Zn）が酸化されてイオンになり、電子を外部回路に放出します。イは＋極での反応です。</div>
+  </div>
+
+  <div class="sec-result" id="res-c"></div>
+  <div style="text-align:center;"><button class="sec-reset-btn" onclick="resetSection(&#39;sec-c&#39;)">↻ やり直す</button></div>
+</div>
+
+
+<!-- ======================================== -->
+<!-- セクション D: 燃料電池                    -->
+<!-- ======================================== -->
+<div class="section sec-d">
+  <div class="section-title"><span class="sec-num">D</span>燃料電池</div>
+
+  <div class="minitest" data-correct="o">
+    <div class="mt-stem"><span class="mt-num">問13</span>燃料電池は、水素と酸素の化学反応で電気エネルギーを取り出す装置で、排出されるのは水だけである。</div>
+    <div class="mt-choices">
+      <button class="mt-c" data-v="o">○</button>
+      <button class="mt-c" data-v="x">×</button>
+    </div>
+    <div class="mt-exp">○ 正解です。燃料電池の最大の特長は CO₂ などを排出しないことです。水素と酸素が反応してできるのは<strong>水（H₂O）のみ</strong>です。</div>
+  </div>
+
+  <div class="q4" data-correct="b">
+    <div class="q4-stem"><span class="q4-num">問14</span>燃料電池の全体の化学反応式として正しいものはどれか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：H₂ + O₂ → H₂O</button>
+      <button class="q4-c" data-v="b">イ：2H₂ + O₂ → 2H₂O</button>
+      <button class="q4-c" data-v="c">ウ：H₂ + O → H₂O</button>
+      <button class="q4-c" data-v="d">エ：4H₂ + O₂ → 4H₂O</button>
+    </div>
+    <div class="q4-exp">正解は<strong>イ：2H₂ + O₂ → 2H₂O</strong>。両辺の原子数を確認しましょう（H：4個、O：2個）。アは係数が合っていません。</div>
+  </div>
+
+  <div class="sec-result" id="res-d"></div>
+  <div style="text-align:center;"><button class="sec-reset-btn" onclick="resetSection(&#39;sec-d&#39;)">↻ やり直す</button></div>
+</div>
+
+
+<!-- 完了バナー -->
+<div class="finish-banner">
+  <h3>🎉 第2回ドリル 完了！</h3>
+  <p>電気分解・化学電池・燃料電池の知識を確認できました。<br>復習できたら第3回テキストへ進もう！</p>
+  <div class="links">
+    <a href="file:///C:/Users/tinbu/Downloads/ion2.html">📖 第2回テキストを復習</a>
+    <a href="file:///C:/Users/tinbu/Downloads/ion3.html">📖 第3回テキストへ進む →</a>
+  </div>
+</div>
+
+<!-- ページナビ -->
+<div class="pagenav">
+  <a href="file:///C:/Users/tinbu/Downloads/ion2.html">
+    <span class="label">◀ テキスト</span>
+    <span class="title">第2回 電気分解・化学電池</span>
+  </a>
+  <a href="file:///C:/Users/tinbu/Downloads/ion3.html" class="next">
+    <span class="label">NEXT ▶</span>
+    <span class="title">第3回 中和・塩</span>
+  </a>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+const TOTAL = 14;
+
+function recalcGlobal() {
+  const done = document.querySelectorAll('[data-done]');
+  let correct = 0;
+  done.forEach(el => { if (el.dataset.done === 'correct') correct++; });
+  return correct;
+}
+
+function updateGlobal() {
+  const correct = recalcGlobal();
+  const answered = document.querySelectorAll('[data-done]').length;
+  document.getElementById('global-score').textContent = correct + ' / ' + TOTAL;
+  const pct = Math.round(correct / TOTAL * 100);
+  document.getElementById('global-bar').style.width = pct + '%';
+  if (answered === 0) {
+    document.getElementById('global-msg').textContent = '問題を解いてみよう！';
+  } else if (correct === TOTAL) {
+    document.getElementById('global-msg').textContent = '🎉 全問正解！完璧です！';
+    var sb = document.querySelector('.scoreboard');
+    if (sb && !sb.dataset.confettiFired) { sb.dataset.confettiFired = '1'; launchConfetti(); }
+  } else {
+    document.getElementById('global-msg').textContent = '正解率 ' + pct + '%　— 頑張れ！';
+  }
+}
+
+function setupSection(sec) {
+  // ○× ミニテスト
+  sec.querySelectorAll('.minitest').forEach(mt => {
+    const correct = mt.dataset.correct;
+    const exp = mt.querySelector('.mt-exp');
+    mt.querySelectorAll('.mt-c').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (mt.dataset.done) return;
+        const v = btn.dataset.v;
+        if (v === correct) {
+          btn.classList.add('correct');
+          exp.classList.add('visible');
+          mt.dataset.done = 'correct';
+        } else {
+          btn.classList.add('incorrect');
+          exp.classList.add('visible', 'show-err');
+          mt.dataset.done = 'incorrect';
+        }
+        mt.querySelectorAll('.mt-c').forEach(b => b.classList.add('disabled'));
+        updateSecResult(sec);
+        updateGlobal();
+      });
+    });
+  });
+
+  // 4択
+  sec.querySelectorAll('.q4').forEach(q => {
+    const correct = q.dataset.correct;
+    const exp = q.querySelector('.q4-exp');
+    q.querySelectorAll('.q4-c').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (q.dataset.done) return;
+        const v = btn.dataset.v;
+        if (v === correct) {
+          btn.classList.add('correct');
+          q.dataset.done = 'correct';
+        } else {
+          btn.classList.add('incorrect');
+          q.querySelectorAll('.q4-c').forEach(b => {
+            if (b.dataset.v === correct) b.classList.add('correct');
+          });
+          q.dataset.done = 'incorrect';
+        }
+        exp.classList.add('visible');
+        q.querySelectorAll('.q4-c').forEach(b => b.classList.add('disabled'));
+        updateSecResult(sec);
+        updateGlobal();
+      });
+    });
+  });
+
+  sec._reset = function() {
+    sec.querySelectorAll('.minitest, .q4').forEach(el => {
+      delete el.dataset.done;
+      el.querySelectorAll('.mt-c, .q4-c').forEach(b => {
+        b.classList.remove('correct','incorrect','disabled');
+      });
+      const exp = el.querySelector('.mt-exp, .q4-exp');
+      if (exp) exp.classList.remove('visible','show-err');
+    });
+    const resId = sec.querySelector('.sec-result').id;
+    document.getElementById(resId).textContent = '';
+  };
+}
+
+function updateSecResult(sec) {
+  const items = sec.querySelectorAll('.minitest[data-done], .q4[data-done]');
+  const total = sec.querySelectorAll('.minitest, .q4').length;
+  let correct = 0;
+  items.forEach(el => { if (el.dataset.done === 'correct') correct++; });
+  const resId = sec.querySelector('.sec-result').id;
+  if (items.length === total) {
+    document.getElementById(resId).textContent = '✅ このセクション：' + correct + ' / ' + total + ' 正解';
+    if (correct === total) launchConfetti();
+  } else {
+    document.getElementById(resId).textContent = correct + ' / ' + items.length + ' 正解中';
+  }
+}
+
+function resetSection(cls) {
+  const sec = document.querySelector('.' + cls);
+  if (sec && sec._reset) sec._reset();
+  updateGlobal();
+}
+
+function resetAll() {
+  document.querySelectorAll('.section').forEach(sec => {
+    if (sec._reset) sec._reset();
+  });
+  updateGlobal();
+}
+
+// 初期化
+document.querySelectorAll('.section').forEach(sec => setupSection(sec));
+updateGlobal();
+
+/* ===== 花吹雪 ===== */
+function launchConfetti() {
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;';
+  document.body.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+  var colors = ['#FF6B6B','#FFE66D','#4ECDC4','#A8E6CF','#FF8B94','#CE93D8','#81C784','#FFB74D','#64B5F6'];
+  var particles = [];
+  for (var i = 0; i < 180; i++) {
+    particles.push({
+      x: Math.random() * canvas.width, y: -20 - Math.random() * 120,
+      w: Math.random() * 14 + 4, h: Math.random() * 7 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: Math.random() * 5 - 2.5, vy: Math.random() * 3 + 2,
+      angle: Math.random() * Math.PI * 2, va: Math.random() * 0.18 - 0.09
+    });
+  }
+  var frame;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var alive = false;
+    particles.forEach(function(p) {
+      p.x += p.vx; p.y += p.vy; p.angle += p.va; p.vy += 0.04;
+      if (p.y < canvas.height + 20) alive = true;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.angle);
+      ctx.fillStyle = p.color; ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      ctx.restore();
+    });
+    if (alive) frame = requestAnimationFrame(draw);
+    else { cancelAnimationFrame(frame); if (canvas.parentNode) canvas.remove(); }
+  }
+  draw();
+  setTimeout(function() { cancelAnimationFrame(frame); if (canvas.parentNode) canvas.remove(); }, 5000);
+}
+</script>
+
+
+</body></html>

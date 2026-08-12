@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///C:/Users/tinbu/Downloads/ion2_3.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>イオン講座 第2回 電気分解・化学電池 | GAMBA中学理科</title>
+<style>
+/* ========================================
+   GAMBA 中学理科 – アプリスタイル (ion2)
+   ======================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", "Yu Gothic", sans-serif;
+  background: #F0F4F8;
+  color: #1a1a2e;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── ナビゲーション ── */
+.topnav {
+  background: #1a237e;
+  color: #fff;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+.topnav .brand { font-weight: 700; font-size: 15px; letter-spacing: .3px; }
+.topnav .sep { color: rgba(255,255,255,.4); }
+.topnav a { color: #90CAF9; text-decoration: none; font-size: 13px; }
+.topnav a:hover { color: #fff; text-decoration: underline; }
+
+/* ── ラッパー ── */
+.wrap { max-width: 820px; margin: 0 auto; padding: 0 12px 60px; }
+
+/* ── ヒーローヘッダー ── */
+.hero {
+  background: linear-gradient(135deg, #00838F 0%, #006064 60%, #004D40 100%);
+  color: #fff;
+  padding: 28px 24px 22px;
+  margin: 0 -12px 22px;
+  position: relative;
+}
+.hero .crumb { font-size: 12px; opacity: .75; margin-bottom: 6px; letter-spacing: .5px; }
+.hero h1 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+.hero .sub { font-size: 13.5px; opacity: .88; line-height: 1.6; }
+.stars { font-size: 16px; vertical-align: middle; margin-left: 6px; }
+
+/* ── ユニット(章カード) ── */
+.unit {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.unit-title {
+  background: linear-gradient(90deg, #00838F, #0097A7);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.unit-title .num {
+  background: #fff;
+  color: #00838F;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* ── ステージ(説明ブロック) ── */
+.stage {
+  margin: 12px 14px;
+  border: 1.5px solid #B2EBF2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.stage-head {
+  background: #E0F7FA;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 1px solid #B2EBF2;
+}
+.stage-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.stage-label.read {
+  background: #00838F;
+  color: #fff;
+}
+.stage-label.exp {
+  background: #F57F17;
+  color: #fff;
+}
+.stage-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+.ch-btn {
+  border: none;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.ch-btn:hover { opacity: .85; }
+.ch-btn.start  { background: #FF8F00; color: #fff; }
+.ch-btn.judge  { background: #2E7D32; color: #fff; }
+.ch-btn.example{ background: #6A1B9A; color: #fff; }
+.ch-btn.reset  { background: #546E7A; color: #fff; }
+.ch-btn.cancel { background: #B71C1C; color: #fff; }
+.challenge-timer { font-size: 13px; font-weight: 700; color: #E53935; }
+
+/* ── 読み取りボックス ── */
+.read-box {
+  padding: 16px 18px;
+  line-height: 1.8;
+}
+.read-box p { margin-bottom: 10px; }
+.read-box p:last-child { margin-bottom: 0; }
+.read-box ul { padding-left: 20px; margin-bottom: 10px; }
+.read-box li { margin-bottom: 4px; }
+
+/* ── キーワード系 ── */
+.kw {
+  background: #FFF8E1;
+  color: #E65100;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+.kw-blank {
+  display: inline-block;
+  min-width: 5em;
+  border-bottom: 2px solid #00838F;
+  color: #00838F;
+  font-weight: 700;
+  padding: 0 4px;
+  cursor: default;
+  transition: background .15s;
+}
+.kw-blank.active {
+  background: #FFF8E1;
+  border-radius: 4px;
+  border-color: #FF8F00;
+  color: #E65100;
+}
+
+/* ── ポイントボックス ── */
+.point-box {
+  background: #FFFDE7;
+  border-left: 5px solid #FFB300;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin: 12px 0 4px;
+  font-size: 14px;
+}
+.point-box .label {
+  font-weight: 800;
+  color: #E65100;
+  font-size: 13.5px;
+  display: block;
+  margin-bottom: 6px;
+}
+.point-box ul { list-style: none; padding: 0; }
+.point-box ul li {
+  padding: 3px 0 3px 20px;
+  position: relative;
+}
+.point-box ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #FF8F00;
+  font-size: 12px;
+}
+
+/* ── 語群(チャレンジ用) ── */
+.word-bank-inline {
+  display: none;
+  background: #F3E5F5;
+  border-top: 1px dashed #CE93D8;
+  padding: 10px 14px;
+}
+.word-bank-inline.visible { display: block; }
+.wb-title { font-size: 12px; font-weight: 700; color: #6A1B9A; margin-bottom: 6px; }
+.wb-words { display: flex; flex-wrap: wrap; gap: 6px; }
+.wb-word {
+  background: #fff;
+  border: 1.5px solid #9C27B0;
+  color: #6A1B9A;
+  border-radius: 16px;
+  padding: 3px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s;
+}
+.wb-word:hover, .wb-word.selected { background: #9C27B0; color: #fff; }
+.wb-word.used { opacity: .35; pointer-events: none; }
+
+/* ── ミニテスト(○×) ── */
+.minitest-block {
+  margin: 12px 14px;
+  border: 1.5px solid #C8E6C9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.mt-block-title {
+  background: #2E7D32;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 8px 14px;
+}
+.minitest {
+  padding: 12px 14px 14px;
+  border-bottom: 1px solid #E8F5E9;
+}
+.minitest:last-of-type { border-bottom: none; }
+.mt-stem { font-size: 14px; margin-bottom: 8px; line-height: 1.6; }
+.mt-num {
+  display: inline-block;
+  background: #2E7D32;
+  color: #fff;
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.mt-choices { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+.mt-c {
+  background: #fff;
+  border: 2px solid #4CAF50;
+  color: #2E7D32;
+  border-radius: 8px;
+  padding: 6px 22px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all .15s;
+  min-width: 60px;
+}
+.mt-c:hover { background: #E8F5E9; }
+.mt-c.correct { background: #4CAF50; border-color: #388E3C; color: #fff; }
+.mt-c.incorrect { background: #EF5350; border-color: #C62828; color: #fff; }
+.mt-c.disabled { pointer-events: none; opacity: .5; }
+.mt-exp {
+  display: none;
+  background: #F1F8E9;
+  border-left: 4px solid #4CAF50;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 13.5px;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+.mt-exp.show-err { background: #FFEBEE; border-color: #EF5350; }
+.mt-exp.visible { display: block; }
+
+/* ── 4択問題(q4) ── */
+.q4 {
+  padding: 12px 14px 14px;
+  border-bottom: 1px solid #E8F5E9;
+}
+.q4:last-of-type { border-bottom: none; }
+.q4-stem { font-size: 14px; margin-bottom: 8px; line-height: 1.6; }
+.q4-num {
+  display: inline-block;
+  background: #00838F;
+  color: #fff;
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.q4-choices { display: flex; flex-direction: column; gap: 6px; margin-bottom: 6px; }
+.q4-c {
+  background: #fff;
+  border: 1.5px solid #80DEEA;
+  color: #006064;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  cursor: pointer;
+  text-align: left;
+  transition: all .15s;
+  width: 100%;
+}
+.q4-c:hover { background: #E0F7FA; border-color: #00838F; }
+.q4-c.correct { background: #4CAF50; border-color: #388E3C; color: #fff; font-weight: 700; }
+.q4-c.incorrect { background: #EF5350; border-color: #C62828; color: #fff; }
+.q4-c.disabled { pointer-events: none; }
+.q4-exp {
+  display: none;
+  background: #E8F5E9;
+  border-left: 4px solid #4CAF50;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 13.5px;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+.q4-exp.visible { display: block; }
+
+/* ── ブロック結果・リセット ── */
+.mt-block-result {
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  min-height: 18px;
+}
+.mt-block-reset {
+  background: #546E7A;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: block;
+  margin: 4px auto 14px;
+  transition: background .15s;
+}
+.mt-block-reset:hover { background: #37474F; }
+
+/* ── ランキング ── */
+.ranking {
+  background: #F8F9FA;
+  border-top: 1px solid #ECEFF1;
+  padding: 14px 18px 18px;
+}
+.ranking h3 { font-size: 14px; font-weight: 700; color: #37474F; margin-bottom: 8px; }
+.ranking-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.ranking-list li {
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 3px 0;
+  color: #37474F;
+}
+.btn.outline {
+  background: transparent;
+  border: 1.5px solid #90A4AE;
+  color: #546E7A;
+  border-radius: 20px;
+  padding: 5px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn.outline:hover { background: #ECEFF1; }
+
+/* ── 情報ボックス ── */
+.info-box {
+  background: #E0F7FA;
+  border: 1px solid #80DEEA;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin: 8px 0;
+}
+.info-box.danger {
+  background: #FFEBEE;
+  border-color: #FFCDD2;
+}
+.info-box.green {
+  background: #F1F8E9;
+  border-color: #C8E6C9;
+}
+
+/* ── 化学式テーブル ── */
+.chem-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin: 10px 0;
+}
+.chem-table th {
+  background: #006064;
+  color: #fff;
+  padding: 7px 12px;
+  text-align: left;
+  border: 1px solid #004D40;
+}
+.chem-table td {
+  padding: 7px 12px;
+  border: 1px solid #B2EBF2;
+}
+.chem-table tr:nth-child(even) td { background: #E0F7FA; }
+.chem-formula { font-family: "Courier New", monospace; font-weight: 700; font-size: 14px; }
+
+/* ── イオン化傾向バー ── */
+.ionization-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 10px 0;
+  overflow-x: auto;
+}
+.ion-step {
+  background: linear-gradient(135deg, #006064, #00838F);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-right: 2px solid #E0F7FA;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ion-step:first-child { border-radius: 8px 0 0 8px; }
+.ion-step:last-child { border-right: none; border-radius: 0 8px 8px 0; }
+.ion-step.highlight {
+  background: linear-gradient(135deg, #E53935, #EF5350);
+}
+.ion-arrow {
+  font-size: 20px;
+  color: #FF8F00;
+  font-weight: 900;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+/* ── ページ完了 ── */
+.next-actions {
+  background: linear-gradient(135deg, #006064, #004D40);
+  color: #fff;
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.next-actions h3 { font-size: 18px; margin-bottom: 10px; }
+.next-actions p { font-size: 14px; opacity: .9; margin-bottom: 16px; line-height: 1.7; }
+.next-actions .links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.next-actions a {
+  background: rgba(255,255,255,.15);
+  border: 1.5px solid rgba(255,255,255,.4);
+  color: #fff;
+  border-radius: 24px;
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .15s;
+}
+.next-actions a:hover { background: rgba(255,255,255,.28); }
+
+/* ── ページナビ ── */
+.pagenav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.pagenav a {
+  flex: 1;
+  background: #fff;
+  border: 1.5px solid #B2EBF2;
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-decoration: none;
+  color: #00838F;
+  transition: background .15s;
+}
+.pagenav a:hover { background: #E0F7FA; }
+.pagenav .label { font-size: 11px; color: #90A4AE; display: block; margin-bottom: 2px; }
+.pagenav .title { font-size: 13px; font-weight: 700; }
+.pagenav a.next { text-align: right; }
+
+</style>
+</head>
+<body>
+
+<!-- ── ナビゲーション ── -->
+<nav class="topnav">
+  <span class="brand">⚗️ GAMBA 中学理科</span>
+  <span class="sep">|</span>
+  <a href="file:///C:/Users/tinbu/Downloads/jscieincetangen.html">📋 単元表</a>
+  <span class="sep">|</span>
+  <a href="file:///C:/Users/tinbu/Downloads/ion1.html">← 第1回</a>
+  <span class="sep">|</span>
+  <a href="file:///C:/Users/tinbu/Downloads/ion2.html" style="color:#fff;font-weight:700;">第2回：電気分解・化学電池</a>
+  <span class="sep">|</span>
+  <a href="file:///C:/Users/tinbu/Downloads/ion3.html">第3回 →</a>
+</nav>
+
+<div class="wrap">
+
+<!-- ── ヒーロー ── -->
+<div class="hero">
+  <div class="crumb">GAMBA 中学理科 › イオン講座</div>
+  <h1>第2回 電気分解・化学電池<span class="stars">⚡🔋</span></h1>
+  <div class="sub">
+    電気を使って物質を分解する「電気分解」と、化学反応から電気を取り出す「化学電池」を学びます。<br>
+    チャレンジモードで空欄を埋めながら確実に定着させましょう。
+  </div>
+</div>
+
+
+<!-- ================================================== -->
+<!--  単元1: 塩酸の電気分解                               -->
+<!-- ================================================== -->
+<div class="unit">
+  <div class="unit-title"><span class="num">1</span>塩酸の電気分解</div>
+
+  <!-- ── チャレンジ 1-1: 塩酸の電気分解の仕組み ── -->
+  <div class="stage challenge" data-ch-id="u1-1" data-target="#u1-1-readbox">
+    <div class="stage-head">
+      <span class="stage-label read">📖 説明</span>
+      <div class="stage-actions">
+        <span class="challenge-timer" style="display:none;">0:00.0</span>
+        <button class="ch-btn start">🎯 チャレンジ開始</button>
+        <button class="ch-btn judge" style="display:none;">✓ 判定</button>
+        <button class="ch-btn example" style="display:none;">📖 手本</button>
+        <button class="ch-btn reset" style="display:none;">↻ リセット</button>
+        <button class="ch-btn cancel" style="display:none;">⏹ 中断</button>
+      </div>
+    </div>
+
+    <div class="read-box" id="u1-1-readbox">
+
+      <h4 style="color:#006064;margin:0 0 8px;">⚡ 電気分解とは</h4>
+      <p>電解質の水溶液（または融解した電解質）に電流を流し、物質を分解することを<strong>電気分解</strong>という。<br>
+      電源の<strong>＋極</strong>につないだ電極を<strong>陽極（＋極）</strong>、<strong>−極</strong>につないだ電極を<strong>陰極（−極）</strong>という。</p>
+
+      <div class="info-box">
+        <strong>イオンと電極の関係：</strong><br>
+        陽イオン（＋）→ <strong>陰極（−極）</strong> へ引き寄せられる<br>
+        陰イオン（−）→ <strong>陽極（＋極）</strong> へ引き寄せられる
+      </div>
+
+      <h4 style="color:#006064;margin:12px 0 6px;">🧪 塩酸（HCl）の電気分解</h4>
+      <p>塩酸（HCl）を水に溶かすと次のように電離する。</p>
+
+      <div class="info-box">
+        HCl &nbsp;→&nbsp; <span class="kw-blank" data-a="水素">水素</span>イオン（H<sup>+</sup>）＋ <span class="kw-blank" data-a="塩化物">塩化物</span>イオン（Cl<sup>−</sup>）
+      </div>
+
+      <p>電流を流すと、それぞれのイオンが電極に引き寄せられて変化する。</p>
+
+      <div style="background:#FFEBEE;border-left:4px solid #E53935;border-radius:6px;padding:10px 14px;margin:8px 0;">
+        <strong>陰極（−極）での変化：</strong><br>
+        H<sup>+</sup>（水素イオン）が電子を受け取り、<span class="kw-blank" data-a="水素">水素</span>（H₂）が発生する。<br>
+        <code style="font-size:13px;">2H<sup>+</sup> + 2e<sup>−</sup> → H₂</code>
+      </div>
+
+      <div style="background:#E3F2FD;border-left:4px solid #1565C0;border-radius:6px;padding:10px 14px;margin:8px 0;">
+        <strong>陽極（＋極）での変化：</strong><br>
+        Cl<sup>−</sup>（塩化物イオン）が電子を放出し、<span class="kw-blank" data-a="塩素">塩素</span>（Cl₂）が発生する。<br>
+        <code style="font-size:13px;">2Cl<sup>−</sup> → Cl₂ + 2e<sup>−</sup></code>
+      </div>
+
+      <!-- 詳しく知ろう ボタン＋詳細パネル -->
+      <div style="text-align:center;margin:10px 0 6px;">
+        <button onclick="(function(btn){var p=document.getElementById(&#39;hcl-detail&#39;);var open=p.style.display!==&#39;none&#39;;p.style.display=open?&#39;none&#39;:&#39;block&#39;;btn.textContent=open?&#39;🔍 詳しく知ろう&#39;:&#39;▲ 閉じる&#39;;})(this)" style="background:#fff;border:2px solid #00838F;color:#006064;border-radius:20px;padding:6px 20px;font-size:13px;font-weight:700;cursor:pointer;">
+          🔍 詳しく知ろう
+        </button>
+      </div>
+      <div id="hcl-detail" style="display:none;background:#F9FBE7;border:1.5px solid #C5E1A5;border-radius:10px;padding:14px 16px;margin:4px 0 8px;font-size:13.5px;line-height:1.8;">
+        <div style="font-weight:800;color:#33691E;margin-bottom:8px;">⚗️ 電極では何が起きているの？（原子レベルで見てみよう）</div>
+
+        <div style="background:#FFEBEE;border-left:4px solid #E53935;border-radius:6px;padding:10px 12px;margin-bottom:10px;">
+          <strong>🔴 陰極（−極）のくわしいしくみ</strong><br><br>
+          ① 溶液中のH<sup>+</sup>（水素イオン）は、−極の電極に引きつけられてやってきます。<br>
+          ② 電源の−極から電極に電子（e<sup>−</sup>）が流れ込んでいます。<br>
+          ③ H<sup>+</sup>はその電子を1個受け取り、電気を持たない<strong>水素原子（H）</strong>になります。<br>
+          &nbsp;&nbsp;&nbsp;<code style="font-size:12px;">H<sup>+</sup> + e<sup>−</sup> → H</code><br>
+          ④ しかし水素原子（H）は単独では不安定です。そこで、隣にできた水素原子とすぐに結合し、<strong>水素分子（H₂）</strong>になります。<br>
+          &nbsp;&nbsp;&nbsp;<code style="font-size:12px;">H + H → H₂</code><br>
+          ⑤ この H₂ が気泡となって電極から出てきます。
+        </div>
+
+        <div style="background:#E3F2FD;border-left:4px solid #1565C0;border-radius:6px;padding:10px 12px;">
+          <strong>🔵 陽極（＋極）のくわしいしくみ</strong><br><br>
+          ① 溶液中のCl<sup>−</sup>（塩化物イオン）は、＋極の電極に引きつけられてやってきます。<br>
+          ② 電源の＋極は電子を引き抜く力を持っています。電極はCl<sup>−</sup>から電子を1個受け取ります。<br>
+          ③ 電子を1個失ったCl<sup>−</sup>は、電気を持たない<strong>塩素原子（Cl）</strong>になります。<br>
+          &nbsp;&nbsp;&nbsp;<code style="font-size:12px;">Cl<sup>−</sup> → Cl + e<sup>−</sup></code><br>
+          ④ しかし塩素原子（Cl）も単独では不安定です。隣にできた塩素原子とすぐに結合し、<strong>塩素分子（Cl₂）</strong>になります。<br>
+          &nbsp;&nbsp;&nbsp;<code style="font-size:12px;">Cl + Cl → Cl₂</code><br>
+          ⑤ この Cl₂ が気泡となって電極から出てきます。黄緑色で刺激臭のある気体です。
+        </div>
+
+        <div style="margin-top:10px;font-size:13px;color:#555;">
+          ※ まとめると：イオンが電子を「受け取る」か「渡す」かで、原子に戻り、原子同士が結合して分子（気体）になります。
+        </div>
+      </div>
+
+      <div class="info-box" style="margin-top:10px;font-size:14px;text-align:center;">
+        <strong>全体の化学反応式：</strong><br>
+        <span style="font-size:16px;font-weight:700;">2HCl → H₂ ＋ Cl₂</span>
+      </div>
+
+      <div class="point-box" style="margin-top:12px;">
+        <span class="label">★ まとめ</span>
+        <ul>
+          <li>陰極（−極）で <strong>水素</strong>（H₂）発生</li>
+          <li>陽極（＋極）で <strong>塩素</strong>（Cl₂）発生</li>
+          <li>化学反応式：2HCl → H₂ + Cl₂</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="word-bank-inline">
+      <div class="wb-title">📚 語群 ― タップして単語を選び、空欄をタップ！</div>
+      <div class="wb-words"></div>
+    </div>
+  </div>
+
+  <!-- ── チャレンジ 1-2: 塩素の性質 ── -->
+  <div class="stage challenge" data-ch-id="u1-2" data-target="#u1-2-readbox">
+    <div class="stage-head">
+      <span class="stage-label exp">🔬 塩素の性質</span>
+      <div class="stage-actions">
+        <span class="challenge-timer" style="display:none;">0:00.0</span>
+        <button class="ch-btn start">🎯 チャレンジ開始</button>
+        <button class="ch-btn judge" style="display:none;">✓ 判定</button>
+        <button class="ch-btn example" style="display:none;">📖 手本</button>
+        <button class="ch-btn reset" style="display:none;">↻ リセット</button>
+        <button class="ch-btn cancel" style="display:none;">⏹ 中断</button>
+      </div>
+    </div>
+
+    <div class="read-box" id="u1-2-readbox">
+
+      <!-- 実験装置図 -->
+      <div style="text-align:center;margin:0 0 12px;">
+        <img src="file:///C:/Users/tinbu/Downloads/ion7.png" alt="塩酸の電気分解の実験装置図（−極で水素、+極で塩素が発生）" style="max-width:100%;border-radius:8px;border:1px solid #B2EBF2;">
+        <div style="font-size:12px;color:#555;margin-top:4px;">図：塩酸の電気分解（ion7.png）</div>
+      </div>
+
+      <h4 style="color:#E65100;margin:0 0 8px;">塩素（Cl₂）の性質</h4>
+
+      <table class="chem-table">
+        <tbody><tr>
+          <th>性質</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>色</td>
+          <td><span class="kw-blank" data-a="黄緑">黄緑</span>色の気体</td>
+        </tr>
+        <tr>
+          <td>においと毒性</td>
+          <td><span class="kw-blank" data-a="刺激臭">刺激臭</span>がある有毒な気体</td>
+        </tr>
+        <tr>
+          <td>水への溶け方</td>
+          <td>水に溶けやすい（塩素水になる）</td>
+        </tr>
+        <tr>
+          <td>特徴的な作用</td>
+          <td><span class="kw-blank" data-a="漂白">漂白</span>・殺菌作用がある</td>
+        </tr>
+      </tbody></table>
+
+      <div class="info-box" style="margin-top:10px;">
+        <strong>確認：</strong>発生した気体に<strong>湿らせた赤色リトマス紙</strong>を近づけると→ <strong>青→白</strong>（漂白される）
+      </div>
+
+      <div class="point-box" style="margin-top:10px;">
+        <span class="label">★ 塩素の覚え方</span>
+        <ul>
+          <li><strong>黄緑色</strong>・<strong>刺激臭</strong>・<strong>有毒</strong></li>
+          <li><strong>漂白・殺菌</strong>作用（プールの消毒に使われる）</li>
+          <li>水に溶けると塩素水になり、酸性を示す</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="word-bank-inline">
+      <div class="wb-title">📚 語群 ― タップして単語を選び、空欄をタップ！</div>
+      <div class="wb-words"></div>
+    </div>
+  </div>
+
+  <!-- ── ミニテスト 単元1 ── -->
+  <div class="minitest-block">
+    <div class="mt-block-title">✏️ 塩酸の電気分解 確認問題（全7問）</div>
+
+    <div class="minitest" data-correct="o">
+      <div class="mt-stem"><span class="mt-num">問1</span>塩酸の電気分解では、陰極（−極）から水素が発生する。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">○ 正解です。H<sup>+</sup>（水素イオン）が陰極で電子を受け取り、<span class="kw">水素</span>（H₂）が発生します。</div>
+    </div>
+
+    <div class="minitest" data-correct="x">
+      <div class="mt-stem"><span class="mt-num">問2</span>塩素は無色・無臭の気体である。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">× 塩素は<span class="kw">黄緑色</span>で<span class="kw">刺激臭</span>のある有毒な気体です。</div>
+    </div>
+
+    <div class="minitest" data-correct="o">
+      <div class="mt-stem"><span class="mt-num">問3</span>塩酸の電気分解の化学反応式は 2HCl → H₂ + Cl₂ である。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">○ 正解です。2HCl → H₂ + Cl₂ が正しい化学反応式です。</div>
+    </div>
+
+    <div class="q4" data-correct="b">
+      <div class="q4-stem"><span class="q4-num">問4</span>塩酸の電気分解で、陽極（＋極）から発生する気体はどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：水素（H₂）</button>
+        <button class="q4-c" data-v="b">イ：塩素（Cl₂）</button>
+        <button class="q4-c" data-v="c">ウ：酸素（O₂）</button>
+        <button class="q4-c" data-v="d">エ：窒素（N₂）</button>
+      </div>
+      <div class="q4-exp">正解は<strong>イ：塩素（Cl₂）</strong>。Cl<sup>−</sup>（塩化物イオン）が陽極で電子を放出し、Cl₂が発生します。</div>
+    </div>
+
+    <div class="q4" data-correct="c">
+      <div class="q4-stem"><span class="q4-num">問5</span>塩素の性質として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：無色・無臭で安全な気体</button>
+        <button class="q4-c" data-v="b">イ：赤色をした刺激臭のある気体</button>
+        <button class="q4-c" data-v="c">ウ：黄緑色で刺激臭があり、漂白・殺菌作用がある</button>
+        <button class="q4-c" data-v="d">エ：青色で甘いにおいがする気体</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ウ</strong>。塩素は<strong>黄緑色</strong>・<strong>刺激臭</strong>・<strong>有毒</strong>で、<strong>漂白・殺菌</strong>作用があります。</div>
+    </div>
+
+    <div class="q4" data-correct="a">
+      <div class="q4-stem"><span class="q4-num">問6</span>塩酸の電気分解で、発生する気体の体積比（陰極：陽極）として正しいのはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：H₂ ：Cl₂ ＝ 1 : 1</button>
+        <button class="q4-c" data-v="b">イ：H₂ ：Cl₂ ＝ 2 : 1</button>
+        <button class="q4-c" data-v="c">ウ：H₂ ：Cl₂ ＝ 1 : 2</button>
+        <button class="q4-c" data-v="d">エ：H₂ ：Cl₂ ＝ 3 : 1</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ア：1 : 1</strong>。2HCl → H₂ + Cl₂ の反応式より、発生する水素と塩素は等しい物質量・等しい体積比（1：1）です。</div>
+    </div>
+
+    <div class="q4" data-correct="b">
+      <div class="q4-stem"><span class="q4-num">問7</span>塩酸の電気分解の化学反応式として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：HCl → H₂ + Cl₂</button>
+        <button class="q4-c" data-v="b">イ：2HCl → H₂ + Cl₂</button>
+        <button class="q4-c" data-v="c">ウ：2HCl → H₂ + 2Cl</button>
+        <button class="q4-c" data-v="d">エ：HCl → H + Cl</button>
+      </div>
+      <div class="q4-exp">正解は<strong>イ：2HCl → H₂ + Cl₂</strong>。係数に注意！左辺はHCl×2、右辺はH₂（分子）とCl₂（分子）。原子の数は H：2＝2、Cl：2＝2 で一致します。</div>
+    </div>
+
+    <div class="mt-block-result"></div>
+    <div style="text-align:center;"><button class="mt-block-reset">↻ もう一度</button></div>
+  </div>
+
+  <div class="ranking">
+    <h3>🏆 チャレンジ ベストタイム</h3>
+    <div style="font-size:12px;color:#78909C;margin-bottom:4px;">塩酸の電気分解（1-1）</div>
+    <ul id="ranking-u1-1" class="ranking-list"><li style="color:#aaa;font-size:12px;">まだ記録がありません</li></ul>
+    <div style="font-size:12px;color:#78909C;margin:8px 0 4px;">塩素の性質（1-2）</div>
+    <ul id="ranking-u1-2" class="ranking-list"><li style="color:#aaa;font-size:12px;">まだ記録がありません</li></ul>
+    <button class="btn outline" onclick="clearRanking(&#39;u1-1&#39;);clearRanking(&#39;u1-2&#39;)">記録をリセット</button>
+  </div>
+</div>
+
+
+<!-- ================================================== -->
+<!--  単元2: 塩化銅の電気分解                             -->
+<!-- ================================================== -->
+<div class="unit">
+  <div class="unit-title"><span class="num">2</span>塩化銅の電気分解</div>
+
+  <!-- ── チャレンジ 2-1: 塩化銅の電気分解 ── -->
+  <div class="stage challenge" data-ch-id="u2-1" data-target="#u2-1-readbox">
+    <div class="stage-head">
+      <span class="stage-label read">📖 説明</span>
+      <div class="stage-actions">
+        <span class="challenge-timer" style="display:none;">0:00.0</span>
+        <button class="ch-btn start">🎯 チャレンジ開始</button>
+        <button class="ch-btn judge" style="display:none;">✓ 判定</button>
+        <button class="ch-btn example" style="display:none;">📖 手本</button>
+        <button class="ch-btn reset" style="display:none;">↻ リセット</button>
+        <button class="ch-btn cancel" style="display:none;">⏹ 中断</button>
+      </div>
+    </div>
+
+    <div class="read-box" id="u2-1-readbox">
+
+      <h4 style="color:#006064;margin:0 0 8px;">🧪 塩化銅（CuCl₂）水溶液の電気分解</h4>
+      <p>塩化銅（CuCl₂）を水に溶かすと<span class="kw-blank" data-a="青">青</span>色の水溶液になり、次のように電離する。</p>
+
+      <div class="info-box">
+        CuCl₂ &nbsp;→&nbsp; <span class="kw-blank" data-a="銅">銅</span>イオン（Cu<sup>2+</sup>）＋ 2塩化物イオン（2Cl<sup>−</sup>）
+      </div>
+
+      <!-- 実験装置図 -->
+      <div style="text-align:center;margin:10px 0;">
+        <img src="file:///C:/Users/tinbu/Downloads/ion8.png" alt="塩化銅の電気分解の実験装置（陰極に銅析出、陽極に塩素発生）" style="max-width:100%;border-radius:8px;border:1px solid #B2EBF2;">
+        <div style="font-size:12px;color:#555;margin-top:4px;">図：塩化銅の電気分解（ion8.png）</div>
+      </div>
+
+      <div style="background:#FFEBEE;border-left:4px solid #E53935;border-radius:6px;padding:10px 14px;margin:8px 0;">
+        <strong>陰極（−極）での変化：</strong><br>
+        Cu<sup>2+</sup>（銅イオン）が電子を受け取り、<span class="kw-blank" data-a="赤褐色">赤褐色</span>の<strong>銅</strong>（Cu）が析出する。<br>
+        <code style="font-size:13px;">Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu</code>
+      </div>
+
+      <div style="background:#E3F2FD;border-left:4px solid #1565C0;border-radius:6px;padding:10px 14px;margin:8px 0;">
+        <strong>陽極（＋極）での変化：</strong><br>
+        Cl<sup>−</sup>（塩化物イオン）が電子を放出し、塩素（Cl₂）が発生する。<br>
+        <code style="font-size:13px;">2Cl<sup>−</sup> → Cl₂ + 2e<sup>−</sup></code>
+      </div>
+
+      <div class="info-box" style="margin-top:10px;font-size:14px;text-align:center;">
+        <strong>全体の化学反応式：</strong><br>
+        <span style="font-size:16px;font-weight:700;">CuCl₂ → Cu ＋ Cl₂</span>
+      </div>
+
+      <h4 style="color:#E65100;margin:12px 0 6px;">水溶液の色の変化</h4>
+      <p>電気分解が進むにつれて、Cu<sup>2+</sup>（銅イオン）が減っていくため、水溶液の<span class="kw-blank" data-a="青">青</span>色が<span class="kw-blank" data-a="薄く">薄く</span>なっていく。</p>
+
+      <div class="point-box" style="margin-top:10px;">
+        <span class="label">★ まとめ</span>
+        <ul>
+          <li>陰極（−極）→ <strong>赤褐色の銅（Cu）</strong>が析出</li>
+          <li>陽極（＋極）→ <strong>塩素（Cl₂）</strong>が発生</li>
+          <li>反応式：CuCl₂ → Cu + Cl₂</li>
+          <li>水溶液の<strong>青色</strong>はしだいに<strong>薄く</strong>なる</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="word-bank-inline">
+      <div class="wb-title">📚 語群 ― タップして単語を選び、空欄をタップ！</div>
+      <div class="wb-words"></div>
+    </div>
+  </div>
+
+  <!-- ── ミニテスト 単元2 ── -->
+  <div class="minitest-block">
+    <div class="mt-block-title">✏️ 塩化銅の電気分解 確認問題（全5問）</div>
+
+    <div class="minitest" data-correct="o">
+      <div class="mt-stem"><span class="mt-num">問1</span>塩化銅水溶液の電気分解で、陰極（−極）に赤褐色の物質が付着する。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">○ 正解です。Cu<sup>2+</sup>（銅イオン）が陰極で電子を受け取り、<span class="kw">赤褐色の銅</span>が析出します。</div>
+    </div>
+
+    <div class="minitest" data-correct="x">
+      <div class="mt-stem"><span class="mt-num">問2</span>塩化銅水溶液の電気分解が進むと、水溶液の色は濃くなる。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">× Cu<sup>2+</sup>（銅イオン）が減るため、青色は<span class="kw">薄く</span>なります。</div>
+    </div>
+
+    <div class="minitest" data-correct="o">
+      <div class="mt-stem"><span class="mt-num">問3</span>塩化銅水溶液を電気分解すると陽極から塩素が発生する。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">○ 正解です。Cl<sup>−</sup>が陽極で電子を放出し、<span class="kw">塩素（Cl₂）</span>が発生します。</div>
+    </div>
+
+    <div class="q4" data-correct="c">
+      <div class="q4-stem"><span class="q4-num">問4</span>塩化銅（CuCl₂）の電気分解で、陰極（−極）に析出する物質はどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：塩素（Cl₂）</button>
+        <button class="q4-c" data-v="b">イ：水素（H₂）</button>
+        <button class="q4-c" data-v="c">ウ：銅（Cu）</button>
+        <button class="q4-c" data-v="d">エ：酸素（O₂）</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ウ：銅（Cu）</strong>。Cu<sup>2+</sup>が陰極で電子を受け取り、<strong>赤褐色の銅</strong>が析出します。</div>
+    </div>
+
+    <div class="q4" data-correct="b">
+      <div class="q4-stem"><span class="q4-num">問5</span>塩化銅（CuCl₂）の電気分解の化学反応式として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：CuCl₂ → Cu + 2Cl</button>
+        <button class="q4-c" data-v="b">イ：CuCl₂ → Cu + Cl₂</button>
+        <button class="q4-c" data-v="c">ウ：CuCl₂ → Cu²⁺ + Cl₂</button>
+        <button class="q4-c" data-v="d">エ：2CuCl₂ → 2Cu + Cl₂</button>
+      </div>
+      <div class="q4-exp">正解は<strong>イ：CuCl₂ → Cu + Cl₂</strong>。銅と塩素が 1：1 の比で生成します。</div>
+    </div>
+
+    <div class="mt-block-result"></div>
+    <div style="text-align:center;"><button class="mt-block-reset">↻ もう一度</button></div>
+  </div>
+
+  <div class="ranking">
+    <h3>🏆 チャレンジ ベストタイム</h3>
+    <div style="font-size:12px;color:#78909C;margin-bottom:4px;">塩化銅の電気分解（2-1）</div>
+    <ul id="ranking-u2-1" class="ranking-list"><li style="color:#aaa;font-size:12px;">まだ記録がありません</li></ul>
+    <button class="btn outline" onclick="clearRanking(&#39;u2-1&#39;)">記録をリセット</button>
+  </div>
+</div>
+
+
+<!-- ================================================== -->
+<!--  単元3: 化学電池                                     -->
+<!-- ================================================== -->
+<div class="unit">
+  <div class="unit-title"><span class="num">3</span>化学電池</div>
+
+  <!-- ── チャレンジ 3-1: 化学電池の仕組み ── -->
+  <div class="stage challenge" data-ch-id="u3-1" data-target="#u3-1-readbox">
+    <div class="stage-head">
+      <span class="stage-label read">📖 説明</span>
+      <div class="stage-actions">
+        <span class="challenge-timer" style="display:none;">0:00.0</span>
+        <button class="ch-btn start">🎯 チャレンジ開始</button>
+        <button class="ch-btn judge" style="display:none;">✓ 判定</button>
+        <button class="ch-btn example" style="display:none;">📖 手本</button>
+        <button class="ch-btn reset" style="display:none;">↻ リセット</button>
+        <button class="ch-btn cancel" style="display:none;">⏹ 中断</button>
+      </div>
+    </div>
+
+    <div class="read-box" id="u3-1-readbox">
+
+      <h4 style="color:#006064;margin:0 0 8px;">🔋 化学電池とは</h4>
+      <p>2種類の異なる金属と<span class="kw-blank" data-a="電解質">電解質</span>水溶液を使って、化学エネルギーを電気エネルギーに変換する装置を<strong>化学電池</strong>という。</p>
+
+      <div class="info-box">
+        <strong>重要：</strong> 非電解質（砂糖水など）ではイオンが生じないため、電池を作ることができない。
+      </div>
+
+      <h4 style="color:#006064;margin:12px 0 6px;">⚡ 亜鉛板・銅板を希硫酸に入れた場合</h4>
+
+      <!-- 実験装置図 -->
+      <div style="text-align:center;margin:8px 0 12px;">
+        <img src="file:///C:/Users/tinbu/Downloads/ion9.png" alt="化学電池の実験装置（亜鉛板が－極、銅板が＋極）" style="max-width:100%;border-radius:8px;border:1px solid #B2EBF2;">
+        <div style="font-size:12px;color:#555;margin-top:4px;">図：化学電池の実験（ion9.png）</div>
+      </div>
+
+      <div style="background:#FFEBEE;border-left:4px solid #E53935;border-radius:6px;padding:10px 14px;margin:8px 0;">
+        <strong>亜鉛板（<span class="kw-blank" data-a="−">−</span>極）での変化：</strong><br>
+        亜鉛（Zn）がとけてイオンになり、電子を放出する。<br>
+        <code style="font-size:13px;">Zn → Zn<sup>2+</sup> + 2e<sup>−</sup></code><br>
+        ※ イオン化傾向が大きい方の金属が <strong>−極</strong> になる
+      </div>
+
+      <div style="background:#E3F2FD;border-left:4px solid #1565C0;border-radius:6px;padding:10px 14px;margin:8px 0;">
+        <strong>銅板（<span class="kw-blank" data-a="＋">＋</span>極）での変化：</strong><br>
+        H<sup>+</sup>（水素イオン）が電子を受け取り、<span class="kw-blank" data-a="水素">水素</span>（H₂）が発生する。<br>
+        <code style="font-size:13px;">2H<sup>+</sup> + 2e<sup>−</sup> → H₂</code>
+      </div>
+
+      <h4 style="color:#006064;margin:12px 0 6px;">📊 イオン化傾向</h4>
+      <p>金属がイオンになりやすい順番を<span class="kw-blank" data-a="イオン化傾向">イオン化傾向</span>という。</p>
+
+      <div style="overflow-x:auto;margin:8px 0;">
+        <div class="ionization-bar">
+          <div class="ion-step">Mg</div>
+          <div class="ion-arrow">＞</div>
+          <div class="ion-step">Al</div>
+          <div class="ion-arrow">＞</div>
+          <div class="ion-step highlight">Zn</div>
+          <div class="ion-arrow">＞</div>
+          <div class="ion-step">Fe</div>
+          <div class="ion-arrow">＞</div>
+          <div class="ion-step highlight" style="background:linear-gradient(135deg,#1565C0,#1976D2);">Cu</div>
+        </div>
+        <div style="font-size:12px;color:#555;margin-top:4px;text-align:center;">← イオンになりやすい　　イオンになりにくい →</div>
+      </div>
+
+      <!-- 暗記法 -->
+      <div style="background:#FFF8E1;border:2px solid #FFB300;border-radius:10px;padding:12px 16px;margin:10px 0;">
+        <div style="font-size:12.5px;font-weight:800;color:#E65100;margin-bottom:8px;">💡 【暗記法】</div>
+        <div style="font-size:22px;font-weight:900;color:#1a1a2e;letter-spacing:2px;text-align:center;margin-bottom:10px;">
+          まあ　手に銅がびっしり
+        </div>
+        <div style="display:flex;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:8px;">
+          <div style="text-align:center;padding:4px 10px;">
+            <div style="font-size:15px;font-weight:900;color:#00838F;">ま</div>
+            <div style="font-size:11px;font-weight:700;color:#555;">Mg</div>
+          </div>
+          <div style="padding:4px 2px;font-weight:700;color:#FF8F00;align-self:center;">＞</div>
+          <div style="text-align:center;padding:4px 10px;">
+            <div style="font-size:15px;font-weight:900;color:#00838F;">あ</div>
+            <div style="font-size:11px;font-weight:700;color:#555;">Al</div>
+          </div>
+          <div style="padding:4px 2px;font-weight:700;color:#FF8F00;align-self:center;">＞</div>
+          <div style="text-align:center;padding:4px 10px;">
+            <div style="font-size:15px;font-weight:900;color:#E53935;">（亜）</div>
+            <div style="font-size:11px;font-weight:700;color:#555;">Zn（亜鉛）</div>
+          </div>
+          <div style="padding:4px 2px;font-weight:700;color:#FF8F00;align-self:center;">＞</div>
+          <div style="text-align:center;padding:4px 10px;">
+            <div style="font-size:15px;font-weight:900;color:#00838F;">手</div>
+            <div style="font-size:11px;font-weight:700;color:#555;">Fe（鉄＝てつ）</div>
+          </div>
+          <div style="padding:4px 2px;font-weight:700;color:#FF8F00;align-self:center;">＞</div>
+          <div style="text-align:center;padding:4px 10px;">
+            <div style="font-size:15px;font-weight:900;color:#1565C0;">銅</div>
+            <div style="font-size:11px;font-weight:700;color:#555;">Cu（銅）</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#777;text-align:center;">声に出して繰り返し唱えよう！</div>
+      </div>
+
+      <div class="info-box">
+        ・Znの方がCuよりイオン化傾向が大きい → Znが <strong>−極</strong>（溶ける）<br>
+        ・より<strong>イオン化傾向が大きい</strong>金属が<strong>−極</strong>になる
+      </div>
+
+      <div class="point-box" style="margin-top:10px;">
+        <span class="label">★ まとめ</span>
+        <ul>
+          <li><strong>化学電池</strong>：化学エネルギー → 電気エネルギー</li>
+          <li>イオン化傾向が大きい方 → <strong>−極</strong>（とける）</li>
+          <li>イオン化傾向が小さい方 → <strong>＋極</strong>（水素発生）</li>
+          <li><strong>電解質</strong>水溶液でないと電池にならない</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="word-bank-inline">
+      <div class="wb-title">📚 語群 ― タップして単語を選び、空欄をタップ！</div>
+      <div class="wb-words"></div>
+    </div>
+  </div>
+
+  <!-- ── チャレンジ 3-2: 燃料電池 ── -->
+  <div class="stage challenge" data-ch-id="u3-2" data-target="#u3-2-readbox">
+    <div class="stage-head">
+      <span class="stage-label exp">🌱 燃料電池</span>
+      <div class="stage-actions">
+        <span class="challenge-timer" style="display:none;">0:00.0</span>
+        <button class="ch-btn start">🎯 チャレンジ開始</button>
+        <button class="ch-btn judge" style="display:none;">✓ 判定</button>
+        <button class="ch-btn example" style="display:none;">📖 手本</button>
+        <button class="ch-btn reset" style="display:none;">↻ リセット</button>
+        <button class="ch-btn cancel" style="display:none;">⏹ 中断</button>
+      </div>
+    </div>
+
+    <div class="read-box" id="u3-2-readbox">
+
+      <h4 style="color:#006064;margin:0 0 8px;">🌿 燃料電池</h4>
+      <p><span class="kw-blank" data-a="水素">水素</span>と<span class="kw-blank" data-a="酸素">酸素</span>を反応させて電気エネルギーを取り出す電池を<strong>燃料電池</strong>という。</p>
+
+      <div class="info-box" style="text-align:center;font-size:15px;">
+        <strong>2H₂ ＋ O₂ → 2<span class="kw-blank" data-a="水">水</span>（2H₂O）</strong><br>
+        <span style="font-size:12px;color:#555;">（この反応で電気エネルギーと熱エネルギーが生じる）</span>
+      </div>
+
+      <table class="chem-table" style="margin-top:12px;">
+        <tbody><tr>
+          <th>特徴</th>
+          <th>内容</th>
+        </tr>
+        <tr>
+          <td>燃料</td>
+          <td><strong>水素</strong>（H₂）</td>
+        </tr>
+        <tr>
+          <td>排出されるもの</td>
+          <td><strong>水（H₂O）のみ</strong>（CO₂を出さない）</td>
+        </tr>
+        <tr>
+          <td>発電効率</td>
+          <td>高い（熱損失が少ない）</td>
+        </tr>
+        <tr>
+          <td>用途</td>
+          <td>燃料電池自動車（FCV）・家庭用発電（エネファーム）</td>
+        </tr>
+      </tbody></table>
+
+      <div class="point-box" style="margin-top:12px;">
+        <span class="label">★ 電気分解 vs 化学電池 まとめ</span>
+        <ul>
+          <li><strong>電気分解</strong>：電気エネルギー → 化学変化（物質を分解）</li>
+          <li><strong>化学電池</strong>：化学エネルギー → 電気エネルギー</li>
+          <li><strong>燃料電池</strong>：水素＋酸素 → 水 ＋ 電気エネルギー</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="word-bank-inline">
+      <div class="wb-title">📚 語群 ― タップして単語を選び、空欄をタップ！</div>
+      <div class="wb-words"></div>
+    </div>
+  </div>
+
+  <!-- ── ミニテスト 単元3 ── -->
+  <div class="minitest-block">
+    <div class="mt-block-title">✏️ 化学電池・燃料電池 確認問題（全6問）</div>
+
+    <div class="minitest" data-correct="o">
+      <div class="mt-stem"><span class="mt-num">問1</span>化学電池では、イオン化傾向が大きい金属が−極になる。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">○ 正解です。イオンになりやすい（イオン化傾向が大きい）金属が<span class="kw">−極</span>になり、溶けていきます。</div>
+    </div>
+
+    <div class="minitest" data-correct="x">
+      <div class="mt-stem"><span class="mt-num">問2</span>砂糖水に亜鉛板と銅板を入れると化学電池になる。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">× 砂糖水は<span class="kw">非電解質</span>なのでイオンが生じません。電解質水溶液でないと電池は作れません。</div>
+    </div>
+
+    <div class="minitest" data-correct="o">
+      <div class="mt-stem"><span class="mt-num">問3</span>燃料電池は水素と酸素から電気を取り出し、水のみを排出する。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">○ 正解です。2H₂ + O₂ → 2H₂O の反応から電気を取り出します。CO₂を排出しないのが特徴です。</div>
+    </div>
+
+    <div class="q4" data-correct="b">
+      <div class="q4-stem"><span class="q4-num">問4</span>亜鉛板と銅板を希硫酸に入れた化学電池で、−極になるのはどちらか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：銅板（Cu）</button>
+        <button class="q4-c" data-v="b">イ：亜鉛板（Zn）</button>
+        <button class="q4-c" data-v="c">ウ：どちらでもない</button>
+        <button class="q4-c" data-v="d">エ：両方</button>
+      </div>
+      <div class="q4-exp">正解は<strong>イ：亜鉛板（Zn）</strong>。ZnはCuよりイオン化傾向が大きいため、Znが溶けて電子を放出し<strong>−極</strong>になります。</div>
+    </div>
+
+    <div class="q4" data-correct="c">
+      <div class="q4-stem"><span class="q4-num">問5</span>次のうち、化学電池に使える組み合わせはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：亜鉛板と銅板を砂糖水に入れる</button>
+        <button class="q4-c" data-v="b">イ：同じ亜鉛板2枚を希硫酸に入れる</button>
+        <button class="q4-c" data-v="c">ウ：亜鉛板と銅板を希塩酸に入れる</button>
+        <button class="q4-c" data-v="d">エ：銅板2枚を砂糖水に入れる</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ウ</strong>。化学電池の条件は「<strong>異なる2種類の金属</strong>＋<strong>電解質</strong>水溶液」です。砂糖水は非電解質なのでNG、同じ金属2枚もNG。</div>
+    </div>
+
+    <div class="q4" data-correct="a">
+      <div class="q4-stem"><span class="q4-num">問6</span>イオン化傾向の大きい順として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：Mg ＞ Al ＞ Zn ＞ Fe ＞ Cu</button>
+        <button class="q4-c" data-v="b">イ：Cu ＞ Fe ＞ Zn ＞ Al ＞ Mg</button>
+        <button class="q4-c" data-v="c">ウ：Zn ＞ Cu ＞ Fe ＞ Al ＞ Mg</button>
+        <button class="q4-c" data-v="d">エ：Fe ＞ Mg ＞ Cu ＞ Zn ＞ Al</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ア：Mg ＞ Al ＞ Zn ＞ Fe ＞ Cu</strong>。この順番はよく試験に出ます。Mgが最もイオンになりやすく、Cuが最もなりにくいです。</div>
+    </div>
+
+    <div class="mt-block-result"></div>
+    <div style="text-align:center;"><button class="mt-block-reset">↻ もう一度</button></div>
+  </div>
+
+  <div class="ranking">
+    <h3>🏆 チャレンジ ベストタイム</h3>
+    <div style="font-size:12px;color:#78909C;margin-bottom:4px;">化学電池の仕組み（3-1）</div>
+    <ul id="ranking-u3-1" class="ranking-list"><li style="color:#aaa;font-size:12px;">まだ記録がありません</li></ul>
+    <div style="font-size:12px;color:#78909C;margin:8px 0 4px;">燃料電池（3-2）</div>
+    <ul id="ranking-u3-2" class="ranking-list"><li style="color:#aaa;font-size:12px;">まだ記録がありません</li></ul>
+    <button class="btn outline" onclick="clearRanking(&#39;u3-1&#39;);clearRanking(&#39;u3-2&#39;)">記録をリセット</button>
+  </div>
+</div>
+
+
+<!-- ページ完了 -->
+<div class="next-actions">
+  <h3>🎉 第2回 お疲れさまでした！</h3>
+  <p>電気分解・化学電池をひととおり学びました。<br>まずはドリルで復習してから、第3回へ進みましょう！</p>
+  <div class="links">
+    <a href="file:///C:/Users/tinbu/Downloads/ion2-drill.html">📝 第2回ドリルで復習する</a>
+    <a href="file:///C:/Users/tinbu/Downloads/ion3.html">📖 第3回へ進む（中和・塩）</a>
+    <a href="file:///C:/Users/tinbu/Downloads/ion1.html">← 第1回に戻る</a>
+  </div>
+</div>
+
+<nav class="pagenav">
+  <a href="file:///C:/Users/tinbu/Downloads/ion1.html">
+    <span class="label">◀ PREV</span>
+    <span class="title">第1回 電解質・イオン</span>
+  </a>
+  <a href="file:///C:/Users/tinbu/Downloads/ion2-drill.html" class="next">
+    <span class="label">NEXT ▶</span>
+    <span class="title">第2回 ドリルで復習</span>
+  </a>
+</nav>
+
+</div><!-- /.wrap -->
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── ミニテスト・q4 ── */
+  function setupMinitests(block) {
+    var tests   = Array.from(block.querySelectorAll('.minitest'));
+    var q4s     = Array.from(block.querySelectorAll('.q4'));
+    var resultEl = block.querySelector('.mt-block-result');
+    var resetBtn = block.querySelector('.mt-block-reset');
+    var total   = tests.length + q4s.length;
+    var answered = 0;
+    var correct = 0;
+
+    tests.forEach(function (test) {
+      var ans  = test.dataset.correct;
+      var btns = test.querySelectorAll('.mt-c');
+      var exp  = test.querySelector('.mt-exp');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (test.dataset.done) return;
+          test.dataset.done = '1';
+          var isCorrect = btn.dataset.v === ans;
+          if (isCorrect) { btn.classList.add('correct'); correct++; }
+          else {
+            btn.classList.add('incorrect');
+            btns.forEach(function (b) { if (b.dataset.v === ans) b.classList.add('correct'); });
+          }
+          btns.forEach(function (b) { b.classList.add('disabled'); });
+          if (exp) {
+            exp.classList.add('visible');
+            if (!isCorrect) exp.classList.add('show-err');
+          }
+          answered++;
+          if (answered === total) showResult();
+        });
+      });
+    });
+
+    q4s.forEach(function (q4) {
+      var ans  = q4.dataset.correct;
+      var btns = q4.querySelectorAll('.q4-c');
+      var exp  = q4.querySelector('.q4-exp');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (q4.dataset.done) return;
+          q4.dataset.done = '1';
+          var isCorrect = btn.dataset.v === ans;
+          if (isCorrect) { btn.classList.add('correct'); correct++; }
+          else {
+            btn.classList.add('incorrect');
+            btns.forEach(function (b) { if (b.dataset.v === ans) b.classList.add('correct'); });
+          }
+          btns.forEach(function (b) { b.classList.add('disabled'); });
+          if (exp) exp.classList.add('visible');
+          answered++;
+          if (answered === total) showResult();
+        });
+      });
+    });
+
+    function showResult() {
+      if (!resultEl) return;
+      var pct = Math.round(correct / total * 100);
+      var msg = '';
+      if (pct === 100) msg = '🎉 全問正解！すばらしい！';
+      else if (pct >= 70) msg = '👍 よくできました！もう少し！';
+      else msg = '📖 もう一度確認しましょう。';
+      resultEl.innerHTML = '<span style="color:#006064;">' + correct + ' / ' + total + ' 正解</span>　' + msg;
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        answered = 0; correct = 0;
+        tests.forEach(function (test) {
+          delete test.dataset.done;
+          test.querySelectorAll('.mt-c').forEach(function (b) {
+            b.classList.remove('correct', 'incorrect', 'disabled');
+          });
+          var exp = test.querySelector('.mt-exp');
+          if (exp) { exp.classList.remove('visible', 'show-err'); }
+        });
+        q4s.forEach(function (q4) {
+          delete q4.dataset.done;
+          q4.querySelectorAll('.q4-c').forEach(function (b) {
+            b.classList.remove('correct', 'incorrect', 'disabled');
+          });
+          var exp = q4.querySelector('.q4-exp');
+          if (exp) exp.classList.remove('visible');
+        });
+        if (resultEl) resultEl.innerHTML = '';
+      });
+    }
+  }
+
+  document.querySelectorAll('.minitest-block').forEach(setupMinitests);
+
+  /* ── チャレンジモード ── */
+  function setupChallenge(stageEl) {
+    var chId       = stageEl.dataset.chId;
+    var targetSel  = stageEl.dataset.target;
+    var wbInline   = stageEl.querySelector('.word-bank-inline');
+    var wbWords    = stageEl.querySelector('.wb-words');
+    var timerEl    = stageEl.querySelector('.challenge-timer');
+    var startBtn   = stageEl.querySelector('.ch-btn.start');
+    var judgeBtn   = stageEl.querySelector('.ch-btn.judge');
+    var exampleBtn = stageEl.querySelector('.ch-btn.example');
+    var resetBtn2  = stageEl.querySelector('.ch-btn.reset');
+    var cancelBtn  = stageEl.querySelector('.ch-btn.cancel');
+
+    if (!startBtn) return;
+
+    var blanks     = [];
+    var words      = [];
+    var selected   = null;
+    var timerInt   = null;
+    var startTime  = 0;
+    var running    = false;
+
+    function collectBlanks() {
+      blanks = Array.from(stageEl.querySelectorAll('.kw-blank'));
+      words = blanks.map(function (b) { return b.dataset.a; });
+    }
+
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = a[i]; a[i] = a[j]; a[j] = t;
+      }
+      return a;
+    }
+
+    function buildWordBank() {
+      if (!wbWords) return;
+      wbWords.innerHTML = '';
+      var ws = shuffle(words.slice());
+      ws.forEach(function (w) {
+        var btn = document.createElement('button');
+        btn.className = 'wb-word';
+        btn.textContent = w;
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.wb-word').forEach(function (b) { b.classList.remove('selected'); });
+          btn.classList.add('selected');
+          selected = w;
+        });
+        wbWords.appendChild(btn);
+      });
+    }
+
+    function hideAnswer(blank) {
+      blank.textContent = '　　　　';
+      blank.classList.remove('active');
+      blank.style.color = '';
+      blank._filled = '';
+    }
+
+    function startChallenge() {
+      collectBlanks();
+      blanks.forEach(hideAnswer);
+      buildWordBank();
+      if (wbInline) wbInline.classList.add('visible');
+      if (timerEl) timerEl.style.display = '';
+      startTime = Date.now();
+      running = true;
+      timerInt = setInterval(function () {
+        var el = timerEl;
+        if (!el) return;
+        var ms = Date.now() - startTime;
+        var s = Math.floor(ms / 1000);
+        var m = Math.floor(s / 60);
+        s = s % 60;
+        var d = Math.floor((ms % 1000) / 100);
+        el.textContent = m + ':' + (s < 10 ? '0' : '') + s + '.' + d;
+      }, 100);
+
+      [startBtn].forEach(function (b) { if (b) b.style.display = 'none'; });
+      [judgeBtn, exampleBtn, resetBtn2, cancelBtn].forEach(function (b) { if (b) b.style.display = ''; });
+
+      blanks.forEach(function (blank) {
+        blank.addEventListener('click', onBlankClick);
+      });
+      selected = null;
+    }
+
+    function onBlankClick(e) {
+      if (!running) return;
+      if (!selected) { alert('先に語群から単語を選んでください。'); return; }
+      var blank = e.currentTarget;
+      blank.textContent = selected;
+      blank._filled = selected;
+      blank.classList.add('active');
+      var wBtn = Array.from(wbWords ? wbWords.querySelectorAll('.wb-word') : []).find(function (b) { return b.textContent === selected && !b.classList.contains('used'); });
+      if (wBtn) wBtn.classList.add('used');
+      selected = null;
+      document.querySelectorAll('.wb-word').forEach(function (b) { b.classList.remove('selected'); });
+    }
+
+    function judge() {
+      var correct = 0;
+      blanks.forEach(function (blank) {
+        if (blank._filled === blank.dataset.a) {
+          blank.style.color = '#2E7D32';
+          correct++;
+        } else {
+          blank.style.color = '#C62828';
+        }
+      });
+      clearInterval(timerInt); running = false;
+      var ms = Date.now() - startTime;
+      if (correct === blanks.length) {
+        saveRanking(chId, ms);
+        updateRankingUI(chId);
+        launchConfetti();
+        showToast('🎉 全問正解！<br>タイム: ' + formatTime(ms), true);
+      } else {
+        showToast(correct + ' / ' + blanks.length + ' 正解<br>やり直す場合はリセットを。', false);
+      }
+    }
+
+    function showExample() {
+      blanks.forEach(function (blank) {
+        blank.textContent = blank.dataset.a;
+        blank._filled = blank.dataset.a;
+        blank.classList.add('active');
+        blank.style.color = '#006064';
+      });
+      clearInterval(timerInt); running = false;
+    }
+
+    function resetChallenge() {
+      clearInterval(timerInt); running = false;
+      blanks.forEach(function (blank) {
+        blank.removeEventListener('click', onBlankClick);
+        blank.textContent = blank.dataset.a;
+        blank.classList.remove('active');
+        blank.style.color = '';
+        blank._filled = '';
+      });
+      if (wbInline) wbInline.classList.remove('visible');
+      if (timerEl) { timerEl.textContent = '0:00.0'; timerEl.style.display = 'none'; }
+      [judgeBtn, exampleBtn, resetBtn2, cancelBtn].forEach(function (b) { if (b) b.style.display = 'none'; });
+      if (startBtn) startBtn.style.display = '';
+    }
+
+    if (startBtn)   startBtn.addEventListener('click', startChallenge);
+    if (judgeBtn)   judgeBtn.addEventListener('click', judge);
+    if (exampleBtn) exampleBtn.addEventListener('click', showExample);
+    if (resetBtn2)  resetBtn2.addEventListener('click', resetChallenge);
+    if (cancelBtn)  cancelBtn.addEventListener('click', resetChallenge);
+  }
+
+  document.querySelectorAll('.stage.challenge').forEach(setupChallenge);
+
+  /* ── ランキング ── */
+  function rankKey(id) { return 'gamba_rank2_' + id; }
+
+  function saveRanking(id, ms) {
+    try {
+      var data = JSON.parse(localStorage.getItem(rankKey(id)) || '[]');
+      data.push(ms);
+      data.sort(function (a, b) { return a - b; });
+      data = data.slice(0, 5);
+      localStorage.setItem(rankKey(id), JSON.stringify(data));
+    } catch(e) {}
+  }
+
+  function formatTime(ms) {
+    var s = Math.floor(ms / 1000);
+    var m = Math.floor(s / 60);
+    s = s % 60;
+    var d = Math.floor((ms % 1000) / 100);
+    return m + ':' + (s < 10 ? '0' : '') + s + '.' + d;
+  }
+
+  function updateRankingUI(id) {
+    var el = document.getElementById('ranking-' + id);
+    if (!el) return;
+    try {
+      var data = JSON.parse(localStorage.getItem(rankKey(id)) || '[]');
+      if (!data.length) { el.innerHTML = '<li style="color:#aaa;font-size:12px;">まだ記録がありません</li>'; return; }
+      el.innerHTML = data.map(function (ms, i) {
+        return '<li>' + ['🥇','🥈','🥉','4位','5位'][i] + '&nbsp;' + formatTime(ms) + '</li>';
+      }).join('');
+    } catch(e) {}
+  }
+
+  window.clearRanking = function (id) {
+    try { localStorage.removeItem(rankKey(id)); } catch(e) {}
+    updateRankingUI(id);
+  };
+
+  ['u1-1','u1-2','u2-1','u3-1','u3-2'].forEach(updateRankingUI);
+
+})();
+
+/* ===== 花吹雪 ===== */
+function launchConfetti() {
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;';
+  document.body.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+  var colors = ['#FF6B6B','#FFE66D','#4ECDC4','#A8E6CF','#FF8B94','#80DEEA','#81C784','#FFB74D','#64B5F6'];
+  var particles = [];
+  for (var i = 0; i < 180; i++) {
+    particles.push({
+      x: Math.random() * canvas.width, y: -20 - Math.random() * 120,
+      w: Math.random() * 14 + 4, h: Math.random() * 7 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: Math.random() * 5 - 2.5, vy: Math.random() * 3 + 2,
+      angle: Math.random() * Math.PI * 2, va: Math.random() * 0.18 - 0.09
+    });
+  }
+  var frame;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var alive = false;
+    particles.forEach(function(p) {
+      p.x += p.vx; p.y += p.vy; p.angle += p.va; p.vy += 0.04;
+      if (p.y < canvas.height + 20) alive = true;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.angle);
+      ctx.fillStyle = p.color; ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      ctx.restore();
+    });
+    if (alive) frame = requestAnimationFrame(draw);
+    else { cancelAnimationFrame(frame); if (canvas.parentNode) canvas.remove(); }
+  }
+  draw();
+  setTimeout(function() { cancelAnimationFrame(frame); if (canvas.parentNode) canvas.remove(); }, 5000);
+}
+function showToast(msg, ok) {
+  var t = document.createElement('div');
+  t.innerHTML = msg;
+  t.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-60%);background:'+(ok?'#2E7D32':'#546E7A')+';color:#fff;padding:18px 32px;border-radius:16px;font-size:16px;font-weight:700;z-index:10000;text-align:center;box-shadow:0 6px 28px rgba(0,0,0,.45);line-height:1.6;min-width:200px;';
+  document.body.appendChild(t);
+  setTimeout(function() { t.remove(); }, 3500);
+}
+</script>
+
+
+
+</body></html>

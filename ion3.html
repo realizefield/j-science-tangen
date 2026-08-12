@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)file:///C:/Users/tinbu/Downloads/ion3_11.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>イオン講座 第3回 中和・塩 | GAMBA中学理科</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", "Yu Gothic", sans-serif;
+  background: #F3E5F5; color: #1a1a2e; font-size: 15px; line-height: 1.7;
+}
+.topnav {
+  background: #4A148C; color: #fff; padding: 10px 16px;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+.topnav .brand { font-weight: 700; font-size: 15px; }
+.topnav .sep { color: rgba(255,255,255,.4); }
+.topnav a { color: #CE93D8; text-decoration: none; font-size: 13px; }
+.topnav a:hover { color: #fff; text-decoration: underline; }
+.wrap { max-width: 820px; margin: 0 auto; padding: 0 12px 60px; }
+.hero {
+  background: linear-gradient(135deg, #7B1FA2 0%, #6A1B9A 60%, #4A148C 100%);
+  color: #fff; padding: 28px 24px 22px; margin: 0 -12px 22px;
+}
+.hero .crumb { font-size: 12px; opacity: .75; margin-bottom: 6px; }
+.hero h1 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+.hero .sub { font-size: 13.5px; opacity: .88; line-height: 1.6; }
+
+/* UNIT */
+.unit { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.08); margin-bottom: 24px; overflow: hidden; }
+.unit-title {
+  background: linear-gradient(90deg, #7B1FA2, #9C27B0);
+  color: #fff; font-size: 16px; font-weight: 700; padding: 12px 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.unit-title .unit-num {
+  background: rgba(255,255,255,.2); border-radius: 50%;
+  width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; flex-shrink: 0;
+}
+.unit-body { padding: 14px 16px 16px; }
+.section-sub {
+  font-size: 14px; font-weight: 700; color: #6A1B9A;
+  border-bottom: 2px solid #E1BEE7; padding-bottom: 4px; margin: 14px 0 10px;
+}
+
+/* INFO / KW BOXES */
+.kw-box {
+  background: #F3E5F5; border-left: 4px solid #7B1FA2;
+  border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 10px 0; font-size: 14px;
+}
+.kw-box .label { font-size: 11px; font-weight: 700; color: #7B1FA2; margin-bottom: 4px; }
+.info-box {
+  background: #EDE7F6; border: 1.5px solid #CE93D8;
+  border-radius: 10px; padding: 12px 14px; margin: 10px 0; font-size: 14px; line-height: 1.9;
+}
+.info-box .head { font-weight: 700; color: #6A1B9A; margin-bottom: 6px; font-size: 14px; }
+
+/* INDICATOR TABLE */
+.ind-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 10px 0; }
+.ind-table th { background: #7B1FA2; color: #fff; padding: 7px 10px; text-align: center; }
+.ind-table td { border: 1px solid #D1C4E9; padding: 7px 10px; text-align: center; }
+.ind-table tr:nth-child(even) td { background: #FAF5FF; }
+.cell-acid { background: #FFF9C4 !important; font-weight: 700; color: #F57F17; }
+.cell-neu  { background: #F1F8E9 !important; font-weight: 700; color: #2E7D32; }
+.cell-alk  { background: #E3F2FD !important; font-weight: 700; color: #1565C0; }
+
+/* 暗記法ボックス */
+.mnemo-box {
+  background: #FFFDE7; border: 2px dashed #FBC02D; border-radius: 12px;
+  padding: 14px 18px; margin: 12px 0 6px;
+}
+.mnemo-box h4 { font-size: 14px; font-weight: 800; color: #E65100; margin-bottom: 10px; }
+.mnemo-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 9px; line-height: 1.7; }
+.mnemo-item:last-child { margin-bottom: 0; }
+.mnemo-key {
+  flex-shrink: 0; display: inline-block;
+  background: #FFF9C4; border: 1.5px solid #F9A825; border-radius: 7px;
+  padding: 3px 11px; font-weight: 900; font-size: 14px; color: #BF360C;
+  letter-spacing: 0.04em; white-space: nowrap;
+}
+.mnemo-desc { font-size: 13px; color: #555; padding-top: 2px; }
+.mnemo-desc b { color: #7B1FA2; }
+
+/* BTB VISUAL */
+.btb-bar { display: flex; align-items: center; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+.btb-cell { border-radius: 8px; padding: 10px 14px; font-size: 13px; font-weight: 700; text-align: center; min-width: 80px; }
+.btb-y { background: #F9A825; color: #333; }
+.btb-g { background: #558B2F; color: #fff; }
+.btb-b { background: #1565C0; color: #fff; }
+.btb-arr { font-size: 20px; color: #9C27B0; }
+
+/* EQUATION BOX */
+.eq-box {
+  background: #fff; border: 2px solid #AB47BC; border-radius: 10px;
+  padding: 12px 16px; margin: 10px 0; font-size: 14.5px; line-height: 2.2;
+}
+.eq-label { font-size: 12px; font-weight: 700; color: #7B1FA2; margin-bottom: 4px; }
+.eq-hl { background: #E1BEE7; border-radius: 4px; padding: 1px 6px; font-weight: 700; }
+
+/* STAGE / CHALLENGE */
+.stage { background: #F8F0FF; border: 1.5px solid #CE93D8; border-radius: 12px; padding: 14px 14px 10px; margin: 12px 0; }
+.stage.challenge { background: #FDF6FF; border-color: #AB47BC; }
+.stage-title { font-size: 13px; font-weight: 700; color: #7B1FA2; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.ch-body { font-size: 14px; line-height: 2.4; margin-bottom: 10px; }
+.kw-blank {
+  display: inline-block; min-width: 80px; text-align: center;
+  border-bottom: 2.5px solid #7B1FA2; color: #4A148C; font-weight: 700;
+  cursor: pointer; padding: 0 4px; border-radius: 4px 4px 0 0; margin: 0 2px;
+  background: #F3E5F5; transition: background .15s;
+  font-size: 14px;
+}
+.kw-blank:hover { background: #E1BEE7; }
+.kw-blank.correct { background: #C8E6C9 !important; border-color: #388E3C; color: #1B5E20; }
+.kw-blank.incorrect { background: #FFCDD2 !important; border-color: #C62828; color: #B71C1C; }
+
+/* WORD BANK */
+.word-bank { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 10px; }
+.wb-btn {
+  background: #EDE7F6; border: 2px solid #CE93D8; color: #6A1B9A;
+  border-radius: 20px; padding: 5px 16px; font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: all .15s;
+}
+.wb-btn:hover:not(:disabled) { background: #D1C4E9; border-color: #9C27B0; }
+.wb-btn:disabled { opacity: .35; cursor: not-allowed; }
+
+/* CHALLENGE CONTROLS */
+.ch-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.ch-timer { font-size: 13px; font-weight: 700; color: #7B1FA2; min-width: 46px; }
+.ch-timer.warn { color: #E53935; }
+.ch-judge-btn {
+  background: #7B1FA2; color: #fff; border: none; border-radius: 20px;
+  padding: 6px 20px; font-size: 13px; font-weight: 700; cursor: pointer; transition: background .15s;
+}
+.ch-judge-btn:hover { background: #6A1B9A; }
+.ch-reset-btn, .ch-cancel-btn {
+  background: #fff; border: 1.5px solid #CE93D8; color: #7B1FA2;
+  border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 700;
+  cursor: pointer; transition: all .15s;
+}
+.ch-reset-btn:hover, .ch-cancel-btn:hover { background: #F3E5F5; }
+.ch-result { font-size: 13px; font-weight: 700; color: #7B1FA2; margin-left: 4px; }
+
+/* RANKING */
+.ranking-wrap { margin-top: 10px; }
+.ranking-title { font-size: 12px; font-weight: 700; color: #9C27B0; margin-bottom: 4px; }
+.ranking-list { display: flex; gap: 8px; flex-wrap: wrap; min-height: 22px; }
+.rank-row { background: #F3E5F5; border-radius: 6px; padding: 3px 10px; font-size: 12px; display: flex; gap: 4px; align-items: center; }
+.rank-num { font-weight: 700; color: #7B1FA2; }
+.rank-time { color: #555; }
+.rank-empty { font-size: 12px; color: #AAA; }
+
+/* READ BOX */
+.read-box {
+  display: none; background: #EDE7F6; border: 1.5px solid #CE93D8;
+  border-radius: 10px; padding: 12px 14px; margin-top: 10px;
+  font-size: 13.5px; line-height: 1.9;
+}
+
+/* MINITEST */
+.minitest { padding: 12px 14px 14px; border-bottom: 1px solid #F3F4F6; }
+.minitest:last-of-type { border-bottom: none; }
+.mt-stem { font-size: 14px; margin-bottom: 8px; line-height: 1.6; }
+.mt-num {
+  display: inline-block; background: #7B1FA2; color: #fff;
+  border-radius: 4px; padding: 1px 7px; font-size: 12px; font-weight: 700;
+  margin-right: 6px; vertical-align: middle;
+}
+.mt-choices { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+.mt-c {
+  background: #fff; border: 2px solid #CE93D8; color: #6A1B9A;
+  border-radius: 8px; padding: 6px 22px; font-size: 18px; font-weight: 900;
+  cursor: pointer; transition: all .15s;
+}
+.mt-c:hover { background: #F3E5F5; }
+.mt-c.correct { background: #4CAF50; border-color: #388E3C; color: #fff; }
+.mt-c.incorrect { background: #EF5350; border-color: #C62828; color: #fff; }
+.mt-c.disabled { pointer-events: none; opacity: .5; }
+.mt-exp {
+  display: none; border-left: 4px solid #4CAF50; border-radius: 4px;
+  padding: 8px 12px; font-size: 13.5px; margin-top: 6px; line-height: 1.6; background: #F1F8E9;
+}
+.mt-exp.show-err { background: #FFEBEE; border-color: #EF5350; }
+.mt-exp.visible { display: block; }
+
+/* Q4 */
+.q4 { padding: 12px 14px 14px; border-bottom: 1px solid #F3F4F6; }
+.q4:last-of-type { border-bottom: none; }
+.q4-stem { font-size: 14px; margin-bottom: 8px; line-height: 1.6; }
+.q4-num {
+  display: inline-block; background: #6A1B9A; color: #fff;
+  border-radius: 4px; padding: 1px 7px; font-size: 12px; font-weight: 700;
+  margin-right: 6px; vertical-align: middle;
+}
+.q4-choices { display: flex; flex-direction: column; gap: 6px; margin-bottom: 6px; }
+.q4-c {
+  background: #fff; border: 1.5px solid #CE93D8; color: #6A1B9A;
+  border-radius: 8px; padding: 8px 14px; font-size: 13.5px;
+  cursor: pointer; text-align: left; transition: all .15s; width: 100%;
+}
+.q4-c:hover { background: #F3E5F5; border-color: #7B1FA2; }
+.q4-c.correct { background: #4CAF50; border-color: #388E3C; color: #fff; font-weight: 700; }
+.q4-c.incorrect { background: #EF5350; border-color: #C62828; color: #fff; }
+.q4-c.disabled { pointer-events: none; }
+.q4-exp {
+  display: none; background: #E8F5E9; border-left: 4px solid #4CAF50;
+  border-radius: 4px; padding: 8px 12px; font-size: 13.5px; margin-top: 6px; line-height: 1.6;
+}
+.q4-exp.visible { display: block; }
+
+/* NEXT ACTIONS */
+.next-actions {
+  background: linear-gradient(135deg, #7B1FA2, #4A148C);
+  color: #fff; border-radius: 14px; padding: 24px 20px; text-align: center; margin-bottom: 24px;
+}
+.next-actions h3 { font-size: 18px; margin-bottom: 10px; }
+.next-actions p { font-size: 14px; opacity: .9; margin-bottom: 16px; line-height: 1.7; }
+.next-actions .links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.next-actions a {
+  background: rgba(255,255,255,.15); border: 1.5px solid rgba(255,255,255,.4);
+  color: #fff; border-radius: 24px; padding: 9px 20px; font-size: 14px; font-weight: 700;
+  text-decoration: none; transition: background .15s;
+}
+.next-actions a:hover { background: rgba(255,255,255,.28); }
+
+/* PAGENAV */
+.pagenav { display: flex; gap: 10px; margin-bottom: 40px; }
+.pagenav a {
+  flex: 1; background: #fff; border: 1.5px solid #CE93D8;
+  border-radius: 12px; padding: 12px 14px; text-decoration: none; color: #7B1FA2; transition: background .15s;
+}
+.pagenav a:hover { background: #F3E5F5; }
+.pagenav .label { font-size: 11px; color: #90A4AE; display: block; margin-bottom: 2px; }
+.pagenav .title { font-size: 13px; font-weight: 700; }
+.pagenav a.next { text-align: right; }
+
+code { font-family: "Courier New", monospace; font-weight: 700; font-size: 13px; background: #F3E5F5; padding: 1px 5px; border-radius: 3px; }
+@media (max-width: 520px) {
+  .pagenav { flex-direction: column; }
+  .btb-bar { gap: 6px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <span class="brand">⚗️ GAMBA 中学理科</span>
+  <span class="sep">|</span>
+  <a href="file:///C:/Users/tinbu/Downloads/jscieincetangen.html">📋 単元表</a>
+  <span class="sep">|</span>
+  <a href="file:///C:/Users/tinbu/Downloads/ion2.html">← 第2回</a>
+  <span class="sep">|</span>
+  <span style="color:#fff;font-weight:700;">第3回 中和・塩</span>
+  <span class="sep">|</span>
+  <a href="file:///C:/Users/tinbu/Downloads/ion3-drill.html">ドリル →</a>
+</nav>
+
+<div class="wrap">
+
+<div class="hero">
+  <div class="crumb">GAMBA 中学理科 › イオン講座 第3回</div>
+  <h1>🧪 第3回　中和・塩</h1>
+  <div class="sub">酸・アルカリの性質 ／ 中和と塩 ／ 中和滴定・イオンの変化<br>江原予備校 理科3年　化学変化とイオン</div>
+</div>
+
+
+<!-- ========================================================= -->
+<!-- UNIT 1: 酸・アルカリの性質とイオン                          -->
+<!-- ========================================================= -->
+<div class="unit">
+  <div class="unit-title"><span class="unit-num">1</span>酸・アルカリの性質とイオン</div>
+  <div class="unit-body">
+
+    <div class="kw-box">
+      <div class="label">🔑 キーワード</div>
+      <strong>酸</strong> ＝ 水に溶けると <strong>水素イオン（H⁺）</strong> を生じる電解質<br>
+      <strong>アルカリ</strong> ＝ 水に溶けると <strong>水酸化物イオン（OH⁻）</strong> を生じる電解質
+    </div>
+
+    <div class="section-sub">🧪 指示薬の色変化</div>
+    <table class="ind-table">
+      <thead>
+        <tr><th>指示薬</th><th>酸性</th><th>中性</th><th>アルカリ性</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>リトマス試験紙（青）</td>
+          <td class="cell-acid">赤に変化 🔴</td>
+          <td>変化なし</td>
+          <td>変化なし</td>
+        </tr>
+        <tr>
+          <td>リトマス試験紙（赤）</td>
+          <td>変化なし</td>
+          <td>変化なし</td>
+          <td class="cell-alk">青に変化 🔵</td>
+        </tr>
+        <tr>
+          <td>BTB溶液</td>
+          <td class="cell-acid">黄 🟡</td>
+          <td class="cell-neu">緑 🟢</td>
+          <td class="cell-alk">青 🔵</td>
+        </tr>
+        <tr>
+          <td>フェノールフタレイン</td>
+          <td>無色（変化なし）</td>
+          <td>無色（変化なし）</td>
+          <td class="cell-alk">赤（桃）色 🔴</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 暗記法 -->
+    <div class="mnemo-box">
+      <h4>💡 【暗記法】指示薬の覚え方</h4>
+      <div class="mnemo-item">
+        <span class="mnemo-key">おかあさん → 青赤酸</span>
+        <span class="mnemo-desc">
+          リトマス紙（<b>お</b>=青）が <b>か</b>=変化して <b>あ</b>=赤になったら <b>さん</b>=酸性！<br>
+          「お・か・あ・さん」＝「青→赤＝酸」と覚えよう。
+        </span>
+      </div>
+      <div class="mnemo-item">
+        <span class="mnemo-key">酸黄・中緑・アル青</span>
+        <span class="mnemo-desc">
+          BTB溶液：<b>さんき</b>（酸性＝黄）・<b>ちゅうりょく</b>（中性＝緑）・<b>あるあお</b>（アルカリ性＝青）
+        </span>
+      </div>
+      <div class="mnemo-item">
+        <span class="mnemo-key">ムームー赤（無無赤）</span>
+        <span class="mnemo-desc">
+          フェノールフタレイン：<b>無色</b>（酸性）・<b>無色</b>（中性）・<b>赤</b>（アルカリ性）<br>
+          「ムー・ムー・赤」と声に出して覚えよう！
+        </span>
+      </div>
+    </div>
+
+    <!-- Challenge 1-1 -->
+    <div class="section-sub">⚡ 暗記チャレンジ 1-1　酸の性質</div>
+    <div class="stage challenge" data-ch-id="u1-1" data-target="#rb-u1-1" data-timer="60">
+      <div class="stage-title">⏱ 語群から選んでクリック → 空欄をうめよう！（空欄をクリックで取り消し）</div>
+      <div class="ch-body">
+        酸は水に溶けると<span class="kw-blank" data-kw="水素">　　　</span>イオン（H⁺）を生じます。
+        酸性の水溶液はリトマス試験紙（<span class="kw-blank" data-kw="青色">　　　</span>）を
+        <span class="kw-blank" data-kw="赤色">　　　</span>に変えます。
+        BTB溶液は<span class="kw-blank" data-kw="黄">　　</span>色になり、
+        フェノールフタレイン液は<span class="kw-blank" data-kw="無色">　　　</span>のままです。
+      </div>
+      <div class="word-bank">
+        <button class="wb-btn" data-kw="水素">水素</button>
+        <button class="wb-btn" data-kw="水酸化物">水酸化物</button>
+        <button class="wb-btn" data-kw="青色">青色</button>
+        <button class="wb-btn" data-kw="赤色">赤色</button>
+        <button class="wb-btn" data-kw="黄">黄</button>
+        <button class="wb-btn" data-kw="緑">緑</button>
+        <button class="wb-btn" data-kw="無色">無色</button>
+        <button class="wb-btn" data-kw="赤紫">赤紫</button>
+      </div>
+      <div class="ch-controls">
+        <span class="ch-timer">60秒</span>
+        <button class="ch-judge-btn">✔ 判定する</button>
+        <button class="ch-reset-btn">↻ リセット</button>
+        <button class="ch-cancel-btn">✕ キャンセル</button>
+        <span class="ch-result"></span>
+      </div>
+      <div class="ranking-wrap">
+        <div class="ranking-title">🏆 タイムランキング</div>
+        <div class="ranking-list" id="ranking-u1-1"><span class="rank-empty">まだ記録なし</span></div>
+      </div>
+    </div>
+
+    <div class="read-box" id="rb-u1-1">
+      <strong>✅ 確認ポイント</strong><br>
+      ・酸 → <strong>水素イオン（H⁺）</strong> を生じる<br>
+      ・アルカリ → <strong>水酸化物イオン（OH⁻）</strong> を生じる<br>
+      ・BTB：酸性=黄・中性=緑・アルカリ性=青<br>
+      ・フェノールフタレイン：アルカリ性のときだけ赤（桃）色になる
+    </div>
+
+    <!-- 確認問題 Unit 1 -->
+    <div class="section-sub">📝 確認問題</div>
+
+    <div class="minitest" data-correct="o">
+      <div class="mt-stem"><span class="mt-num">問1</span>酸の水溶液にリトマス試験紙（青色）をつけると赤色に変化する。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">○ 正解です。酸の水溶液はH⁺を含み、<strong>青色リトマスを赤色</strong>に変えます。</div>
+    </div>
+
+    <div class="minitest" data-correct="x">
+      <div class="mt-stem"><span class="mt-num">問2</span>アルカリの水溶液には水素イオン（H⁺）が多く含まれている。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">× アルカリの水溶液には<strong>水酸化物イオン（OH⁻）</strong>が多く含まれています。H⁺が多いのは酸性です。</div>
+    </div>
+
+    <div class="q4" data-correct="b">
+      <div class="q4-stem"><span class="q4-num">問3</span>BTB溶液が緑色を示す水溶液はどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：酸性の水溶液</button>
+        <button class="q4-c" data-v="b">イ：中性の水溶液</button>
+        <button class="q4-c" data-v="c">ウ：アルカリ性の水溶液</button>
+        <button class="q4-c" data-v="d">エ：すべての水溶液</button>
+      </div>
+      <div class="q4-exp">正解は<strong>イ：中性の水溶液</strong>。BTBは酸性=黄・中性=<strong>緑</strong>・アルカリ性=青と覚えましょう。</div>
+    </div>
+
+    <div class="q4" data-correct="c">
+      <div class="q4-stem"><span class="q4-num">問4</span>フェノールフタレイン溶液を加えると赤（桃）色になる水溶液はどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：酸性の水溶液</button>
+        <button class="q4-c" data-v="b">イ：中性の水溶液</button>
+        <button class="q4-c" data-v="c">ウ：アルカリ性の水溶液</button>
+        <button class="q4-c" data-v="d">エ：酸性とアルカリ性の両方</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ウ：アルカリ性</strong>。フェノールフタレインは<strong>アルカリ性のときだけ</strong>赤（桃）色になります。酸性・中性では無色です。</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ========================================================= -->
+<!-- UNIT 2: 中和と塩                                            -->
+<!-- ========================================================= -->
+<div class="unit">
+  <div class="unit-title"><span class="unit-num">2</span>中和と塩（えん）</div>
+  <div class="unit-body">
+
+    <div class="kw-box">
+      <div class="label">🔑 キーワード</div>
+      <strong>中和</strong>……酸性の水溶液とアルカリ性の水溶液を混ぜると、それぞれの性質を<strong>互いに打ち消し合う</strong>反応<br>
+      <strong>塩（えん）</strong>……中和によってできた物質（NaCl・BaSO₄など）
+    </div>
+
+    <div class="info-box">
+      <div class="head">💡 中和の本質</div>
+      酸のH⁺とアルカリのOH⁻が結合して<strong>水（H₂O）</strong>ができます。<br>
+      <div style="text-align:center;font-size:16px;font-weight:700;margin:8px 0;">
+        H⁺ ＋ OH⁻ → H₂O
+      </div>
+      この反応が中和の核心です。
+    </div>
+
+    <!-- 中和の反応図 -->
+    <div class="section-sub">🔬 塩酸と水酸化ナトリウム水溶液の中和</div>
+    <p style="font-size:14px;line-height:1.8;margin:6px 0 10px;">
+      塩酸（酸性）と水酸化ナトリウム溶液（アルカリ性）の中和について、次のような化学反応を行います。
+    </p>
+    <div style="text-align:center;margin:0 0 16px;">
+      <img src="file:///C:/Users/tinbu/Downloads/ion12.png" alt="塩酸と水酸化ナトリウム水溶液の中和反応図（HCl+NaOH→NaCl+H₂O）" style="max-width:100%;border-radius:8px;border:1px solid #D1C4E9;">
+      <div style="font-size:12px;color:#555;margin-top:4px;">図：塩酸と水酸化ナトリウム水溶液の中和（ion12.png）</div>
+    </div>
+
+    <!-- 硫酸＋水酸化バリウムの反応図 -->
+    <div class="section-sub">🔬 硫酸と水酸化バリウム水溶液の中和</div>
+    <p style="font-size:14px;line-height:1.8;margin:6px 0 10px;">
+      続いて、硫酸（H₂SO₄）と水酸化バリウム（Ba(OH)₂）水溶液の中和について、次のような化学反応を行います。
+    </p>
+    <div style="text-align:center;margin:0 0 16px;">
+      <img src="file:///C:/Users/tinbu/Downloads/ion13.png" alt="硫酸と水酸化バリウム水溶液の中和反応図（H₂SO₄+Ba(OH)₂→BaSO₄↓+2H₂O）" style="max-width:100%;border-radius:8px;border:1px solid #D1C4E9;">
+      <div style="font-size:12px;color:#555;margin-top:4px;">図：硫酸と水酸化バリウム水溶液の中和（ion13.png）</div>
+    </div>
+
+    <!-- ミニテスト：塩酸とNaOHの中和 -->
+    <div class="section-sub">📝 ミニテスト　塩酸と水酸化ナトリウム水溶液の中和</div>
+
+    <div class="q4" data-correct="a">
+      <div class="q4-stem"><span class="q4-num">問1</span>塩酸（HCl）の電離式として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：HCl → H⁺ ＋ Cl⁻</button>
+        <button class="q4-c" data-v="b">イ：HCl → H ＋ Cl</button>
+        <button class="q4-c" data-v="c">ウ：HCl → H₂⁺ ＋ Cl⁻</button>
+        <button class="q4-c" data-v="d">エ：HCl → H⁺ ＋ Cl²⁻</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ア：HCl → H⁺ ＋ Cl⁻</strong>。塩酸は水中で<strong>水素イオン（H⁺）</strong>と<strong>塩化物イオン（Cl⁻）</strong>に電離します。イは電荷がなく誤り。ウ・エはイオンの価数が誤りです。</div>
+    </div>
+
+    <div class="q4" data-correct="b">
+      <div class="q4-stem"><span class="q4-num">問2</span>水酸化ナトリウム（NaOH）の電離式として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：NaOH → Na ＋ OH</button>
+        <button class="q4-c" data-v="b">イ：NaOH → Na⁺ ＋ OH⁻</button>
+        <button class="q4-c" data-v="c">ウ：NaOH → Na⁺ ＋ OH₂⁻</button>
+        <button class="q4-c" data-v="d">エ：2NaOH → 2Na⁺ ＋ O²⁻ ＋ H₂</button>
+      </div>
+      <div class="q4-exp">正解は<strong>イ：NaOH → Na⁺ ＋ OH⁻</strong>。NaOHは水中で<strong>ナトリウムイオン（Na⁺）</strong>と<strong>水酸化物イオン（OH⁻）</strong>に電離します。このOH⁻がアルカリ性の原因です。</div>
+    </div>
+
+    <div class="q4" data-correct="c">
+      <div class="q4-stem"><span class="q4-num">問3</span>塩酸と水酸化ナトリウム水溶液の中和の化学反応式として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：HCl ＋ NaOH → NaCl ＋ H</button>
+        <button class="q4-c" data-v="b">イ：2HCl ＋ NaOH → NaCl ＋ H₂O</button>
+        <button class="q4-c" data-v="c">ウ：HCl ＋ NaOH → NaCl ＋ H₂O</button>
+        <button class="q4-c" data-v="d">エ：HCl ＋ 2NaOH → NaCl ＋ 2H₂O</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ウ：HCl ＋ NaOH → NaCl ＋ H₂O</strong>。係数を確認すると両辺ともNa1・Cl1・H2・O1で一致します。アはH₂Oが正しく書かれておらず、イ・エは係数が合いません。</div>
+    </div>
+
+    <div class="q4" data-correct="d">
+      <div class="q4-stem"><span class="q4-num">問4</span>問3の反応でできた<strong>塩（えん）</strong>の名称として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：塩化カリウム</button>
+        <button class="q4-c" data-v="b">イ：硫酸ナトリウム</button>
+        <button class="q4-c" data-v="c">ウ：炭酸ナトリウム</button>
+        <button class="q4-c" data-v="d">エ：塩化ナトリウム</button>
+      </div>
+      <div class="q4-exp">正解は<strong>エ：塩化ナトリウム（NaCl）</strong>。HClのCl⁻とNaOHのNa⁺が結びついてできた塩（えん）が塩化ナトリウムです。食塩（NaCl）と同じ物質です。</div>
+    </div>
+
+    <div class="q4" data-correct="a">
+      <div class="q4-stem"><span class="q4-num">問5</span>問4の塩（えん）である塩化ナトリウム（NaCl）の性質として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：水によく溶け、水溶液は中性を示す</button>
+        <button class="q4-c" data-v="b">イ：水に溶けにくい白色の固体で沈殿する</button>
+        <button class="q4-c" data-v="c">ウ：水に溶けると強い酸性を示す</button>
+        <button class="q4-c" data-v="d">エ：水に溶けると強いアルカリ性を示す</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ア</strong>。塩化ナトリウム（NaCl）は水に<strong>よく溶ける</strong>塩（えん）で、水溶液は<strong>中性</strong>を示します。水に溶けにくい沈殿になるのは硫酸バリウム（BaSO₄）などです。</div>
+    </div>
+
+    <div class="q4" data-correct="b">
+      <div class="q4-stem"><span class="q4-num">問6</span>水素イオン（H⁺）と水酸化物イオン（OH⁻）の中和反応式として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：H⁺ ＋ OH⁻ → H₂O₂</button>
+        <button class="q4-c" data-v="b">イ：H⁺ ＋ OH⁻ → H₂O</button>
+        <button class="q4-c" data-v="c">ウ：2H⁺ ＋ OH⁻ → H₂O</button>
+        <button class="q4-c" data-v="d">エ：H⁺ ＋ 2OH⁻ → H₂O</button>
+      </div>
+      <div class="q4-exp">正解は<strong>イ：H⁺ ＋ OH⁻ → H₂O</strong>。中和の本質はこの式です。H⁺とOH⁻が1：1の比で結合して水（H₂O）ができます。アのH₂O₂は過酸化水素で別物です。</div>
+    </div>
+
+    <div class="q4" data-correct="d">
+      <div class="q4-stem"><span class="q4-num">問7</span>塩酸と水酸化ナトリウム水溶液を中和したのち、水溶液を加熱・自然乾燥すると白色の粉末が見られた。この物質は何か。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：塩化カルシウム（CaCl₂）</button>
+        <button class="q4-c" data-v="b">イ：硫酸ナトリウム（Na₂SO₄）</button>
+        <button class="q4-c" data-v="c">ウ：炭酸ナトリウム（Na₂CO₃）</button>
+        <button class="q4-c" data-v="d">エ：塩化ナトリウム（NaCl）</button>
+      </div>
+      <div class="q4-exp">正解は<strong>エ：塩化ナトリウム（NaCl）</strong>。HCl ＋ NaOH → NaCl ＋ H₂O の反応でできた塩化ナトリウムは、水を蒸発させると<strong>白色の結晶（食塩）</strong>として残ります。</div>
+    </div>
+
+    <!-- ミニテスト2：硫酸とBa(OH)2の中和 -->
+    <div class="section-sub" style="margin-top:24px;">📝 ミニテスト　硫酸と水酸化バリウムの中和</div>
+
+    <div class="q4" data-correct="a">
+      <div class="q4-stem"><span class="q4-num">問1</span>硫酸（H₂SO₄）の電離式として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：H₂SO₄ → 2H⁺ ＋ SO₄²⁻</button>
+        <button class="q4-c" data-v="b">イ：H₂SO₄ → H⁺ ＋ SO₄²⁻</button>
+        <button class="q4-c" data-v="c">ウ：H₂SO₄ → H₂²⁺ ＋ SO₄²⁻</button>
+        <button class="q4-c" data-v="d">エ：H₂SO₄ → 2H⁺ ＋ SO₄³⁻</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ア：H₂SO₄ → 2H⁺ ＋ SO₄²⁻</strong>。硫酸は<strong>2価の酸</strong>で、水中でH⁺を2個放出します。SO₄²⁻は<strong>硫酸イオン（価数2−）</strong>です。イはH⁺の係数が抜けており、エはSO₄の価数が誤りです。</div>
+    </div>
+
+    <div class="q4" data-correct="b">
+      <div class="q4-stem"><span class="q4-num">問2</span>水酸化バリウム（Ba(OH)₂）の電離式として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：Ba(OH)₂ → Ba ＋ 2OH</button>
+        <button class="q4-c" data-v="b">イ：Ba(OH)₂ → Ba²⁺ ＋ 2OH⁻</button>
+        <button class="q4-c" data-v="c">ウ：Ba(OH)₂ → Ba⁺ ＋ 2OH⁻</button>
+        <button class="q4-c" data-v="d">エ：Ba(OH)₂ → 2Ba²⁺ ＋ SO₄²⁻</button>
+      </div>
+      <div class="q4-exp">正解は<strong>イ：Ba(OH)₂ → Ba²⁺ ＋ 2OH⁻</strong>。バリウムは<strong>2価の陽イオン（Ba²⁺）</strong>になり、OH⁻を2個放出します。アは電荷がなく誤り。ウはBaの価数が間違いです。</div>
+    </div>
+
+    <div class="q4" data-correct="c">
+      <div class="q4-stem"><span class="q4-num">問3</span>硫酸と水酸化バリウム水溶液の中和の化学反応式として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：H₂SO₄ ＋ Ba(OH)₂ → BaSO₄ ＋ H₂O</button>
+        <button class="q4-c" data-v="b">イ：H₂SO₄ ＋ 2Ba(OH)₂ → 2BaSO₄ ＋ H₂O</button>
+        <button class="q4-c" data-v="c">ウ：H₂SO₄ ＋ Ba(OH)₂ → BaSO₄ ＋ 2H₂O</button>
+        <button class="q4-c" data-v="d">エ：2H₂SO₄ ＋ Ba(OH)₂ → BaSO₄ ＋ 2H₂O</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ウ：H₂SO₄ ＋ Ba(OH)₂ → BaSO₄ ＋ 2H₂O</strong>。両辺を確認すると Ba1・S1・O6・H4で一致します。H₂SO₄のH₂とBa(OH)₂の(OH)₂が2個の水（2H₂O）をつくる点がポイントです。</div>
+    </div>
+
+    <div class="q4" data-correct="d">
+      <div class="q4-stem"><span class="q4-num">問4</span>問3の反応でできた<strong>塩（えん）</strong>はどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：塩化ナトリウム（NaCl）</button>
+        <button class="q4-c" data-v="b">イ：硫酸ナトリウム（Na₂SO₄）</button>
+        <button class="q4-c" data-v="c">ウ：塩化バリウム（BaCl₂）</button>
+        <button class="q4-c" data-v="d">エ：硫酸バリウム（BaSO₄）</button>
+      </div>
+      <div class="q4-exp">正解は<strong>エ：硫酸バリウム（BaSO₄）</strong>。H₂SO₄のSO₄²⁻とBa(OH)₂のBa²⁺が結びついてできた塩（えん）が硫酸バリウムです。</div>
+    </div>
+
+    <div class="q4" data-correct="a">
+      <div class="q4-stem"><span class="q4-num">問5</span>問4の硫酸バリウム（BaSO₄）は水に溶けるか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：溶けない（白色の沈殿になる）</button>
+        <button class="q4-c" data-v="b">イ：溶ける（水溶液になる）</button>
+      </div>
+      <div class="q4-exp">正解は<strong>イ：溶けない</strong>。BaSO₄は水に<strong>ほとんど溶けない</strong>白色の固体で、中和反応によって<strong>白色の沈殿</strong>として生じます。これが塩酸とNaOHの中和（NaClは水に溶ける）との大きな違いです。</div>
+    </div>
+
+    <!-- Challenge 2-1 -->
+    <div class="section-sub">⚡ 暗記チャレンジ 2-1　中和とは</div>
+    <div class="stage challenge" data-ch-id="u2-1" data-target="#rb-u2-1" data-timer="50">
+      <div class="stage-title">⏱ 語群から選んでクリック → 空欄をうめよう！（空欄をクリックで取り消し）</div>
+      <div class="ch-body">
+        酸性の水溶液とアルカリ性の水溶液を混ぜると、それぞれの性質を互いに
+        <span class="kw-blank" data-kw="打ち消し">　　　　</span>合う反応が起こります。
+        この反応を<span class="kw-blank" data-kw="中和">　　　</span>といいます。
+        中和によってできた物質を<span class="kw-blank" data-kw="塩（えん）">　　　　</span>といいます。
+        このとき水素イオン（H⁺）と水酸化物イオン（OH⁻）が結合して
+        <span class="kw-blank" data-kw="水">　</span>（H₂O）ができます。
+      </div>
+      <div class="word-bank">
+        <button class="wb-btn" data-kw="打ち消し">打ち消し</button>
+        <button class="wb-btn" data-kw="加え合わせ">加え合わせ</button>
+        <button class="wb-btn" data-kw="中和">中和</button>
+        <button class="wb-btn" data-kw="電気分解">電気分解</button>
+        <button class="wb-btn" data-kw="塩（えん）">塩（えん）</button>
+        <button class="wb-btn" data-kw="水">水</button>
+      </div>
+      <div class="ch-controls">
+        <span class="ch-timer">50秒</span>
+        <button class="ch-judge-btn">✔ 判定する</button>
+        <button class="ch-reset-btn">↻ リセット</button>
+        <button class="ch-cancel-btn">✕ キャンセル</button>
+        <span class="ch-result"></span>
+      </div>
+      <div class="ranking-wrap">
+        <div class="ranking-title">🏆 タイムランキング</div>
+        <div class="ranking-list" id="ranking-u2-1"><span class="rank-empty">まだ記録なし</span></div>
+      </div>
+    </div>
+    <div class="read-box" id="rb-u2-1">
+      <strong>✅ 確認ポイント</strong><br>
+      中和 ＝ 酸＋アルカリ → <strong>塩（えん）＋水</strong><br>
+      本質：<strong>H⁺ ＋ OH⁻ → H₂O</strong>（水が生じる）<br>
+      ※塩（えん）は食塩（塩化ナトリウム）だけでなく、様々な物質があります。
+    </div>
+
+    <!-- Challenge 2-2 -->
+    <div class="section-sub">⚡ 暗記チャレンジ 2-2　化学反応式</div>
+    <div class="eq-box" style="margin-bottom:8px;">
+      <div class="eq-label">参考 — 2つの中和反応式</div>
+      ① HCl ＋ NaOH → NaCl ＋ H₂O<br>
+      ② H₂SO₄ ＋ Ba(OH)₂ → BaSO₄ ＋ 2H₂O
+    </div>
+    <div class="stage challenge" data-ch-id="u2-2" data-target="#rb-u2-2" data-timer="60">
+      <div class="stage-title">⏱ 語群から選んでクリック → 空欄をうめよう！（空欄をクリックで取り消し）</div>
+      <div class="ch-body">
+        ① 塩酸 ＋ 水酸化ナトリウム →
+        <span class="kw-blank" data-kw="塩化ナトリウム">　　　　　</span>（NaCl） ＋
+        <span class="kw-blank" data-kw="水">　</span>（H₂O）<br>
+        ② 硫酸 ＋ 水酸化バリウム →
+        <span class="kw-blank" data-kw="硫酸バリウム">　　　　　</span>（BaSO₄） ＋ 2H₂O<br>
+        BaSO₄は水に溶けにくい<span class="kw-blank" data-kw="白色">　　　</span>の
+        <span class="kw-blank" data-kw="沈殿">　　　</span>ができます。
+      </div>
+      <div class="word-bank">
+        <button class="wb-btn" data-kw="塩化ナトリウム">塩化ナトリウム</button>
+        <button class="wb-btn" data-kw="水酸化ナトリウム">水酸化ナトリウム</button>
+        <button class="wb-btn" data-kw="水">水</button>
+        <button class="wb-btn" data-kw="硫酸バリウム">硫酸バリウム</button>
+        <button class="wb-btn" data-kw="硫酸ナトリウム">硫酸ナトリウム</button>
+        <button class="wb-btn" data-kw="白色">白色</button>
+        <button class="wb-btn" data-kw="黒色">黒色</button>
+        <button class="wb-btn" data-kw="沈殿">沈殿</button>
+      </div>
+      <div class="ch-controls">
+        <span class="ch-timer">60秒</span>
+        <button class="ch-judge-btn">✔ 判定する</button>
+        <button class="ch-reset-btn">↻ リセット</button>
+        <button class="ch-cancel-btn">✕ キャンセル</button>
+        <span class="ch-result"></span>
+      </div>
+      <div class="ranking-wrap">
+        <div class="ranking-title">🏆 タイムランキング</div>
+        <div class="ranking-list" id="ranking-u2-2"><span class="rank-empty">まだ記録なし</span></div>
+      </div>
+    </div>
+    <div class="read-box" id="rb-u2-2">
+      <strong>✅ 確認ポイント</strong><br>
+      ① HCl ＋ NaOH → <span style="color:#7B1FA2;font-weight:700;">NaCl（塩化ナトリウム）</span> ＋ H₂O<br>
+      ② H₂SO₄ ＋ Ba(OH)₂ → <span style="color:#7B1FA2;font-weight:700;">BaSO₄（硫酸バリウム）</span> ＋ 2H₂O<br>
+      BaSO₄ は水に溶けにくい<strong>白色の沈殿</strong>ができるのが特徴！
+    </div>
+
+    <!-- 確認問題 Unit 2 -->
+    <div class="section-sub">📝 確認問題</div>
+
+    <div class="minitest" data-correct="o">
+      <div class="mt-stem"><span class="mt-num">問5</span>中和では酸もアルカリもその性質が打ち消しあって弱まっていく。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">○ 正解です。H⁺とOH⁻が結合してH₂Oになることで、酸性・アルカリ性の性質が互いに打ち消されます。</div>
+    </div>
+
+    <div class="minitest" data-correct="x">
+      <div class="mt-stem"><span class="mt-num">問6</span>すべての中和反応で白色の沈殿が生じる。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">× 白色の沈殿（BaSO₄）が生じるのは<strong>硫酸＋水酸化バリウム</strong>の中和のときです。塩酸＋水酸化ナトリウムでは沈殿は生じません。</div>
+    </div>
+
+    <div class="minitest" data-correct="o">
+      <div class="mt-stem"><span class="mt-num">問7</span>HCl ＋ NaOH → NaCl ＋ H₂O の NaCl を「塩（えん）」という。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">○ 正解です。NaCl（塩化ナトリウム）は中和によってできた<strong>塩（えん）</strong>です。食塩とも呼ばれますが、化学的には「塩」の一種です。</div>
+    </div>
+
+    <div class="q4" data-correct="c">
+      <div class="q4-stem"><span class="q4-num">問8</span>HCl ＋ NaOH → （　　）＋ H₂O　の（　）に入る物質はどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：NaOH（水酸化ナトリウム）</button>
+        <button class="q4-c" data-v="b">イ：HCl（塩酸）</button>
+        <button class="q4-c" data-v="c">ウ：NaCl（塩化ナトリウム）</button>
+        <button class="q4-c" data-v="d">エ：Na₂SO₄（硫酸ナトリウム）</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ウ：NaCl（塩化ナトリウム）</strong>。HClのCl⁻とNaOHのNa⁺が結合して塩化ナトリウム（食塩）ができます。</div>
+    </div>
+
+    <div class="q4" data-correct="d">
+      <div class="q4-stem"><span class="q4-num">問9</span>H₂SO₄ ＋ Ba(OH)₂ → BaSO₄ ＋ 2H₂O の反応で生じる沈殿（BaSO₄）の色は？</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：赤色</button>
+        <button class="q4-c" data-v="b">イ：青色</button>
+        <button class="q4-c" data-v="c">ウ：黄色</button>
+        <button class="q4-c" data-v="d">エ：白色</button>
+      </div>
+      <div class="q4-exp">正解は<strong>エ：白色</strong>。BaSO₄（硫酸バリウム）は水に溶けにくい<strong>白色</strong>の沈殿です。この沈殿が生じることで中和の証拠を目で確認できます。</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ========================================================= -->
+<!-- UNIT 3: 中和滴定とイオンの変化                              -->
+<!-- ========================================================= -->
+<div class="unit">
+  <div class="unit-title"><span class="unit-num">3</span>中和滴定とイオンの変化</div>
+  <div class="unit-body">
+
+    <div class="section-sub">🎨 BTB溶液の色変化</div>
+    <p style="font-size:14px;margin-bottom:8px;">塩酸にNaOH水溶液を少しずつ加えていくと：</p>
+    <div class="btb-bar">
+      <div class="btb-cell btb-y">酸性<br>🟡 黄色</div>
+      <span class="btb-arr">→</span>
+      <div class="btb-cell btb-g">中性<br>🟢 緑色<br><span style="font-size:11px;">← 中和点！</span></div>
+      <span class="btb-arr">→</span>
+      <div class="btb-cell btb-b">アルカリ性<br>🔵 青色</div>
+    </div>
+
+    <!-- Challenge 3-1 -->
+    <div class="section-sub">⚡ 暗記チャレンジ 3-1　BTBと中和点</div>
+    <div class="stage challenge" data-ch-id="u3-1" data-target="#rb-u3-1" data-timer="45">
+      <div class="stage-title">⏱ 語群から選んでクリック → 空欄をうめよう！（空欄をクリックで取り消し）</div>
+      <div class="ch-body">
+        塩酸にNaOH水溶液を少しずつ加えると、BTB溶液の色は
+        <span class="kw-blank" data-kw="黄">　</span>色 →
+        <span class="kw-blank" data-kw="緑">　</span>色 →
+        <span class="kw-blank" data-kw="青">　</span>色 と変化します。
+        BTBが緑色になった時点が<span class="kw-blank" data-kw="中和点">　　　　</span>で、水溶液は中性です。
+      </div>
+      <div class="word-bank">
+        <button class="wb-btn" data-kw="黄">黄</button>
+        <button class="wb-btn" data-kw="緑">緑</button>
+        <button class="wb-btn" data-kw="青">青</button>
+        <button class="wb-btn" data-kw="中和点">中和点</button>
+        <button class="wb-btn" data-kw="赤">赤</button>
+        <button class="wb-btn" data-kw="電離点">電離点</button>
+      </div>
+      <div class="ch-controls">
+        <span class="ch-timer">45秒</span>
+        <button class="ch-judge-btn">✔ 判定する</button>
+        <button class="ch-reset-btn">↻ リセット</button>
+        <button class="ch-cancel-btn">✕ キャンセル</button>
+        <span class="ch-result"></span>
+      </div>
+      <div class="ranking-wrap">
+        <div class="ranking-title">🏆 タイムランキング</div>
+        <div class="ranking-list" id="ranking-u3-1"><span class="rank-empty">まだ記録なし</span></div>
+      </div>
+    </div>
+    <div class="read-box" id="rb-u3-1">
+      <strong>✅ 確認ポイント</strong><br>
+      BTB：<strong>黄（酸性）→ 緑（中性・中和点）→ 青（アルカリ性）</strong><br>
+      リトマス紙（赤→青）もアルカリ性で変化。中和点の確認にはBTBが最もわかりやすい！
+    </div>
+
+    <!-- 電流変化の説明 -->
+    <div class="section-sub">📊 電流の変化（HCl + NaOH）</div>
+
+    <!-- ion14.png：電流グラフ + ビーカー図 -->
+    <div style="text-align:center;margin:0 0 16px;">
+      <img src="file:///C:/Users/tinbu/Downloads/ion14.png" alt="電流の変化グラフと各点でのイオンの様子（HCl+NaOH中和実験）" style="max-width:100%;border-radius:8px;border:1px solid #D1C4E9;">
+      <div style="font-size:12px;color:#555;margin-top:4px;">図：電流の変化と各点のイオンの様子（ion14.png）</div>
+    </div>
+
+    <!-- 語群穴埋め：a b c d → ア イ ウ エ -->
+    <div class="eq-box" id="abcd-box" style="margin-bottom:18px;">
+      <div class="eq-label" style="font-size:14px;">🔍 グラフの各点に当てはまるビーカーの図を語群から選ぼう！</div>
+      <div style="font-size:13px;color:#555;margin-bottom:8px;">① 空欄をクリックして選択（紫枠が出る）→ ② 下の語群ボタンをクリックして入力　空欄をもう一度クリックで選び直せます。</div>
+      <div style="font-size:14px;line-height:2.4;margin-top:6px;">
+        点 <strong>a</strong> に当てはまる図 ：
+        <span class="abcd-blank" style="display:inline-block;min-width:2.2em;border-bottom:2px solid #7B1FA2;text-align:center;cursor:pointer;padding:2px 10px;border-radius:6px;background:#F3E5F5;font-weight:700;">　</span>
+        　　点 <strong>b</strong> に当てはまる図 ：
+        <span class="abcd-blank" style="display:inline-block;min-width:2.2em;border-bottom:2px solid #7B1FA2;text-align:center;cursor:pointer;padding:2px 10px;border-radius:6px;background:#F3E5F5;font-weight:700;">　</span>
+        　　点 <strong>c</strong> に当てはまる図 ：
+        <span class="abcd-blank" style="display:inline-block;min-width:2.2em;border-bottom:2px solid #7B1FA2;text-align:center;cursor:pointer;padding:2px 10px;border-radius:6px;background:#F3E5F5;font-weight:700;">　</span>
+        　　点 <strong>d</strong> に当てはまる図 ：
+        <span class="abcd-blank" style="display:inline-block;min-width:2.2em;border-bottom:2px solid #7B1FA2;text-align:center;cursor:pointer;padding:2px 10px;border-radius:6px;background:#F3E5F5;font-weight:700;">　</span>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="abcd-wbtn" data-v="ア" style="background:#CE93D8;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;font-weight:700;">ア</button>
+        <button class="abcd-wbtn" data-v="イ" style="background:#CE93D8;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;font-weight:700;">イ</button>
+        <button class="abcd-wbtn" data-v="ウ" style="background:#CE93D8;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;font-weight:700;">ウ</button>
+        <button class="abcd-wbtn" data-v="エ" style="background:#CE93D8;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;font-weight:700;">エ</button>
+        <button onclick="checkAbcd()" style="background:#7B1FA2;color:#fff;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;font-weight:700;">✔ 答え合わせ</button>
+        <button onclick="resetAbcd()" style="background:#B39DDB;color:#fff;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;">↻ リセット</button>
+      </div>
+      <div id="abcd-result" style="margin-top:10px;font-size:14px;font-weight:700;"></div>
+    </div>
+
+    <!-- a b c d 解説 -->
+    <div class="info-box" style="margin-bottom:18px;background:linear-gradient(135deg,#F3E5F5 0%,#EDE7F6 100%);border-left:4px solid #7B1FA2;">
+      <div class="head" style="color:#6A1B9A;">🎓 各点の解説 — ビーカーの中のイオンはどうなっているの？</div>
+
+      <div style="margin-bottom:12px;">
+        <span style="display:inline-block;background:#7B1FA2;color:#fff;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-weight:700;margin-right:6px;">a</span>
+        <strong>点 a （実験開始直後）→ 図イ</strong><br>
+        　ビーカーの中にはまだ水酸化ナトリウム水溶液を加えていません。
+        塩酸（HCl）だけが入っているので、水溶液中には <strong>H⁺（水素イオン）</strong> と <strong>Cl⁻（塩化物イオン）</strong> がたくさん存在しています。
+        イオンが多いので電流も大きくなります。図イのビーカーにH⁺とCl⁻がびっしり並んでいるのがその証拠です！
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <span style="display:inline-block;background:#7B1FA2;color:#fff;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-weight:700;margin-right:6px;">b</span>
+        <strong>点 b （中和途中）→ 図エ</strong><br>
+        　NaOH水溶液を少し加えた状態です。加えた NaOH の OH⁻ が H⁺ と結合して水（H₂O）になり、
+        H⁺ の数が減り始めています。ただし H⁺ はまだ残っています。
+        図エのように、H₂O・Na⁺・Cl⁻・H⁺ が混在している状態です。
+        イオン全体の数が減ってきているので電流も少し下がります。
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <span style="display:inline-block;background:#7B1FA2;color:#fff;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-weight:700;margin-right:6px;">c</span>
+        <strong>点 c （中和点＝電流が最小）→ 図ウ</strong><br>
+        　H⁺ がすべて OH⁻ と結合して水になり、H⁺ がゼロになった瞬間が<strong>中和点</strong>です。
+        ビーカーの中には Na⁺ と Cl⁻ だけが残り、どちらも中和反応とは無関係に水溶液中に留まります。
+        図ウのように Na⁺・Cl⁻・H₂O だけになります。
+        H⁺ と OH⁻ が消えてもイオンはゼロにならない（Na⁺ と Cl⁻ が残る）ため、電流もゼロにはなりません。
+      </div>
+
+      <div>
+        <span style="display:inline-block;background:#7B1FA2;color:#fff;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-weight:700;margin-right:6px;">d</span>
+        <strong>点 d （中和点を過ぎた後）→ 図ア</strong><br>
+        　NaOH を加えすぎた状態です。H⁺ はゼロになっているので、
+        加えた NaOH の Na⁺ と OH⁻ がそのまま水溶液中に増えていきます。
+        図アのように Na⁺・OH⁻・Cl⁻・H₂O が混在していて、イオンの数が増えるほど電流が大きくなります。
+        グラフで点 d 以降の電流が右肩上がりになっているのはこのためです！
+      </div>
+    </div>
+
+    <!-- イオンの数の変化グラフ問題 -->
+    <div class="section-sub" style="margin-top:18px;">📈 イオンの数の変化グラフ</div>
+    <div class="eq-box" style="margin-bottom:12px;">
+      <div class="eq-label" style="font-size:14px;">📋 問題</div>
+      <div style="font-size:14px;line-height:1.9;margin-top:4px;">
+        次の図は、塩酸に水酸化ナトリウム水溶液を加えていく中で、
+        <strong>あるイオンの数の変化</strong>をあらわしたものです。
+        ア〜エのグラフは、それぞれどのイオンの変化を表しているでしょうか。
+      </div>
+    </div>
+
+    <!-- ion15.png：イオン数変化グラフ -->
+    <div style="text-align:center;margin:0 0 16px;">
+      <img src="file:///C:/Users/tinbu/Downloads/ion15.png" alt="イオンの数の変化グラフ（ア〜エ）" style="max-width:100%;border-radius:8px;border:1px solid #D1C4E9;">
+      <div style="font-size:12px;color:#555;margin-top:4px;">図：イオンの数の変化（ion15.png）</div>
+    </div>
+
+    <!-- イオン数グラフ解説 -->
+    <div class="info-box" style="margin-bottom:18px;background:linear-gradient(135deg,#EDE7F6 0%,#F3E5F5 100%);border-left:4px solid #9C27B0;">
+      <div class="head" style="color:#6A1B9A;">🔬 各グラフのイオンは何？ 詳しく見てみよう！</div>
+
+      <div style="margin-bottom:14px;">
+        <span style="display:inline-block;background:#F48FB1;color:#fff;border-radius:8px;padding:2px 12px;font-weight:700;margin-right:6px;">ア</span>
+        <strong>H⁺（水素イオン）のグラフ</strong><br>
+        　塩酸を最初にビーカーに入れたとき、H⁺ はたくさんいます。
+        NaOH 水溶液を加えるたびに <strong>H⁺ ＋ OH⁻ → H₂O</strong> の反応が起き、H⁺ がどんどん減ります。
+        中和点（NaOH がちょうど同量になった点）で H⁺ はゼロになり、
+        そのあとはいくら NaOH を加えても H⁺ は増えません（ゼロのまま）。
+        → グラフは <strong>右下がりでゼロになり、そのあと水平（ア）</strong> になります！
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <span style="display:inline-block;background:#A5D6A7;color:#fff;border-radius:8px;padding:2px 12px;font-weight:700;margin-right:6px;">イ</span>
+        <strong>Na⁺（ナトリウムイオン）のグラフ</strong><br>
+        　Na⁺ は NaOH 水溶液と一緒に加えられます。実験の最初はゼロですが、
+        NaOH を加えるたびに Na⁺ が増えていきます。
+        中和反応が起きても Na⁺ は消費されません（H⁺ と結合しないのです）。
+        だから加えれば加えるほどずっと増え続けます。
+        → グラフは <strong>ゼロから右肩上がり（イ）</strong> になります！
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <span style="display:inline-block;background:#90CAF9;color:#fff;border-radius:8px;padding:2px 12px;font-weight:700;margin-right:6px;">ウ</span>
+        <strong>OH⁻（水酸化物イオン）のグラフ</strong><br>
+        　OH⁻ は NaOH 水溶液と一緒に加えられますが、加えた端から H⁺ と結合して水になります。
+        だから中和点までは OH⁻ はゼロのままです。
+        中和点を過ぎると H⁺ がなくなるので、余った OH⁻ がそのまま水溶液中に残るようになります。
+        → グラフは <strong>中和点まで水平（ゼロ）で、その後右肩上がり（ウ）</strong> になります！
+      </div>
+
+      <div>
+        <span style="display:inline-block;background:#FFD54F;color:#555;border-radius:8px;padding:2px 12px;font-weight:700;margin-right:6px;">エ</span>
+        <strong>Cl⁻（塩化物イオン）のグラフ</strong><br>
+        　Cl⁻ は最初から塩酸（HCl）の中に入っていて、中和反応が起きても消費されません。
+        HCl → H⁺ ＋ Cl⁻ と電離したClはずっとそのまま水溶液中にあり続けます。
+        NaOH を加えても加えなくても Cl⁻ の数は変わりません。
+        → グラフは <strong>ずっと水平（エ）</strong> になります！
+      </div>
+
+      <div style="margin-top:14px;padding:10px 12px;background:#fff;border-radius:8px;border:2px dashed #9C27B0;font-size:13px;">
+        🌟 <strong>まとめの覚え方</strong>：<br>
+        　ア（H⁺）= 右下がりでゼロに<br>
+        　イ（Na⁺）= ゼロから右上がり<br>
+        　ウ（OH⁻）= 中和点まで水平、あとで上がる<br>
+        　エ（Cl⁻）= ずっと水平（変化なし）
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="head">⚡ なぜ電流が変化するの？</div>
+      <strong>中和点まで（電流が減少）：</strong><br>
+      　NaOH水溶液を加えるたびに H⁺ が OH⁻ と結合して水（H₂O）になるため、
+      イオンの数が減り電流が下がります。<br><br>
+      <strong>中和点（電流が最小）：</strong><br>
+      　H⁺ がすべて消費されます。ただし Na⁺ と Cl⁻ は残るので電流はゼロにはなりません。<br><br>
+      <strong>中和点を超えたあと（電流が増加）：</strong><br>
+      　余分な Na⁺ と OH⁻ が加わりイオンの数が増えるため電流が増えます。
+    </div>
+
+    <!-- Challenge 3-2 -->
+    <div class="section-sub">⚡ 暗記チャレンジ 3-2　電流の変化</div>
+    <div class="stage challenge" data-ch-id="u3-2" data-target="#rb-u3-2" data-timer="55">
+      <div class="stage-title">⏱ 語群から選んでクリック → 空欄をうめよう！（空欄をクリックで取り消し）</div>
+      <div class="ch-body">
+        NaOH水溶液を加えていくと、H⁺が消費されてイオンの数が減るため電流は
+        <span class="kw-blank" data-kw="減少">　　　</span>します。<br>
+        中和点を超えると余分な<span class="kw-blank" data-kw="ナトリウムイオン">　　　　　　　</span>（Na⁺）と
+        <span class="kw-blank" data-kw="水酸化物イオン">　　　　　　　</span>（OH⁻）が増え、
+        電流は<span class="kw-blank" data-kw="増加">　　　</span>します。
+      </div>
+      <div class="word-bank">
+        <button class="wb-btn" data-kw="減少">減少</button>
+        <button class="wb-btn" data-kw="増加">増加</button>
+        <button class="wb-btn" data-kw="ナトリウムイオン">ナトリウムイオン</button>
+        <button class="wb-btn" data-kw="水酸化物イオン">水酸化物イオン</button>
+        <button class="wb-btn" data-kw="塩化物イオン">塩化物イオン</button>
+        <button class="wb-btn" data-kw="水素イオン">水素イオン</button>
+      </div>
+      <div class="ch-controls">
+        <span class="ch-timer">55秒</span>
+        <button class="ch-judge-btn">✔ 判定する</button>
+        <button class="ch-reset-btn">↻ リセット</button>
+        <button class="ch-cancel-btn">✕ キャンセル</button>
+        <span class="ch-result"></span>
+      </div>
+      <div class="ranking-wrap">
+        <div class="ranking-title">🏆 タイムランキング</div>
+        <div class="ranking-list" id="ranking-u3-2"><span class="rank-empty">まだ記録なし</span></div>
+      </div>
+    </div>
+    <div class="read-box" id="rb-u3-2">
+      <strong>✅ 確認ポイント</strong><br>
+      中和前：H⁺ ＋ OH⁻ → H₂O　→ イオン減少 → <strong>電流↓</strong><br>
+      中和点：Na⁺ と Cl⁻ が残る → 電流は<strong>ゼロにはならない</strong>（最小値）<br>
+      中和後：Na⁺ と OH⁻ が増加 → <strong>電流↑</strong>
+    </div>
+
+    <!-- 確認問題 Unit 3 -->
+    <div class="section-sub">📝 確認問題</div>
+
+    <div class="minitest" data-correct="o">
+      <div class="mt-stem"><span class="mt-num">問10</span>BTB溶液が緑色のとき、水溶液は中性（中和点）である。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">○ 正解です。BTBの緑色は中性のサインです。塩酸にNaOH水溶液を加えてBTBが緑になった点が<strong>中和点</strong>（完全中和）です。</div>
+    </div>
+
+    <div class="minitest" data-correct="x">
+      <div class="mt-stem"><span class="mt-num">問11</span>HCl + NaOH の中和点では、溶液中のすべてのイオンがゼロになる。</div>
+      <div class="mt-choices">
+        <button class="mt-c" data-v="o">○</button>
+        <button class="mt-c" data-v="x">×</button>
+      </div>
+      <div class="mt-exp">× 中和点でもNa⁺とCl⁻は溶液中に残ります。ゼロになるのは<strong>H⁺とOH⁻</strong>だけです。そのため電流はゼロにならず、最小値になります。</div>
+    </div>
+
+    <div class="q4" data-correct="c">
+      <div class="q4-stem"><span class="q4-num">問12</span>塩酸20cm³をNaOH水溶液30cm³で完全に中和した。塩酸30cm³を完全に中和するには何cm³のNaOH水溶液が必要か。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：30cm³</button>
+        <button class="q4-c" data-v="b">イ：40cm³</button>
+        <button class="q4-c" data-v="c">ウ：45cm³</button>
+        <button class="q4-c" data-v="d">エ：60cm³</button>
+      </div>
+      <div class="q4-exp">正解は<strong>ウ：45cm³</strong>。比例計算：20：30 ＝ 30：χ　→　20χ ＝ 30×30　→　χ ＝ 45（cm³）</div>
+    </div>
+
+    <div class="q4" data-correct="d">
+      <div class="q4-stem"><span class="mt-num">問13</span>塩酸にNaOH水溶液を加えていくとき、電流の変化として正しいものはどれか。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：NaOHを加えるにつれて常に増加する</button>
+        <button class="q4-c" data-v="b">イ：NaOHを加えるにつれて常に減少する</button>
+        <button class="q4-c" data-v="c">ウ：中和点でゼロになり、その後増加する</button>
+        <button class="q4-c" data-v="d">エ：中和点で最小になり、その後増加する</button>
+      </div>
+      <div class="q4-exp">正解は<strong>エ</strong>。中和点でNa⁺・Cl⁻が残るため電流はゼロにならず<strong>最小値</strong>をとります。中和点を過ぎると余分なNa⁺・OH⁻が増えて電流は増加します。</div>
+    </div>
+
+    <div class="q4" data-correct="b">
+      <div class="q4-stem"><span class="q4-num">問14</span>塩酸＋NaOH水溶液の中和実験で中和点を超えてNaOHを加えすぎた後、水分を蒸発させると残る固体は何か。</div>
+      <div class="q4-choices">
+        <button class="q4-c" data-v="a">ア：塩化ナトリウム（NaCl）のみ</button>
+        <button class="q4-c" data-v="b">イ：塩化ナトリウム（NaCl）と水酸化ナトリウム（NaOH）の両方</button>
+        <button class="q4-c" data-v="c">ウ：水酸化ナトリウム（NaOH）のみ</button>
+        <button class="q4-c" data-v="d">エ：何も残らない</button>
+      </div>
+      <div class="q4-exp">正解は<strong>イ</strong>。中和点を超えているので余分なNaOHが溶液中に残っています。蒸発させると<strong>NaCl（中和で生じた塩）とNaOH（余分なアルカリ）</strong>の両方が固体として残ります。</div>
+    </div>
+
+    <!-- ═══════ 電流の変化 H₂SO₄ + Ba(OH)₂ ═══════ -->
+    <div class="section-sub" style="margin-top:28px;">📊 電流の変化（H₂SO₄ + Ba(OH)₂）</div>
+
+    <!-- ion16.png：電流グラフ + ビーカー図 -->
+    <div style="text-align:center;margin:0 0 16px;">
+      <img src="file:///C:/Users/tinbu/Downloads/ion16.png" alt="硫酸と水酸化バリウム水溶液の中和における電流変化グラフとビーカーの様子" style="max-width:100%;border-radius:8px;border:1px solid #D1C4E9;">
+      <div style="font-size:12px;color:#555;margin-top:4px;">図：電流の変化と各点のイオンの様子（ion16.png）</div>
+    </div>
+
+    <!-- 語群穴埋め：a b c d → ア イ ウ エ（H₂SO₄版） -->
+    <div class="eq-box" id="abcd-box2" style="margin-bottom:18px;">
+      <div class="eq-label" style="font-size:14px;">🔍 グラフの各点に当てはまるビーカーの図を語群から選ぼう！</div>
+      <div style="font-size:13px;color:#555;margin-bottom:8px;">① 空欄をクリックして選択（紫枠が出る）→ ② 下の語群ボタンをクリックして入力</div>
+      <div style="font-size:14px;line-height:2.4;margin-top:6px;">
+        点 <strong>a</strong> に当てはまる図 ：
+        <span class="abcd-blank2" style="display:inline-block;min-width:2.2em;border-bottom:2px solid #7B1FA2;text-align:center;cursor:pointer;padding:2px 10px;border-radius:6px;background:#F3E5F5;font-weight:700;">　</span>
+        　　点 <strong>b</strong> に当てはまる図 ：
+        <span class="abcd-blank2" style="display:inline-block;min-width:2.2em;border-bottom:2px solid #7B1FA2;text-align:center;cursor:pointer;padding:2px 10px;border-radius:6px;background:#F3E5F5;font-weight:700;">　</span>
+        　　点 <strong>c</strong> に当てはまる図 ：
+        <span class="abcd-blank2" style="display:inline-block;min-width:2.2em;border-bottom:2px solid #7B1FA2;text-align:center;cursor:pointer;padding:2px 10px;border-radius:6px;background:#F3E5F5;font-weight:700;">　</span>
+        　　点 <strong>d</strong> に当てはまる図 ：
+        <span class="abcd-blank2" style="display:inline-block;min-width:2.2em;border-bottom:2px solid #7B1FA2;text-align:center;cursor:pointer;padding:2px 10px;border-radius:6px;background:#F3E5F5;font-weight:700;">　</span>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="abcd-wbtn2" data-v="ア" style="background:#CE93D8;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;font-weight:700;">ア</button>
+        <button class="abcd-wbtn2" data-v="イ" style="background:#CE93D8;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;font-weight:700;">イ</button>
+        <button class="abcd-wbtn2" data-v="ウ" style="background:#CE93D8;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;font-weight:700;">ウ</button>
+        <button class="abcd-wbtn2" data-v="エ" style="background:#CE93D8;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;font-weight:700;">エ</button>
+        <button onclick="checkAbcd2()" style="background:#7B1FA2;color:#fff;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;font-weight:700;">✔ 答え合わせ</button>
+        <button onclick="resetAbcd2()" style="background:#B39DDB;color:#fff;border:none;border-radius:20px;padding:6px 18px;font-size:14px;cursor:pointer;">↻ リセット</button>
+      </div>
+      <div id="abcd-result2" style="margin-top:10px;font-size:14px;font-weight:700;"></div>
+    </div>
+
+    <!-- a b c d 解説（H₂SO₄+Ba(OH)₂版） -->
+    <div class="info-box" style="margin-bottom:18px;background:linear-gradient(135deg,#F3E5F5 0%,#EDE7F6 100%);border-left:4px solid #7B1FA2;">
+      <div class="head" style="color:#6A1B9A;">🎓 各点の解説 ── 塩酸のときと何がちがうの？</div>
+
+      <div style="margin-bottom:12px;">
+        <span style="display:inline-block;background:#7B1FA2;color:#fff;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-weight:700;margin-right:6px;">a</span>
+        <strong>点 a（実験開始直後）→ 図イ</strong><br>
+        　ビーカーには硫酸（H₂SO₄）だけが入っています。
+        H₂SO₄ → 2H⁺ ＋ SO₄²⁻ と電離しているので、
+        <strong>H⁺</strong> と <strong>SO₄²⁻</strong> がたくさん存在しています。
+        イオンが多いので電流が大きくなります（図イ）。
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <span style="display:inline-block;background:#7B1FA2;color:#fff;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-weight:700;margin-right:6px;">b</span>
+        <strong>点 b（中和途中）→ 図ウ</strong><br>
+        　Ba(OH)₂ 水溶液を少し加えた状態です。
+        OH⁻ が H⁺ と結合して水に、Ba²⁺ が SO₄²⁻ と結合して
+        <strong>硫酸バリウム（BaSO₄）の白色沈殿</strong>になります。
+        H⁺ も SO₄²⁻ もどちらも減っているため電流が下がります（図ウ）。
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <span style="display:inline-block;background:#7B1FA2;color:#fff;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-weight:700;margin-right:6px;">c</span>
+        <strong>点 c（中和点＝電流がゼロ！）→ 図エ</strong><br>
+        　塩酸のときとの<strong>大きな違い</strong>がここです！
+        H₂SO₄ ＋ Ba(OH)₂ → BaSO₄↓ ＋ 2H₂O の反応で、
+        H⁺・SO₄²⁻・Ba²⁺・OH⁻ の<strong>すべてのイオンが消費</strong>されます。
+        BaSO₄ は水に溶けないので沈殿し、水溶液中にイオンが残りません。
+        そのため電流は<strong>本当にゼロ（0 mA）</strong>になります（図エ）。
+        塩酸のときは Na⁺ と Cl⁻ が残ったのでゼロにならなかった点と比べてみましょう！
+      </div>
+
+      <div>
+        <span style="display:inline-block;background:#7B1FA2;color:#fff;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-weight:700;margin-right:6px;">d</span>
+        <strong>点 d（中和点を過ぎた後）→ 図ア</strong><br>
+        　Ba(OH)₂ を加えすぎた状態です。
+        もう H⁺ も SO₄²⁻ もゼロなので、余分な <strong>Ba²⁺ と OH⁻</strong> が水溶液に溶け込んでいきます。
+        BaSO₄ の沈殿は底に残ったままですが、Ba²⁺ と OH⁻ のおかげでイオンが増え電流が再び上がります（図ア）。
+      </div>
+    </div>
+
+    <!-- なぜ電流が変化するの？（H₂SO₄版） -->
+    <div class="info-box" style="margin-bottom:20px;">
+      <div class="head">⚡ H₂SO₄ ＋ Ba(OH)₂ 電流変化のまとめ</div>
+      <strong>中和点まで（電流が減少）：</strong><br>
+      　Ba(OH)₂ を加えるたびに、H⁺ ＋ OH⁻ → H₂O　かつ　Ba²⁺ ＋ SO₄²⁻ → BaSO₄↓ の<strong>2つの反応</strong>が同時に起き、イオンが急速に減ります。<br><br>
+      <strong>中和点（電流がゼロ）：</strong><br>
+      　4種類のイオン（H⁺・SO₄²⁻・Ba²⁺・OH⁻）がすべて消費され、水溶液中のイオンがゼロになります。<strong>電流も 0 mA</strong> になります！<br><br>
+      <strong>中和点を超えたあと（電流が増加）：</strong><br>
+      　余分な Ba²⁺ と OH⁻ が増えるため電流が増えます。
+    </div>
+
+    <!-- イオン数変化グラフ問題（H₂SO₄版） -->
+    <div class="section-sub" style="margin-top:10px;">📈 イオンの数の変化グラフ（H₂SO₄ + Ba(OH)₂）</div>
+    <div class="eq-box" style="margin-bottom:12px;">
+      <div class="eq-label" style="font-size:14px;">📋 問題</div>
+      <div style="font-size:14px;line-height:1.9;margin-top:4px;">
+        次の図は、硫酸に水酸化バリウム水溶液を加えていく中で、
+        <strong>あるイオンの数の変化</strong>をあらわしたものです。
+        ア〜オのグラフは、それぞれどのイオンの変化を表しているでしょうか。
+        ただし、ア〜オのうち<strong>1つはどのイオンにも当てはまりません</strong>（ダミー）。
+      </div>
+    </div>
+
+    <!-- ion17.png：イオン数変化グラフ ア〜オ -->
+    <div style="text-align:center;margin:0 0 16px;">
+      <img src="file:///C:/Users/tinbu/Downloads/ion17.png" alt="H₂SO₄+Ba(OH)₂中和におけるイオンの数変化グラフ（ア〜オ）" style="max-width:100%;border-radius:8px;border:1px solid #D1C4E9;">
+      <div style="font-size:12px;color:#555;margin-top:4px;">図：イオンの数の変化（ion17.png）</div>
+    </div>
+
+    <!-- イオン数グラフ解説（H₂SO₄版） -->
+    <div class="info-box" style="margin-bottom:18px;background:linear-gradient(135deg,#EDE7F6 0%,#F3E5F5 100%);border-left:4px solid #9C27B0;">
+      <div class="head" style="color:#6A1B9A;">🔬 各グラフのイオンは何？ 詳しく解説！</div>
+
+      <div style="margin-bottom:14px;">
+        <span style="display:inline-block;background:#F48FB1;color:#fff;border-radius:8px;padding:2px 12px;font-weight:700;margin-right:6px;">ア</span>
+        <strong>H⁺（水素イオン）のグラフ</strong><br>
+        　硫酸は H₂SO₄ → 2H⁺ ＋ SO₄²⁻ と電離するので、最初は H⁺ がたくさんいます。
+        Ba(OH)₂ を加えるたびに <strong>H⁺ ＋ OH⁻ → H₂O</strong> の反応が起き、H⁺ が減っていきます。
+        中和点で H⁺ はゼロになり、そのまま増えません。
+        → グラフは <strong>最初から右下がりでゼロになり、その後水平（ア）</strong>。
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <span style="display:inline-block;background:#A5D6A7;color:#fff;border-radius:8px;padding:2px 12px;font-weight:700;margin-right:6px;">イ</span>
+        <strong>ダミーのグラフ（当てはまるイオンなし）</strong><br>
+        　「ゼロから右肩上がりで一直線」のグラフは、H₂SO₄ ＋ Ba(OH)₂ の系では存在しません。
+        HCl ＋ NaOH のときの Na⁺（加え始めからずっと増える）に似た形ですが、
+        Ba²⁺ はすぐ BaSO₄ になるのでこの形にはなりません。
+        → <strong>どのイオンにも当てはまらないダミー</strong>です！引っかからないように注意しましょう。
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <span style="display:inline-block;background:#90CAF9;color:#fff;border-radius:8px;padding:2px 12px;font-weight:700;margin-right:6px;">ウ</span>
+        <strong>OH⁻（水酸化物イオン）のグラフ</strong><br>
+        　OH⁻ は Ba(OH)₂ と一緒に加えられますが、加えた端から H⁺ と結合して水になります。
+        中和点まで OH⁻ はゼロのままです。
+        中和点を過ぎると H⁺ がなくなるので、余った OH⁻ が水溶液中に残り始めます。
+        → グラフは <strong>中和点まで水平（ゼロ）、その後右肩上がり（ウ）</strong>。
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <span style="display:inline-block;background:#FFD54F;color:#555;border-radius:8px;padding:2px 12px;font-weight:700;margin-right:6px;">エ</span>
+        <strong>SO₄²⁻（硫酸イオン）のグラフ</strong><br>
+        　硫酸から生じた SO₄²⁻ は最初から存在しますが（H⁺ の半分の量）、
+        Ba²⁺ が加わると <strong>Ba²⁺ ＋ SO₄²⁻ → BaSO₄↓</strong> の反応ですぐに沈殿します。
+        中和点で SO₄²⁻ もゼロになり、その後は増えません（BaSO₄ が不溶なので）。
+        → グラフは <strong>アより低い位置から右下がりでゼロになり水平（エ）</strong>。
+        ※アの H⁺ より傾きが緩やか（最初の量がアの半分）な点がポイントです！
+      </div>
+
+      <div>
+        <span style="display:inline-block;background:#CE93D8;color:#fff;border-radius:8px;padding:2px 12px;font-weight:700;margin-right:6px;">オ</span>
+        <strong>Ba²⁺（バリウムイオン）のグラフ</strong><br>
+        　Ba²⁺ は Ba(OH)₂ と一緒に加えられますが、加えた端から SO₄²⁻ と結合して BaSO₄ として沈殿します。
+        だから中和点まで Ba²⁺ は水溶液中にほとんどゼロのままです。
+        中和点を過ぎると SO₄²⁻ がなくなるので、余った Ba²⁺ が水溶液中に残り始めます。
+        → グラフは <strong>中和点まで水平（ゼロ）、その後右肩上がり（オ）</strong>。
+        ウ（OH⁻）と形は同じですが、Ba²⁺ は OH⁻ の半分の量しかない点が異なります。
+      </div>
+
+      <div style="margin-top:16px;padding:12px;background:#fff;border-radius:8px;border:2px dashed #9C27B0;font-size:13px;">
+        🌟 <strong>H₂SO₄ ＋ Ba(OH)₂ まとめ表</strong><br><br>
+        　ア（H⁺）　 = 最初から減少 → ゼロで水平<br>
+        　イ　　　　 = <span style="color:#E53935;font-weight:700;">ダミー（当てはまらない）</span><br>
+        　ウ（OH⁻）　= 中和点まで水平 → その後上昇<br>
+        　エ（SO₄²⁻）= 最初から減少（傾きはアより緩やか）→ ゼロで水平<br>
+        　オ（Ba²⁺）　= 中和点まで水平 → その後上昇（ウより量は少ない）<br><br>
+        🔑 <strong>塩酸との最大の違い：</strong>HCl ＋ NaOH は中和点でイオンが残るが、
+        H₂SO₄ ＋ Ba(OH)₂ は中和点でイオンがゼロになり<strong>電流も 0 mA</strong>！
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══ 確認問題：イオン数グラフ H₂SO₄+Ba(OH)₂ ═══ -->
+<div class="unit-block">
+  <div class="section-sub">📝 確認問題　イオンの数の変化グラフ（H₂SO₄ + Ba(OH)₂）</div>
+  <div style="font-size:13px;color:#555;margin-bottom:12px;">ion17.png のグラフ ア〜オ を参考に答えてください。</div>
+
+  <!-- 問1：H⁺ → ア (a) -->
+  <div class="q4" data-correct="a">
+    <div class="q4-stem"><span class="q4-num">問1</span>硫酸（H₂SO₄）と水酸化バリウム（Ba(OH)₂）水溶液の中和実験で、<strong>H⁺（水素イオン）</strong>の数の変化を表すグラフはどれか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：最初から右下がりでゼロになり、その後水平</button>
+      <button class="q4-c" data-v="b">イ：ゼロから右肩上がりで一直線に増える</button>
+      <button class="q4-c" data-v="c">ウ：中和点まで水平（ゼロ）、その後右肩上がり</button>
+      <button class="q4-c" data-v="d">エ：最初から右下がりでゼロになり水平（アより傾きが緩やか）</button>
+      <button class="q4-c" data-v="e">オ：中和点まで水平（ゼロ）、その後右肩上がり（ウより量が少ない）</button>
+    </div>
+    <div class="q4-exp">正解は<strong>ア</strong>。H⁺ は最初（硫酸のみ）のとき最も多く、Ba(OH)₂ を加えるたびに <strong>H⁺ ＋ OH⁻ → H₂O</strong> の反応でどんどん減ります。中和点でゼロになり、その後も増えません。最初の量が一番多いのでグラフの傾きも急です。</div>
+  </div>
+
+  <!-- 問2：Ba²⁺ → オ (e) -->
+  <div class="q4" data-correct="e">
+    <div class="q4-stem"><span class="q4-num">問2</span><strong>Ba²⁺（バリウムイオン）</strong>の数の変化を表すグラフはどれか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：最初から右下がりでゼロになり、その後水平</button>
+      <button class="q4-c" data-v="b">イ：ゼロから右肩上がりで一直線に増える</button>
+      <button class="q4-c" data-v="c">ウ：中和点まで水平（ゼロ）、その後右肩上がり</button>
+      <button class="q4-c" data-v="d">エ：最初から右下がりでゼロになり水平（アより傾きが緩やか）</button>
+      <button class="q4-c" data-v="e">オ：中和点まで水平（ゼロ）、その後右肩上がり（ウより量が少ない）</button>
+    </div>
+    <div class="q4-exp">正解は<strong>オ</strong>。Ba²⁺ は Ba(OH)₂ と一緒に加えられますが、すぐに <strong>Ba²⁺ ＋ SO₄²⁻ → BaSO₄↓</strong> の反応で沈殿してしまいます。中和点まで Ba²⁺ は水溶液中にほぼゼロ。中和点を過ぎると SO₄²⁻ がなくなるので余った Ba²⁺ が水溶液に残り始め、右肩上がりになります。OH⁻（ウ）と形は同じですが量が少ない点が異なります。</div>
+  </div>
+
+  <!-- 問3：SO₄²⁻ → エ (d) -->
+  <div class="q4" data-correct="d">
+    <div class="q4-stem"><span class="q4-num">問3</span><strong>SO₄²⁻（硫酸イオン）</strong>の数の変化を表すグラフはどれか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：最初から右下がりでゼロになり、その後水平</button>
+      <button class="q4-c" data-v="b">イ：ゼロから右肩上がりで一直線に増える</button>
+      <button class="q4-c" data-v="c">ウ：中和点まで水平（ゼロ）、その後右肩上がり</button>
+      <button class="q4-c" data-v="d">エ：最初から右下がりでゼロになり水平（アより傾きが緩やか）</button>
+      <button class="q4-c" data-v="e">オ：中和点まで水平（ゼロ）、その後右肩上がり（ウより量が少ない）</button>
+    </div>
+    <div class="q4-exp">正解は<strong>エ</strong>。SO₄²⁻ は最初から存在しますが、Ba²⁺ が加わるたびに <strong>BaSO₄ として沈殿</strong>します。中和点でゼロになり、その後も増えません。H⁺（ア）と同じ形ですが、H₂SO₄ 1分子から H⁺ は2個・SO₄²⁻ は1個できるため、<strong>最初の量が H⁺ の半分</strong>で傾きが緩やかな点がポイントです。</div>
+  </div>
+
+  <!-- 問4：OH⁻ → ウ (c) -->
+  <div class="q4" data-correct="c">
+    <div class="q4-stem"><span class="q4-num">問4</span><strong>OH⁻（水酸化物イオン）</strong>の数の変化を表すグラフはどれか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：最初から右下がりでゼロになり、その後水平</button>
+      <button class="q4-c" data-v="b">イ：ゼロから右肩上がりで一直線に増える</button>
+      <button class="q4-c" data-v="c">ウ：中和点まで水平（ゼロ）、その後右肩上がり</button>
+      <button class="q4-c" data-v="d">エ：最初から右下がりでゼロになり水平（アより傾きが緩やか）</button>
+      <button class="q4-c" data-v="e">オ：中和点まで水平（ゼロ）、その後右肩上がり（ウより量が少ない）</button>
+    </div>
+    <div class="q4-exp">正解は<strong>ウ</strong>。OH⁻ は Ba(OH)₂ と一緒に加えられますが、加えた端から <strong>H⁺ ＋ OH⁻ → H₂O</strong> の反応で消費されます。中和点までは OH⁻ がゼロのまま。中和点を過ぎると H⁺ がなくなるため、余った OH⁻ が水溶液中に残り始めて増えていきます。</div>
+  </div>
+
+  <!-- 問5：中和点ゼロの理由 4択 → イ (b) -->
+  <div class="q4" data-correct="b">
+    <div class="q4-stem"><span class="q4-num">問5</span>硫酸と水酸化バリウムの中和実験では、中和点で電流が 0 mA になります。その理由として正しいものはどれか。</div>
+    <div class="q4-choices">
+      <button class="q4-c" data-v="a">ア：塩化ナトリウム（NaCl）が生じてすべてのイオンを吸収するから</button>
+      <button class="q4-c" data-v="b">イ：生じた硫酸バリウム（BaSO₄）が水に溶けないため、H⁺・SO₄²⁻・Ba²⁺・OH⁻ のすべてのイオンが消費されるから</button>
+      <button class="q4-c" data-v="c">ウ：水（H₂O）が電気を通すため、電流がキャンセルされるから</button>
+      <button class="q4-c" data-v="d">エ：中和点では温度が上がり電流が流れにくくなるから</button>
+    </div>
+    <div class="q4-exp">正解は<strong>イ</strong>。H₂SO₄ ＋ Ba(OH)₂ → <strong>BaSO₄↓</strong> ＋ 2H₂O の反応では、生じた BaSO₄ が水にほとんど溶けないため沈殿します。これによって H⁺・SO₄²⁻・Ba²⁺・OH⁻ の4種類のイオンがすべて水溶液中から取り除かれます。その結果、電流を運ぶイオンがゼロになり電流が 0 mA になります。塩酸＋NaOH の中和では Na⁺ と Cl⁻ が残るためゼロにならない点と大きく異なります。</div>
+  </div>
+
+</div>
+
+<!-- 完了バナー -->
+<div class="next-actions">
+  <h3>🎉 第3回 お疲れさまでした！</h3>
+  <p>酸・アルカリ・中和・塩をひととおり学びました。<br>まずはドリルで復習してから、次の単元へ進みましょう！</p>
+  <div class="links">
+    <a href="file:///C:/Users/tinbu/Downloads/ion3-drill.html">📝 第3回ドリルで復習する</a>
+    <a href="file:///C:/Users/tinbu/Downloads/ion2.html">← 第2回に戻る</a>
+  </div>
+</div>
+
+<!-- ページナビ -->
+<nav class="pagenav">
+  <a href="file:///C:/Users/tinbu/Downloads/ion2.html">
+    <span class="label">◀ PREV</span>
+    <span class="title">第2回 電気分解・化学電池</span>
+  </a>
+  <a href="file:///C:/Users/tinbu/Downloads/ion3-drill.html" class="next">
+    <span class="label">NEXT ▶</span>
+    <span class="title">第3回 ドリルで復習</span>
+  </a>
+</nav>
+
+</div><!-- /.wrap -->
+
+<script>
+(function () {
+  'use strict';
+  var RANK_PREFIX = 'gamba_rank3_';
+
+  /* ─── チャレンジエンジン ─── */
+  document.querySelectorAll('.stage.challenge').forEach(function (stage) {
+    var chId    = stage.dataset.chId;
+    var targetEl = stage.dataset.target ? document.querySelector(stage.dataset.target) : null;
+    var blanks  = Array.from(stage.querySelectorAll('.kw-blank'));
+    var wbBtns  = Array.from(stage.querySelectorAll('.wb-btn'));
+    var timerEl = stage.querySelector('.ch-timer');
+    var judgeBtn  = stage.querySelector('.ch-judge-btn');
+    var resetBtn  = stage.querySelector('.ch-reset-btn');
+    var cancelBtn = stage.querySelector('.ch-cancel-btn');
+    var resultEl  = stage.querySelector('.ch-result');
+    var totalSec  = parseInt(stage.dataset.timer || '60', 10);
+    var timer = null, timeLeft = totalSec, started = false, judged = false;
+
+    /* 空欄クリック → 取り消し */
+    blanks.forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (judged) return;
+        if (b.dataset.filled) {
+          var kw = b.dataset.kw;
+          b.textContent = '　　　';
+          delete b.dataset.filled;
+          wbBtns.forEach(function (btn) {
+            if (btn.dataset.kw === kw) btn.disabled = false;
+          });
+        }
+      });
+    });
+
+    /* 語群クリック → 空欄を埋める */
+    wbBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (judged) return;
+        var kw = btn.dataset.kw;
+        var blank = blanks.find(function (b) { return b.dataset.kw === kw && !b.dataset.filled; });
+        if (blank) {
+          blank.textContent = kw;
+          blank.dataset.filled = '1';
+          var remaining = blanks.filter(function (b) { return b.dataset.kw === kw && !b.dataset.filled; });
+          if (!remaining.length) btn.disabled = true;
+          if (!started) startTimer();
+        }
+      });
+    });
+
+    function startTimer() {
+      started = true;
+      timer = setInterval(function () {
+        timeLeft--;
+        timerEl.textContent = timeLeft + '秒';
+        if (timeLeft <= 10) timerEl.classList.add('warn');
+        if (timeLeft <= 0) { clearInterval(timer); doJudge(); }
+      }, 1000);
+    }
+
+    function doJudge() {
+      if (judged) return;
+      judged = true;
+      clearInterval(timer);
+      var allOk = true;
+      blanks.forEach(function (b) {
+        if (b.dataset.filled && b.textContent === b.dataset.kw) {
+          b.classList.add('correct');
+        } else {
+          b.classList.add('incorrect');
+          if (!b.dataset.filled) b.textContent = b.dataset.kw;
+          allOk = false;
+        }
+        b.style.pointerEvents = 'none';
+      });
+      wbBtns.forEach(function (btn) { btn.disabled = true; });
+      if (resultEl) resultEl.textContent = allOk ? '🎉 全問正解！' : '❌ 見直してみよう';
+      if (allOk) launchConfetti();
+      if (allOk && started && timeLeft > 0) {
+        saveRanking(chId, totalSec - timeLeft);
+        updateRankingUI(chId);
+      }
+      if (targetEl) targetEl.style.display = 'block';
+    }
+
+    function doReset(clearResult) {
+      clearInterval(timer);
+      started = false; judged = false; timeLeft = totalSec;
+      timerEl.textContent = totalSec + '秒';
+      timerEl.classList.remove('warn');
+      blanks.forEach(function (b) {
+        b.textContent = '　　　';
+        b.classList.remove('correct', 'incorrect');
+        b.style.pointerEvents = '';
+        delete b.dataset.filled;
+      });
+      wbBtns.forEach(function (btn) { btn.disabled = false; });
+      if (clearResult && resultEl) resultEl.textContent = '';
+    }
+
+    if (judgeBtn)  judgeBtn.addEventListener('click',  doJudge);
+    if (resetBtn)  resetBtn.addEventListener('click',  function () { doReset(true); if (targetEl) targetEl.style.display = 'none'; });
+    if (cancelBtn) cancelBtn.addEventListener('click', function () { doReset(false); if (targetEl) targetEl.style.display = 'none'; });
+  });
+
+  /* ─── ランキング ─── */
+  function saveRanking(chId, elapsed) {
+    var key = RANK_PREFIX + chId;
+    var rec = JSON.parse(localStorage.getItem(key) || '[]');
+    rec.push(elapsed);
+    rec.sort(function (a, b) { return a - b; });
+    localStorage.setItem(key, JSON.stringify(rec.slice(0, 5)));
+  }
+
+  function updateRankingUI(chId) {
+    var el = document.getElementById('ranking-' + chId);
+    if (!el) return;
+    var rec = JSON.parse(localStorage.getItem(RANK_PREFIX + chId) || '[]');
+    if (!rec.length) { el.innerHTML = '<span class="rank-empty">まだ記録なし</span>'; return; }
+    el.innerHTML = rec.map(function (t, i) {
+      return '<div class="rank-row"><span class="rank-num">' + (i + 1) + '位</span><span class="rank-time">' + t + '秒</span></div>';
+    }).join('');
+  }
+
+  ['u1-1', 'u2-1', 'u2-2', 'u3-1', 'u3-2'].forEach(updateRankingUI);
+
+  /* ─── ミニテスト ─── */
+  document.querySelectorAll('.minitest').forEach(function (mt) {
+    var correct = mt.dataset.correct;
+    var exp = mt.querySelector('.mt-exp');
+    mt.querySelectorAll('.mt-c').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (mt.dataset.done) return;
+        mt.dataset.done = '1';
+        if (btn.dataset.v === correct) {
+          btn.classList.add('correct');
+          if (exp) exp.classList.add('visible');
+        } else {
+          btn.classList.add('incorrect');
+          if (exp) exp.classList.add('visible', 'show-err');
+          mt.querySelectorAll('.mt-c').forEach(function (b) {
+            if (b.dataset.v === correct) b.classList.add('correct');
+          });
+        }
+        mt.querySelectorAll('.mt-c').forEach(function (b) { b.classList.add('disabled'); });
+      });
+    });
+  });
+
+  /* ─── 4択 ─── */
+  document.querySelectorAll('.q4').forEach(function (q) {
+    var correct = q.dataset.correct;
+    var exp = q.querySelector('.q4-exp');
+    q.querySelectorAll('.q4-c').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (q.dataset.done) return;
+        q.dataset.done = '1';
+        if (btn.dataset.v === correct) {
+          btn.classList.add('correct');
+          launchConfetti();
+        } else {
+          btn.classList.add('incorrect');
+          q.querySelectorAll('.q4-c').forEach(function (b) {
+            if (b.dataset.v === correct) b.classList.add('correct');
+          });
+        }
+        if (exp) exp.classList.add('visible');
+        q.querySelectorAll('.q4-c').forEach(function (b) { b.classList.add('disabled'); });
+      });
+    });
+  });
+
+})();
+
+/* ─── a b c d 語群穴埋め（H₂SO₄+Ba(OH)₂版） ─── */
+(function() {
+  var ANSWERS2 = ['イ','ウ','エ','ア']; // a,b,c,d の正解
+  var selected2 = null;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var box = document.getElementById('abcd-box2');
+    if (!box) return;
+    var blanks = box.querySelectorAll('.abcd-blank2');
+    var btns   = box.querySelectorAll('.abcd-wbtn2');
+
+    blanks.forEach(function(bl) {
+      bl.addEventListener('click', function() {
+        blanks.forEach(function(b){ b.style.outline=''; });
+        selected2 = bl;
+        bl.style.outline = '2px solid #7B1FA2';
+      });
+    });
+
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (!selected2) {
+          for (var i=0;i<blanks.length;i++){
+            if (!blanks[i].dataset.filled){ selected2=blanks[i]; break; }
+          }
+          if (!selected2) return;
+        }
+        selected2.textContent = btn.dataset.v;
+        selected2.dataset.filled = btn.dataset.v;
+        selected2.style.background = '#EDE7F6';
+        selected2.style.outline = '';
+        selected2 = null;
+      });
+    });
+  });
+
+  window.checkAbcd2 = function() {
+    var box = document.getElementById('abcd-box2');
+    var blanks = box.querySelectorAll('.abcd-blank2');
+    var correct = 0;
+    blanks.forEach(function(bl, i) {
+      var got = bl.dataset.filled || '';
+      if (got === ANSWERS2[i]) { bl.style.background='#C8E6C9'; bl.style.color='#1B5E20'; correct++; }
+      else { bl.style.background='#FFCDD2'; bl.style.color='#B71C1C'; }
+    });
+    var res = document.getElementById('abcd-result2');
+    if (correct === 4) {
+      res.innerHTML = '🎉 全問正解！　a→<b>イ</b>　b→<b>ウ</b>　c→<b>エ</b>　d→<b>ア</b>';
+      res.style.color='#2E7D32';
+      launchConfetti();
+    } else {
+      res.textContent = correct + '／4問正解。もう一度チャレンジしてみよう！';
+      res.style.color='#B71C1C';
+    }
+  };
+
+  window.resetAbcd2 = function() {
+    var box = document.getElementById('abcd-box2');
+    var blanks = box.querySelectorAll('.abcd-blank2');
+    blanks.forEach(function(bl) {
+      bl.textContent='　'; bl.dataset.filled='';
+      bl.style.background='#F3E5F5'; bl.style.color=''; bl.style.outline='';
+    });
+    document.getElementById('abcd-result2').textContent='';
+    selected2 = null;
+  };
+})();
+
+/* ─── a b c d 語群穴埋め ─── */
+(function() {
+  var ANSWERS = ['イ','エ','ウ','ア']; // a,b,c,d の正解
+  var selected = null; // 現在選択中のブランク要素
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var box = document.getElementById('abcd-box');
+    if (!box) return;
+    var blanks = box.querySelectorAll('.abcd-blank');
+    var btns   = box.querySelectorAll('.abcd-wbtn');
+
+    blanks.forEach(function(bl) {
+      bl.addEventListener('click', function() {
+        blanks.forEach(function(b){ b.style.outline=''; });
+        selected = bl;
+        bl.style.outline = '2px solid #7B1FA2';
+      });
+      // クリックで取り消し（右クリック or ダブルクリック不要：空なら無視）
+    });
+
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (!selected) {
+          // ブランクが未選択なら左から順に入れる
+          for (var i=0;i<blanks.length;i++){
+            if (!blanks[i].dataset.filled){ selected=blanks[i]; break; }
+          }
+          if (!selected) return;
+        }
+        selected.textContent = btn.dataset.v;
+        selected.dataset.filled = btn.dataset.v;
+        selected.style.background = '#EDE7F6';
+        selected.style.outline = '';
+        selected = null;
+      });
+    });
+  });
+
+  window.checkAbcd = function() {
+    var box = document.getElementById('abcd-box');
+    var blanks = box.querySelectorAll('.abcd-blank');
+    var correct = 0;
+    blanks.forEach(function(bl, i) {
+      var got = bl.dataset.filled || '';
+      if (got === ANSWERS[i]) { bl.style.background='#C8E6C9'; bl.style.color='#1B5E20'; correct++; }
+      else { bl.style.background='#FFCDD2'; bl.style.color='#B71C1C'; }
+    });
+    var res = document.getElementById('abcd-result');
+    if (correct === 4) {
+      res.innerHTML = '🎉 全問正解！　a→<b>イ</b>　b→<b>エ</b>　c→<b>ウ</b>　d→<b>ア</b>';
+      res.style.color='#2E7D32';
+      launchConfetti();
+    } else {
+      res.textContent = correct + '／4問正解。もう一度チャレンジしてみよう！';
+      res.style.color='#B71C1C';
+    }
+  };
+
+  window.resetAbcd = function() {
+    var box = document.getElementById('abcd-box');
+    var blanks = box.querySelectorAll('.abcd-blank');
+    blanks.forEach(function(bl) {
+      bl.textContent='　'; bl.dataset.filled='';
+      bl.style.background='#F3E5F5'; bl.style.color=''; bl.style.outline='';
+    });
+    document.getElementById('abcd-result').textContent='';
+    selected = null;
+  };
+})();
+
+function launchConfetti() {
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;';
+  document.body.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+  var colors = ['#FF6B6B','#FFE66D','#4ECDC4','#A8E6CF','#FF8B94','#CE93D8','#81C784','#FFB74D','#64B5F6'];
+  var particles = [];
+  for (var i = 0; i < 180; i++) {
+    particles.push({
+      x: Math.random() * canvas.width, y: -20 - Math.random() * 120,
+      w: Math.random() * 14 + 4, h: Math.random() * 7 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: Math.random() * 5 - 2.5, vy: Math.random() * 3 + 2,
+      angle: Math.random() * Math.PI * 2, va: Math.random() * 0.18 - 0.09
+    });
+  }
+  var frame;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var alive = false;
+    particles.forEach(function(p) {
+      p.x += p.vx; p.y += p.vy; p.angle += p.va; p.vy += 0.04;
+      if (p.y < canvas.height + 20) alive = true;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.angle);
+      ctx.fillStyle = p.color; ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      ctx.restore();
+    });
+    if (alive) frame = requestAnimationFrame(draw);
+    else { cancelAnimationFrame(frame); if (canvas.parentNode) canvas.remove(); }
+  }
+  draw();
+  setTimeout(function() { cancelAnimationFrame(frame); if (canvas.parentNode) canvas.remove(); }, 5000);
+}
+</script>
+
+
+</body></html>
